@@ -7,10 +7,7 @@ import catAndHumanIllustration from "../images/cat-and-human-illustration.svg";
 function IndexPage() {
   return (
     <Layout>
-      <SEO
-        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-        title="Home"
-      />
+      <SEO keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]} title="Home" />
 
       <section className="text-center">
         <img
