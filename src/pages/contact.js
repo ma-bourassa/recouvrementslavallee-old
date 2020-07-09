@@ -8,43 +8,86 @@ function ContactPage() {
     <Layout>
       <SEO keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]} title="Contact" />
       <section>
-        <form className="mx-auto md:w-1/2">
-          <p className="mb-8 leading-loose">
-            Here is an example of a form built using the official Tailwind CSS Custom Forms plugin.{` `}
-            <a
-              className="font-bold text-gray-700 no-underline"
-              href="https://github.com/tailwindcss/custom-forms"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read the docs
+        {/*Title*/}
+        <div className="w-full">
+          <div className="mb-6">
+            <h1 className=" text-2xl md:text-4xl pb-2">Contactez-nous !</h1>
+            <p className="leading-loose ">
+              Pour toute demande, veuillez nous contacter à l&apos;aide du formulaire ci-dessous.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="flex flex-wrap justify-start items-start -mx-4">
+        <div className="w-full md:w-1/2 p-4">
+          <form>
+            <label className="block">
+              <span className="text-gray-700 font-semibold">Nom *</span>
+              <input className="form-input mt-1 mb-4 block w-full" />
+            </label>
+
+            <label className="block">
+              <span className="text-gray-700 font-semibold">Téléphone *</span>
+              <input className="form-input mt-1 mb-4 block w-full" />
+            </label>
+
+            <label className="block">
+              <span className="text-gray-700 font-semibold">Courriel *</span>
+              <input className="form-input mt-1 mb-4 block w-full" />
+            </label>
+
+            <label className="block">
+              <span className="text-gray-700 font-semibold">Message</span>
+              <textarea
+                className="w-full mb-4 form-textarea"
+                id="message"
+                placeholder="Précisez votre demande"
+                rows="10"
+              />
+            </label>
+
+            <button className="btn btn-blue btn-blue:hover">Envoyer</button>
+          </form>
+        </div>
+
+        <div className="w-full md:w-1/2 p-4">
+          <p className="text-lg font-semibold">
+            André Lavallée :{" "}
+            <a className="font-bold" href="tel:+14503573127">
+              (450) 357-3127
             </a>
-            .
+          </p>
+          <p className="text-lg font-semibold">
+            Samuel Lavallée :{" "}
+            <a className="font-bold" href="tel:+15147933743">
+              (514) 793-3743
+            </a>
           </p>
 
-          <label className="block mb-2 text-xs font-bold uppercase" htmlFor="first-name">
-            First Name
-          </label>
+          <p className="text-black font-semibold mt-3 mb-1">Les recouvrements de sols André Lavallée Inc.</p>
+          <p className="text-sm mb-2">
+            166 rang Saint-André
+            <br />
+            Saint-Bernard-de-Lacolle QC
+            <br />
+            Canada J0J 1V0
+          </p>
 
-          <input className="w-full mb-6 form-input" id="first-name" placeholder="Bill" type="text" />
-
-          <label className="block mb-2 text-xs font-bold uppercase" htmlFor="last-name">
-            Last Name
-          </label>
-
-          <input className="w-full mb-6 form-input" id="last-name" placeholder="Murray" type="text" />
-
-          <label className="block mb-2 text-xs font-bold uppercase" htmlFor="message">
-            Message
-          </label>
-
-          <textarea className="w-full mb-6 form-textarea" id="message" placeholder="Say something..." rows="8" />
-
-          <button className="px-4 py-2 text-sm font-bold text-white bg-gray-700 border-b-4 border-gray-800 rounded hover:border-gray-700 hover:bg-gray-600">
-            Submit
-          </button>
-        </form>
-      </section>
+          <div className="overflow-hidden rounded border mb-6">
+            <iframe
+              scrolling="no"
+              marginHeight="0"
+              marginWidth="0"
+              src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=166%20rang%20St-Andr%C3%A9%20St-Bernard%20de%20Lacolle%20+(My%20company)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              width="100%"
+              height="400"
+              frameBorder="0"
+            ></iframe>
+          </div>
+        </div>
+        <div className="w-full"></div>
+      </div>
     </Layout>
   );
 }

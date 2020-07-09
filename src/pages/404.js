@@ -2,6 +2,7 @@ import React from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import { Link } from "gatsby";
 
 function NotFoundPage() {
   return (
@@ -21,12 +22,9 @@ function NotFoundPage() {
             </div>
             <h2 className="mt-8 uppercase text-xl lg:text-4xl font-black">Désolé, cette page est introuvable.</h2>
             <p className="mt-6 text-xl text-gray-900">Vous pouvez nous en faire part en communiquant avec nous.</p>
-            <a
-              href="/"
-              className="mt-8 bg-blue-500 hover:bg-blue-700 text-white py-3 px-6 rounded-lg inline-block shadow-md"
-            >
+            <Link className="btn btn-blue btn-blue:hover mt-8 inline-block" to="/">
               Accueil
-            </a>
+            </Link>
           </div>
         </section>
       </div>

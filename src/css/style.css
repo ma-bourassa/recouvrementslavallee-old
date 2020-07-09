@@ -1,5 +1,18 @@
 /*! purgecss start ignore */
 @tailwind base;
 @tailwind components;
+
+.btn {
+  @apply py-3 px-6 font-semibold rounded-lg mt-8 inline-block shadow-md;
+}
+
+.btn-blue {
+  @apply bg-blue-600 text-white;
+}
+
+.btn-blue:hover {
+  @apply bg-blue-800;
+}
+
 /*! purgecss end ignore */
 @tailwind utilities;
