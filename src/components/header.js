@@ -1,41 +1,27 @@
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { Link } from "gatsby";
 import React, { useState } from "react";
+import siteTitle from "./title";
 import logo from "../images/logo_fb.png";
 
 function Header() {
   const [isExpanded, toggleExpansion] = useState(false);
-  const { site } = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
 
   return (
-    <header className="bg-grey">
-      <div className="flex flex-wrap items-end justify-between px-2 py-4 md:justify-around">
-        <Link to="/">
-          <img className="mb-2 flex h-12 sm:h-16 md:h-20" src={logo} alt={site.siteMetadata.title} />
-        </Link>
+    <header className="bg-grey-dark">
+      <div className="flex flex-wrap items-baseline justify-between px-2 py-2 md:py-4 md:justify-around">
+        <div className="flex p-2 items-center">
+          <Link to="/">
+            <img className="flex object-scale-down pr-4" src={logo} alt={siteTitle()} />
+          </Link>
 
-        <button
-          className="mb-2 flex items-end px-3 py-2 text-white border border-white rounded md:hidden"
-          onClick={() => toggleExpansion(!isExpanded)}
-        >
-          <svg className="w-3 h-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <title>Menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-          </svg>
-        </button>
-
-        <nav
-          className={`${
-            isExpanded ? `block` : `hidden`
-          } divide-y divide-white md:divide-y-0 md:flex md:items-center w-full md:w-auto`}
-        >
+          <button className="flex pt-4 px-4 text-white  md:hidden" onClick={() => toggleExpansion(!isExpanded)}>
+            <svg className="w-6 h-6 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </button>
+        </div>
+        <nav className={`${isExpanded ? `block` : `hidden`}  mt-2 md:flex md:items-center w-full md:w-auto`}>
           {[
             {
               route: `/a-propos`,
@@ -43,11 +29,11 @@ function Header() {
             },
             {
               route: `/services`,
-              title: `Nos Services`,
+              title: `Services`,
             },
             {
               route: `/realisations`,
-              title: `Nos réalisations`,
+              title: `Réalisations`,
             },
             {
               route: `/contact`,
@@ -55,13 +41,28 @@ function Header() {
             },
           ].map((link) => (
             <Link
-              className="block px-4 py-3 text-white text-xl font-semibold no-underline md:rounded md:border-0 md:inline-block hover:bg-grey-dark active:bg-grey-dark"
+              className="block px-4 py-3 text-white border-t-2 md:border-t-0 text-xl font-semibold md:inline-block hover:bg-grey-darker"
+              activeClassName="border-b-2 md:border-blue2 "
               key={link.title}
               to={link.route}
             >
               {link.title}
             </Link>
           ))}
+          <div className="hidden md:block">
+            <a
+              className="border border-white text-white text-xl font-semibold py-2 px-4 rounded-full hover:bg-white hover:text-black md:ml-6 md:mr-4"
+              href="tel:+14503573127"
+            >
+              450.357.3127
+            </a>
+            <a
+              className="border border-white text-white text-xl font-semibold py-2 px-4 rounded-full hover:bg-white hover:text-black "
+              href="tel:+15147933743"
+            >
+              514.793.3743
+            </a>
+          </div>
         </nav>
       </div>
     </header>

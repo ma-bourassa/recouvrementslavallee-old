@@ -8,6 +8,10 @@ module.exports = {
           light: "#e2e0e3",
           default: "#424043",
           dark: "#323033",
+          darker: "#222023",
+        },
+        blue2: {
+          default: "#1874B5",
         },
       },
     },

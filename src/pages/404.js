@@ -22,7 +22,7 @@ function NotFoundPage() {
             </div>
             <h2 className="mt-8 uppercase text-xl lg:text-4xl font-black">Désolé, cette page est introuvable.</h2>
             <p className="mt-6 text-xl text-gray-900">Vous pouvez nous en faire part en communiquant avec nous.</p>
-            <Link className="btn btn-blue btn-blue:hover mt-8 inline-block" to="/">
+            <Link className="btn btn-blue mt-8 inline-block" to="/">
               Accueil
             </Link>
           </div>
