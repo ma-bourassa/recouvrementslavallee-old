@@ -64,14 +64,13 @@ export default function ContactPage() {
         </div>
 
         <div className="w-full md:w-2/3 p-6">
-          <form
-            name="Contact"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            data-netlify-recaptcha="true"
-          >
-            <input type="hidden" name="form-name" value="Contact" />
+          <form name="Contact v1" method="POST" onSubmit="submit" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="Contact v1" />
+            <div className="hidden">
+              <label>
+                Don’t fill this out: <input name="bot-field" />
+              </label>
+            </div>
             <label className="block">
               <span className="text-gray-700 font-semibold">Nom *</span>
               <input type="text" name="Nom" className="form-input mt-1 mb-4 block w-full" />
@@ -116,8 +115,6 @@ export default function ContactPage() {
               <FontAwesomeIcon icon="check" className="mr-2" />
               <span className="font-semibold">{fileName}</span>
             </div>
-
-            <div data-netlify-recaptcha="true"></div>
 
             <button type="submit" className="btn btn-blue mt-8 block">
               Envoyer
