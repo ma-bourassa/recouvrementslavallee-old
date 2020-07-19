@@ -72,7 +72,7 @@ function Footer() {
               <nav className={`mt-2 leading-loose items-center`}>
                 {[
                   {
-                    route: `/index`,
+                    route: `/`,
                     title: `Accueil`,
                   },
                   {
