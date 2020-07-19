@@ -30,14 +30,17 @@ function Footer() {
                 </li>
                 <li>
                   <FontAwesomeIcon className="mr-2" icon="envelope" />
-                  <a className="font-semibold" href="mailto:lesrecouvrementslavallee@gmail.com">
+                  <a className="font-semibold text-sm" href="mailto:lesrecouvrementslavallee@gmail.com">
                     lesrecouvrementslavallee@gmail.com
                   </a>
                 </li>
                 <li>
-                  <FontAwesomeIcon className="mr-2" icon={["fab", "facebook"]} />
-                  <a className="font-semibold" href="https://www.facebook.com/search/top?q=recouvrements%20lavallee">
-                    facebook
+                  <a
+                    className="font-semibold"
+                    href="https://www.facebook.com/Les-recouvrements-de-sols-Andr%C3%A9-Lavall%C3%A9einc-135823087133035"
+                  >
+                    {" "}
+                    <FontAwesomeIcon icon={["fab", "facebook"]} size="2x" className="mt-2" />
                   </a>
                 </li>
               </ul>
