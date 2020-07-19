@@ -114,10 +114,12 @@ export default function ContactPage() {
               />
             </label>
 
-            <div className={`${fileName ? `block` : `hidden`} mt-2`}>
-              <FontAwesomeIcon icon="check" className="mr-2" />
-              <span className="font-semibold">{fileName}</span>
-            </div>
+            {fileName && (
+              <div className="block mt-2">
+                <FontAwesomeIcon icon="check" className="mr-2" />
+                <span className="font-semibold">{fileName}</span>
+              </div>
+            )}
 
             <button type="submit" className="btn btn-blue mt-8 block">
               Envoyer
