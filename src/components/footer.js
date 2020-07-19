@@ -9,11 +9,11 @@ function Footer() {
   return (
     <footer>
       <section className="bg-grey text-white">
-        <div className="md:px-24 mx-auto">
-          <div className="w-full flex flex-col justify-center md:flex-row ">
-            <div className=" py-10 pl-4 md:px-10">
+        <div className="w-full md:px-24 mx-auto">
+          <div className="flex flex-col justify-center md:flex-row ">
+            <div className="w-full py-10 px-4 md:px-10 text-center">
               <Link to="/">
-                <img className="object-scale-down h-24 md:h-24" src={logo} alt={siteTitle()} />
+                <img className="object-scale-down w-full h-24 md:h-24" src={logo} alt={siteTitle()} />
               </Link>
               <ul className="mt-4 list-none md:text-lg leading-loose">
                 <li>
@@ -43,9 +43,9 @@ function Footer() {
               </ul>
             </div>
 
-            <div className="bg-blue2 py-10 px-6 md:px-10">
+            <div className="w-full bg-blue2 py-10 px-6 md:px-10">
               <p className="text-center font-semibold text-lg">Accéditations</p>
-              <ul className="p-2 list-disc leading-relaxed">
+              <ul className="p-2 list-disc leading-relaxed max-w-2xl mx-auto">
                 <li className="mt-2">
                   <div>
                     <span>Numéro de licence de la Régie du bâtiment du Québec </span>
@@ -66,8 +66,10 @@ function Footer() {
               </ul>
             </div>
 
-            <div className="py-10 px-6 md:px-10">
-              <nav className={`leading-loose items-center`}>
+            <div className="w-full py-10 px-6 md:px-10 text-center ">
+              <p className="text-center font-semibold text-lg">Navigation</p>
+
+              <nav className={`mt-2 leading-loose items-center`}>
                 {[
                   {
                     route: `/a-propos`,
@@ -96,7 +98,7 @@ function Footer() {
         </div>
       </section>
       <section className="bg-grey-dark p-4 text-sm">
-        <div className="container mx-auto flex flex-wrap md:justify-center">
+        <div className="container mx-auto flex flex-wrap md:justify-around leading-relaxed">
           <p className="flex flex-wrap text-white font-semibold">
             <span>{siteTitle()}&nbsp;</span>
             <span>&copy; {new Date().getFullYear()} Tous droits réservés.</span>
