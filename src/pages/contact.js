@@ -64,7 +64,7 @@ export default function ContactPage() {
         </div>
 
         <div className="w-full md:w-2/3 p-6">
-          <form name="contact" method="POST" netlify>
+          <form name="contact" method="POST" data-netlify="true">
             <label className="block">
               <span className="text-gray-700 font-semibold">Nom *</span>
               <input type="text" name="name" className="form-input mt-1 mb-4 block w-full" />
@@ -110,7 +110,9 @@ export default function ContactPage() {
               <span className="font-semibold">{fileName}</span>
             </div>
 
-            <button className="btn btn-blue mt-8 block">Envoyer</button>
+            <button type="submit" className="btn btn-blue mt-8 block">
+              Envoyer
+            </button>
           </form>
         </div>
       </section>
