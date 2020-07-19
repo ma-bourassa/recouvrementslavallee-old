@@ -9,6 +9,7 @@ function ContactPage() {
       <SEO keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]} title="Contact" />
       <section className="bg-gray-100 mb-6 px-4 py-8 md:px-8 md:py-16">
         <h1 className="text-center font-bold text-2xl md:text-4xl mb-2">Contactez-nous !</h1>
+        <hr className="border-blue2 border-t-4 w-40 mx-auto" />
         <p className="text-center leading-loose md:max-w-3xl md:mx-auto">
           Pour toute demande au sujet de nos services, nos produit ou pour une estimation, veuillez remplir le
           formulaire ci-dessous. Nous communiquerons avec vous dans les plus bref délais.
@@ -19,28 +20,30 @@ function ContactPage() {
         <div className="w-full md:w-1/3 p-6">
           <div className="mb-5">
             <h4 className="text-xl font-bold mb-1">Téléphones</h4>
-            <div className="leading-relaxed">
-              <a className="font-semibold underline text-blue-600" href="tel:+14503573127">
-                450-357-3127
-              </a>
-            </div>
-            <div>
-              <a className="font-semibold underline text-blue-600" href="tel:+15147933743">
-                514-793-3743
-              </a>
-            </div>
+            <ul className="list-none leading-relaxed text-blue2">
+              <li>
+                <a className="font-semibold underline" href="tel:+14503573127">
+                  450-357-3127
+                </a>
+              </li>
+              <li>
+                <a className="font-semibold underline" href="tel:+15147933743">
+                  514-793-3743
+                </a>
+              </li>
+            </ul>
           </div>
 
           <div className="mb-5">
             <h4 className="text-xl font-bold mb-1">Courriel</h4>
-            <a className="font-semibold underline text-blue-600" href="mailto:lesrecouvrementslavallee@gmail.com">
+            <a className="font-semibold underline text-blue2" href="mailto:lesrecouvrementslavallee@gmail.com">
               lesrecouvrementslavallee@gmail.com
             </a>
           </div>
 
           <div className="mb-5">
             <h4 className="text-xl font-bold mb-1">Zone de service</h4>
-            <ul className="font-semibold text-blue-600 mb-2 leading-relaxed">
+            <ul className="font-semibold text-blue2 mb-2 leading-relaxed">
               <li>Montérégie</li>
               <li>Rive-sud de Montréal</li>
             </ul>
@@ -48,7 +51,7 @@ function ContactPage() {
 
           <div className="mb-5">
             <h4 className="text-xl font-bold mb-1">Adresse</h4>
-            <p className=" mb-2 font-semibold text-blue-600 ">
+            <p className=" mb-2 font-semibold text-blue2 ">
               166 rang Saint-André
               <br />
               Saint-Bernard-de-Lacolle QC

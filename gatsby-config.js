@@ -10,6 +10,7 @@ module.exports = {
     author: `mabourassa`,
   },
   plugins: [
+    `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
