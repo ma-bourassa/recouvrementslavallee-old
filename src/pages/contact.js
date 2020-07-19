@@ -64,25 +64,26 @@ export default function ContactPage() {
         </div>
 
         <div className="w-full md:w-2/3 p-6">
-          <form>
+          <form name="contact" method="POST" netlify>
             <label className="block">
               <span className="text-gray-700 font-semibold">Nom *</span>
-              <input className="form-input mt-1 mb-4 block w-full" />
+              <input type="text" name="name" className="form-input mt-1 mb-4 block w-full" />
             </label>
 
             <label className="block">
               <span className="text-gray-700 font-semibold">Téléphone *</span>
-              <input className="form-input mt-1 mb-4 block w-full" />
+              <input type="phone" name="phone" className="form-input mt-1 mb-4 block w-full" />
             </label>
 
             <label className="block">
               <span className="text-gray-700 font-semibold">Courriel *</span>
-              <input className="form-input mt-1 mb-4 block w-full" />
+              <input type="email" name="email" className="form-input mt-1 mb-4 block w-full" />
             </label>
 
             <label className="block">
               <span className="text-gray-700 font-semibold">Message</span>
               <textarea
+                name="message"
                 className="form-textarea  mt-1 mb-4 block w-full"
                 id="message"
                 placeholder="Précisez votre demande"
@@ -96,7 +97,12 @@ export default function ContactPage() {
                 <FontAwesomeIcon icon="cloud-upload-alt" className="mr-2" />
                 <span className="mt-2 text-base leading-normal">Selectionner un fichier</span>
               </span>
-              <input type="file" className="hidden" onChange={(event) => setFileName(event.target.files[0].name)} />
+              <input
+                type="file"
+                name="file"
+                className="hidden"
+                onChange={(event) => setFileName(event.target.files[0].name)}
+              />
             </label>
 
             <div className={`${fileName ? `block` : `hidden`} mt-2`}>
