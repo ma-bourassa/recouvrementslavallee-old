@@ -30,7 +30,7 @@ function Footer() {
                 </li>
                 <li>
                   <FontAwesomeIcon className="mr-2" icon="envelope" />
-                  <a className="font-semibold text-sm" href="mailto:lesrecouvrementslavallee@gmail.com">
+                  <a className="font-semibold text-sm md:text-base" href="mailto:lesrecouvrementslavallee@gmail.com">
                     lesrecouvrementslavallee@gmail.com
                   </a>
                 </li>
@@ -46,7 +46,7 @@ function Footer() {
               </ul>
             </div>
 
-            <div className="w-full bg-blue2 py-10 px-6 md:px-10">
+            <div className="w-full bg-blue2 py-10 px-6 md:px-10 al">
               <p className="text-center font-semibold text-lg">Accréditations</p>
               <ul className="p-2 list-disc leading-relaxed max-w-2xl mx-auto">
                 <li className="mt-2">
