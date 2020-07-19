@@ -3,11 +3,10 @@ import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-export default function IndexPage() {
+export default function RealisationsPage() {
   return (
     <Layout>
-      <SEO title="Accueil" />
-      <section className="text-center"></section>
+      <SEO keywords={["realisations", "modeles"]} title="Services" />
     </Layout>
   );
 }

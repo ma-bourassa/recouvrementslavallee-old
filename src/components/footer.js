@@ -44,7 +44,7 @@ function Footer() {
             </div>
 
             <div className="w-full bg-blue2 py-10 px-6 md:px-10">
-              <p className="text-center font-semibold text-lg">Accéditations</p>
+              <p className="text-center font-semibold text-lg">Accréditations</p>
               <ul className="p-2 list-disc leading-relaxed max-w-2xl mx-auto">
                 <li className="mt-2">
                   <div>
@@ -71,6 +71,10 @@ function Footer() {
 
               <nav className={`mt-2 leading-loose items-center`}>
                 {[
+                  {
+                    route: `/index`,
+                    title: `Accueil`,
+                  },
                   {
                     route: `/a-propos`,
                     title: `À propos`,

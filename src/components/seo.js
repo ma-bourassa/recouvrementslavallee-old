@@ -58,7 +58,7 @@ function SEO({ description, lang, meta, keywords, title }) {
 
 SEO.defaultProps = {
   lang: `fr`,
-  keywords: [],
+  keywords: ["projet", "renovation", "plancher", "recouvrement"],
   meta: [],
 };
 

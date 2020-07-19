@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function ContactPage() {
+export default function ContactPage() {
+  const [fileName, setFileName] = useState("");
   return (
     <Layout>
-      <SEO keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]} title="Contact" />
-      <section className="bg-gray-100 mb-6 px-4 py-8 md:px-8 md:py-16">
-        <h1 className="text-center font-bold text-2xl md:text-4xl mb-2">Contactez-nous !</h1>
+      <SEO keywords={["contact", "soumission", "courriel", "telephone", "adresse"]} title="Contact" />
+      <section className="bg-gray-100 mb-6 px-4 py-8 md:px-8 md:py-16 text-center">
+        <h1 className=" font-bold text-2xl md:text-4xl mb-2">Contactez-nous !</h1>
         <hr className="border-blue2 border-t-4 w-40 mx-auto" />
-        <p className="text-center leading-loose md:max-w-3xl md:mx-auto">
+        <p className="leading-loose md:max-w-3xl md:mx-auto">
           Pour toute demande au sujet de nos services, nos produit ou pour une estimation, veuillez remplir le
           formulaire ci-dessous. Nous communiquerons avec vous dans les plus bref délais.
         </p>
@@ -54,9 +56,9 @@ function ContactPage() {
             <p className=" mb-2 font-semibold text-blue2 ">
               166 rang Saint-André
               <br />
-              Saint-Bernard-de-Lacolle QC
+              Saint-Bernard-de-Lacolle
               <br />
-              Canada J0J 1V0
+              Québec, J0J 1V0
             </p>
           </div>
         </div>
@@ -88,7 +90,21 @@ function ContactPage() {
               />
             </label>
 
-            <button className="btn btn-blue">Envoyer</button>
+            <label>
+              <span className="block text-gray-700 font-semibold">Joindre vos fichiers (plans, photos, etc.)</span>
+              <span className="btn bg-transparent border-blue border border-blue-600 hover:bg-blue-600 hover:text-white ">
+                <FontAwesomeIcon icon="cloud-upload-alt" className="mr-2" />
+                <span className="mt-2 text-base leading-normal">Selectionner un fichier</span>
+              </span>
+              <input type="file" className="hidden" onChange={(event) => setFileName(event.target.files[0].name)} />
+            </label>
+
+            <div className={`${fileName ? `block` : `hidden`} mt-2`}>
+              <FontAwesomeIcon icon="check" className="mr-2" />
+              <span className="font-semibold">{fileName}</span>
+            </div>
+
+            <button className="btn btn-blue mt-8 block">Envoyer</button>
           </form>
         </div>
       </section>
@@ -106,5 +122,3 @@ function ContactPage() {
     </Layout>
   );
 }
-
-export default ContactPage;

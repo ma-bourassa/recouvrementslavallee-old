@@ -2,6 +2,7 @@ import { Link } from "gatsby";
 import React, { useState } from "react";
 import siteTitle from "./title";
 import logo from "../images/logo_fb.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Header() {
   const [isExpanded, toggleExpansion] = useState(false);
@@ -9,22 +10,23 @@ function Header() {
   return (
     <header className="bg-grey-dark">
       <div className="flex flex-wrap items-baseline justify-between px-2 py-2 md:py-4 md:justify-around">
-        <div className="flex p-2 items-center">
+        <div className="flex p-2 items-baseline">
           <Link to="/">
             <img className="flex object-scale-down pr-4" src={logo} alt={siteTitle()} />
           </Link>
 
-          <button className="flex pt-4 px-4 text-white  md:hidden" onClick={() => toggleExpansion(!isExpanded)}>
-            <svg className="w-6 h-6 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
+          <button className="flex px-3 text-white  md:hidden" onClick={() => toggleExpansion(!isExpanded)}>
+            <FontAwesomeIcon icon="bars" size="2x" />
           </button>
         </div>
         <nav className={`${isExpanded ? `block` : `hidden`}  mt-2 md:flex md:items-center w-full md:w-auto`}>
           {[
             {
-              route: `/a-propos`,
+              route: `/index`,
+              title: `Accueil`,
+            },
+            {
+              route: `/about`,
               title: `À propos`,
             },
             {
