@@ -64,26 +64,26 @@ export default function ContactPage() {
         </div>
 
         <div className="w-full md:w-2/3 p-6">
-          <form name="contact" method="POST" data-netlify="true">
+          <form name="Contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
             <label className="block">
               <span className="text-gray-700 font-semibold">Nom *</span>
-              <input type="text" name="name" className="form-input mt-1 mb-4 block w-full" />
+              <input type="text" name="Nom" className="form-input mt-1 mb-4 block w-full" />
             </label>
 
             <label className="block">
               <span className="text-gray-700 font-semibold">Téléphone *</span>
-              <input type="phone" name="phone" className="form-input mt-1 mb-4 block w-full" />
+              <input type="phone" name="Téléphone" className="form-input mt-1 mb-4 block w-full" />
             </label>
 
             <label className="block">
               <span className="text-gray-700 font-semibold">Courriel *</span>
-              <input type="email" name="email" className="form-input mt-1 mb-4 block w-full" />
+              <input type="email" name="Courriel" className="form-input mt-1 mb-4 block w-full" />
             </label>
 
             <label className="block">
               <span className="text-gray-700 font-semibold">Message</span>
               <textarea
-                name="message"
+                name="Message"
                 className="form-textarea  mt-1 mb-4 block w-full"
                 id="message"
                 placeholder="Précisez votre demande"
