@@ -65,12 +65,13 @@ export default function ContactPage() {
 
         <div className="w-full md:w-2/3 p-6">
           <form
-            name="Contact"
+            name="contact"
             method="POST"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             data-netlify-recaptcha="true"
           >
+            <input type="hidden" name="form-name" value="contact" />
             <label className="block">
               <span className="text-gray-700 font-semibold">Nom *</span>
               <input type="text" name="Nom" className="form-input mt-1 mb-4 block w-full" />
