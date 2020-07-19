@@ -64,7 +64,7 @@ export default function ContactPage() {
         </div>
 
         <div className="w-full md:w-2/3 p-6">
-          <form name="Contact v1" method="POST" onSubmit="submit" data-netlify="true" data-netlify-honeypot="bot-field">
+          <form name="Contact v1" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="Contact v1" />
             <div className="hidden">
               <label>
@@ -73,24 +73,24 @@ export default function ContactPage() {
             </div>
             <label className="block">
               <span className="text-gray-700 font-semibold">Nom *</span>
-              <input type="text" name="Nom" className="form-input mt-1 mb-4 block w-full" />
+              <input type="text" name="Nom" className="form-input mt-1 mb-4 block w-full" required />
             </label>
 
             <label className="block">
               <span className="text-gray-700 font-semibold">Téléphone *</span>
-              <input type="phone" name="Téléphone" className="form-input mt-1 mb-4 block w-full" />
+              <input type="tel" name="Téléphone" className="form-input mt-1 mb-4 block w-full" required />
             </label>
 
             <label className="block">
               <span className="text-gray-700 font-semibold">Courriel *</span>
-              <input type="email" name="Courriel" className="form-input mt-1 mb-4 block w-full" />
+              <input type="email" name="Courriel" className="form-input mt-1 mb-4 block w-full" required />
             </label>
 
             <label className="block">
               <span className="text-gray-700 font-semibold">Message</span>
               <textarea
                 name="Message"
-                className="form-textarea  mt-1 mb-4 block w-full"
+                className="form-textarea mt-1 mb-4 block w-full"
                 id="message"
                 placeholder="Précisez votre demande"
                 rows="4"
@@ -98,8 +98,11 @@ export default function ContactPage() {
             </label>
 
             <label>
-              <span className="block text-gray-700 font-semibold">Joindre vos fichiers (plans, photos, etc.)</span>
-              <span className="btn bg-transparent border-blue border border-blue-600 hover:bg-blue-600 hover:text-white ">
+              <span className="block text-gray-700 font-semibold">
+                Joindre vos fichiers <span className="hidden md:inline">(plans, photos, etc.)</span>
+              </span>
+
+              <span className="mt-1 btn bg-transparent border-blue border border-blue-600 hover:bg-blue-600 hover:text-white ">
                 <FontAwesomeIcon icon="cloud-upload-alt" className="mr-2" />
                 <span className="mt-2 text-base leading-normal">Selectionner un fichier</span>
               </span>
