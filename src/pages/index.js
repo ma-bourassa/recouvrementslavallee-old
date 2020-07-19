@@ -7,7 +7,7 @@ export default function IndexPage() {
   return (
     <Layout>
       <SEO title="Accueil" />
-      <section className="text-center"></section>
+      <section className="text-center my-64"></section>
     </Layout>
   );
 }
