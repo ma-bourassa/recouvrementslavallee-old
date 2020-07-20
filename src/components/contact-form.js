@@ -28,7 +28,7 @@ export default function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    toggleSubmit(!submitting);
+    toggleSubmit(true);
     const form = e.target;
     fetch("/", {
       method: "POST",
@@ -39,7 +39,7 @@ export default function ContactForm() {
     })
       .then(() => navigate(form.getAttribute("action")))
       .catch(() => {
-        toggleSubmit(!submitting);
+        toggleSubmit(false);
         alert("Une erreur est survenue. Veuillez réessayer plus tard.");
       });
   };
@@ -127,7 +127,8 @@ export default function ContactForm() {
         <button
           id="submitBtn"
           type="submit"
-          className={`${submitting ? `opacity-50 cursor-not-allowed` : ``} btn btn-blue mt-8 block `}
+          className={`${submitting ? `opacity-50 cursor-default` : ``} btn btn-blue mt-8 block `}
+          disabled={submitting ? "disabled" : ""}
         >
           {submitting && <FontAwesomeIcon icon="circle-notch" spin className="mr-2" />}
           Envoyer
