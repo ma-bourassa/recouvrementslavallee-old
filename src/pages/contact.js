@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Layout from "../components/layout";
+import ContactForm from "../components/contact-form";
 import SEO from "../components/seo";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function ContactPage() {
-  const [fileName, setFileName] = useState("");
   return (
     <Layout>
       <SEO keywords={["contact", "soumission", "courriel", "telephone", "adresse"]} title="Contact" />
@@ -63,69 +62,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="w-full md:w-2/3 p-6">
-          <form name="Contact v1" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="Contact v1" />
-            <div className="hidden">
-              <label>
-                Don’t fill this out: <input name="bot-field" />
-              </label>
-            </div>
-            <label className="block">
-              <span className="text-gray-700 font-semibold">Nom *</span>
-              <input type="text" name="Nom" className="form-input mt-1 mb-4 block w-full" required />
-            </label>
-
-            <label className="block">
-              <span className="text-gray-700 font-semibold">Téléphone *</span>
-              <input type="tel" name="Téléphone" className="form-input mt-1 mb-4 block w-full" required />
-            </label>
-
-            <label className="block">
-              <span className="text-gray-700 font-semibold">Courriel *</span>
-              <input type="email" name="Courriel" className="form-input mt-1 mb-4 block w-full" required />
-            </label>
-
-            <label className="block">
-              <span className="text-gray-700 font-semibold">Message</span>
-              <textarea
-                name="Message"
-                className="form-textarea mt-1 mb-4 block w-full"
-                id="message"
-                placeholder="Précisez votre demande"
-                rows="4"
-              />
-            </label>
-
-            <label>
-              <span className="block text-gray-700 font-semibold">
-                Joindre vos fichiers <span className="hidden md:inline">(plans, photos, etc.)</span>
-              </span>
-
-              <span className="mt-1 btn bg-transparent border-blue border border-blue-600 hover:bg-blue-600 hover:text-white ">
-                <FontAwesomeIcon icon="cloud-upload-alt" className="mr-2" />
-                <span className="mt-2 text-base leading-normal">Selectionner un fichier</span>
-              </span>
-              <input
-                type="file"
-                name="file"
-                className="hidden"
-                onChange={(event) => setFileName(event.target.files[0].name)}
-              />
-            </label>
-
-            {fileName && (
-              <div className="block mt-2">
-                <FontAwesomeIcon icon="check" className="mr-2" />
-                <span className="font-semibold">{fileName}</span>
-              </div>
-            )}
-
-            <button type="submit" className="btn btn-blue mt-8 block">
-              Envoyer
-            </button>
-          </form>
-        </div>
+        <ContactForm />
       </section>
       <section className="w-full overflow-hidden rounded border">
         <iframe
