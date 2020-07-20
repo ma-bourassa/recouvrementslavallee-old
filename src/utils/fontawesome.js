@@ -6,6 +6,7 @@ import {
   faCloudUploadAlt,
   faCheck,
   faCheckCircle,
+  faCircleNotch,
 } from "@fortawesome/free-solid-svg-icons";
 import { fab, faFacebook } from "@fortawesome/free-brands-svg-icons";
-library.add(fab, faFacebook, faPhoneAlt, faEnvelope, faBars, faCloudUploadAlt, faCheck, faCheckCircle);
+library.add(fab, faFacebook, faPhoneAlt, faEnvelope, faBars, faCloudUploadAlt, faCheck, faCheckCircle, faCircleNotch);

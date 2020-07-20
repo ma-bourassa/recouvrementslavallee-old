@@ -14,6 +14,8 @@ function encode(data) {
 }
 
 export default function ContactForm() {
+  const [submitting, toggleSubmit] = useState(false);
+
   const [state, setState] = useState({});
 
   const handleChange = (e) => {
@@ -26,6 +28,7 @@ export default function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    toggleSubmit(!submitting);
     const form = e.target;
     fetch("/", {
       method: "POST",
@@ -35,7 +38,10 @@ export default function ContactForm() {
       }),
     })
       .then(() => navigate(form.getAttribute("action")))
-      .catch((error) => alert(error));
+      .catch(() => {
+        toggleSubmit(!submitting);
+        alert("Une erreur est survenue. Veuillez réessayer plus tard.");
+      });
   };
 
   return (
@@ -118,7 +124,12 @@ export default function ContactForm() {
           </div>
         )}
 
-        <button type="submit" className="btn btn-blue mt-8 block">
+        <button
+          id="submitBtn"
+          type="submit"
+          className={`${submitting ? `opacity-50 cursor-not-allowed` : ``} btn btn-blue mt-8 block `}
+        >
+          {submitting && <FontAwesomeIcon icon="circle-notch" spin className="mr-2" />}
           Envoyer
         </button>
       </form>
