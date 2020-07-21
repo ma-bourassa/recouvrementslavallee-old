@@ -110,7 +110,7 @@ export default function ContactForm() {
             Joindre vos fichiers <span className="hidden md:inline">(plans, photos, etc.)</span>
           </span>
 
-          <span className="mt-1 btn bg-transparent border-blue border border-blue-600 hover:bg-blue-600 hover:text-white ">
+          <span className="mt-1 btn bg-transparent border border-grey hover:bg-grey hover:text-white ">
             <FontAwesomeIcon icon="cloud-upload-alt" className="mr-2" />
             <span className="mt-2 text-base leading-normal">Selectionner un fichier</span>
           </span>

@@ -79,10 +79,6 @@ function Footer() {
                     title: `Accueil`,
                   },
                   {
-                    route: `/a-propos`,
-                    title: `À propos`,
-                  },
-                  {
                     route: `/services`,
                     title: `Services`,
                   },

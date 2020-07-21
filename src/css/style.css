@@ -14,5 +14,9 @@
   @apply bg-blue-800;
 }
 
+.hr {
+  @apply border-blue2 border-t-4 w-40 mx-auto my-4;
+}
+
 /*! purgecss end ignore */
 @tailwind utilities;

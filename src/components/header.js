@@ -26,10 +26,6 @@ function Header() {
               title: `Accueil`,
             },
             {
-              route: `/about`,
-              title: `À propos`,
-            },
-            {
               route: `/services`,
               title: `Services`,
             },
@@ -53,13 +49,13 @@ function Header() {
           ))}
           <div className="hidden md:block">
             <a
-              className="border border-white text-white text-xl font-semibold py-2 px-4 rounded-full hover:bg-white hover:text-black md:ml-6 md:mr-4"
+              className="border border-white text-white text-xl font-semibold py-3 px-4 rounded-full hover:bg-white hover:text-black md:ml-6 md:mr-4"
               href="tel:+14503573127"
             >
               450.357.3127
             </a>
             <a
-              className="border border-white text-white text-xl font-semibold py-2 px-4 rounded-full hover:bg-white hover:text-black "
+              className="border border-white text-white text-xl font-semibold py-3 px-4 rounded-full hover:bg-white hover:text-black "
               href="tel:+15147933743"
             >
               514.793.3743

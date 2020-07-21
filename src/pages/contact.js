@@ -9,9 +9,9 @@ export default function ContactPage() {
     <Layout>
       <SEO keywords={["contact", "soumission", "courriel", "telephone", "adresse"]} title="Contact" />
       <section className="bg-gray-100 mb-6 px-4 py-8 md:px-8 md:py-16 text-center">
-        <h1 className=" font-bold text-2xl md:text-4xl mb-2">Contactez-nous !</h1>
-        <hr className="border-blue2 border-t-4 w-40 mx-auto" />
-        <p className="leading-loose md:max-w-3xl md:mx-auto">
+        <h1 className=" font-bold text-2xl md:text-5xl mb-2">Contactez-nous !</h1>
+        <hr className="hr" />
+        <p className="leading-loose md:max-w-3xl md:mx-auto mt-2">
           Pour toute demande au sujet de nos services, nos produit ou pour une estimation, veuillez remplir le
           formulaire ci-dessous. Nous communiquerons avec vous dans les plus bref délais.
         </p>
@@ -64,7 +64,7 @@ export default function ContactPage() {
 
         <ContactForm />
       </section>
-      <section className="w-full overflow-hidden rounded border">
+      <section className="rounded border">
         <iframe
           scrolling="no"
           marginHeight="0"
