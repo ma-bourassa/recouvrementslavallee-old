@@ -1,7 +1,7 @@
 import { Link } from "gatsby";
 import React, { useState } from "react";
 import siteTitle from "./title";
-import logo from "../images/logo_fb.png";
+import logo from "../images/logo1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Header() {
@@ -39,7 +39,7 @@ function Header() {
             },
           ].map((link) => (
             <Link
-              className="block px-4 py-3 text-white border-t-2 md:border-t-0 text-xl font-semibold md:inline-block hover:bg-grey-darker"
+              className="block px-4 py-3 text-white border-t-2 md:border-t-0 text-lg font-semibold md:inline-block hover:bg-grey-darker"
               activeClassName="md:border-b-2 md:border-blue2 "
               key={link.title}
               to={link.route}
@@ -49,13 +49,13 @@ function Header() {
           ))}
           <div className="hidden md:block">
             <a
-              className="border border-white text-white text-xl font-semibold py-3 px-4 rounded-full hover:bg-white hover:text-black md:ml-6 md:mr-4"
+              className="border border-white text-white text-lg font-semibold py-3 px-4 rounded-full hover:bg-white hover:text-black md:ml-6 md:mr-4"
               href="tel:+14503573127"
             >
               450.357.3127
             </a>
             <a
-              className="border border-white text-white text-xl font-semibold py-3 px-4 rounded-full hover:bg-white hover:text-black "
+              className="border border-white text-white text-lg font-semibold py-3 px-4 rounded-full hover:bg-white hover:text-black "
               href="tel:+15147933743"
             >
               514.793.3743

@@ -1,7 +1,7 @@
 import React from "react";
 import siteTitle from "./title";
 import { Link } from "gatsby";
-import logo from "../images/logo2_icon.png";
+import logo from "../images/logo2.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../utils/fontawesome";
 
@@ -11,7 +11,7 @@ function Footer() {
       <section className="bg-grey text-white">
         <div className="w-full md:px-24 mx-auto">
           <div className="flex flex-col justify-center md:flex-row ">
-            <div className="w-full py-10 px-4 md:px-10 text-center">
+            <div className="w-full py-6 px-4 md:px-10 text-center">
               <Link to="/">
                 <img className="object-scale-down w-full h-24 md:h-24" src={logo} alt={siteTitle()} />
               </Link>
@@ -46,7 +46,7 @@ function Footer() {
               </ul>
             </div>
 
-            <div className="w-full bg-blue2 py-10 px-6 md:px-10 al">
+            <div className="w-full bg-blue2 py-6 px-6 md:px-10 al">
               <p className="text-center font-semibold text-lg">Accréditations</p>
               <ul className="p-2 list-disc leading-relaxed max-w-2xl mx-auto">
                 <li className="mt-2">
@@ -69,7 +69,7 @@ function Footer() {
               </ul>
             </div>
 
-            <div className="w-full py-10 px-6 md:px-10 text-center ">
+            <div className="w-full py-6 px-6 md:px-10 text-center ">
               <p className="text-center font-semibold text-lg">Navigation</p>
 
               <nav className={`mt-2 leading-loose items-center`}>
