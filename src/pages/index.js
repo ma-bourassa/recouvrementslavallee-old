@@ -5,7 +5,6 @@ import SEO from "../components/seo";
 import { Link, graphql } from "gatsby";
 import PropTypes from "prop-types";
 import BackgroundImage from "gatsby-background-image";
-
 export default function IndexPage({ data }) {
   return (
     <Layout>

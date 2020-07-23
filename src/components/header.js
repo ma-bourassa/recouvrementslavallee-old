@@ -1,18 +1,36 @@
-import { Link } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 import React, { useState } from "react";
 import siteTitle from "./title";
-import logo from "../images/logo1.png";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Img from "gatsby-image";
 
 function Header() {
   const [isExpanded, toggleExpansion] = useState(false);
 
+  const data = useStaticQuery(graphql`
+    query {
+      logo: file(relativePath: { eq: "logo1.png" }) {
+        childImageSharp {
+          fixed(width: 300) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `);
+  console.log(data.logo);
+
   return (
     <header className="bg-grey-dark">
-      <div className="flex flex-wrap items-baseline justify-between px-2 py-2 md:py-4 md:justify-around">
+      <div className="flex flex-wrap items-center justify-between px-2 py-3 md:justify-around">
         <div className="flex p-2 items-baseline">
           <Link to="/">
-            <img className="flex object-scale-down pr-4" src={logo} alt={siteTitle()} />
+            <Img
+              className="flex object-scale-down pr-4"
+              alt={siteTitle()}
+              fixed={data.logo.childImageSharp.fixed}
+            ></Img>
           </Link>
 
           <button className="flex px-3 text-white  md:hidden" onClick={() => toggleExpansion(!isExpanded)}>
