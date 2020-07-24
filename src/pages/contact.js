@@ -5,26 +5,17 @@ import ContactForm from "../components/contact-form";
 import SEO from "../components/seo";
 import { graphql } from "gatsby";
 import PropTypes from "prop-types";
-import BackgroundImage from "gatsby-background-image";
+import Header from "../components/header";
 export default function ContactPage({ data }) {
   return (
     <Layout>
       <SEO keywords={["contact", "soumission", "courriel", "telephone", "adresse"]} title="Contact" />
-      <BackgroundImage fluid={data.contactImage.childImageSharp.fluid}>
-        <section className="py-8 md:py-16 text-center text-white">
-          <div className="bg-grey py-4 bg-opacity-50">
-            <div>
-              <h1 className=" font-bold text-2xl md:text-5xl mb-2">Contactez-nous !</h1>
-              <hr className="hr" />
-              <p className="leading-loose md:max-w-3xl md:mx-auto mt-2">
-                Pour toute demande au sujet de nos services, nos produit ou pour une estimation, veuillez remplir le
-                formulaire ci-dessous. Nous communiquerons avec vous dans les plus bref délais.
-              </p>
-            </div>
-          </div>
-        </section>
-      </BackgroundImage>
-
+      <Header
+        title="Contactez-nous !"
+        text="Pour toute demande au sujet de nos services, nos produit ou pour une estimation, veuillez remplir le
+              formulaire ci-dessous. Nous communiquerons avec vous dans les plus bref délais."
+        fluidPhoto={data.contactImage.childImageSharp.fluid}
+      ></Header>
       <section className="flex flex-wrap justify-start items-start max-w-6xl mx-auto mb-6 ">
         <div className="w-full md:w-1/3 p-6">
           <div className="mb-5">
@@ -100,5 +91,5 @@ export const query = graphql`
 `;
 
 ContactPage.propTypes = {
-  data: PropTypes.any,
+  data: PropTypes.string,
 };
