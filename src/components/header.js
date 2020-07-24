@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import BackgroundImage from "gatsby-background-image";
 
-function Header({ title, text, fluidPhoto }) {
+function Header({ title, text, fluidBackground }) {
   return (
-    <BackgroundImage fluid={fluidPhoto}>
+    <BackgroundImage fluid={fluidBackground}>
       <section className="py-8 md:py-16 text-center text-white">
         <div className="bg-grey py-4 bg-opacity-50">
           <div>
@@ -21,6 +21,6 @@ function Header({ title, text, fluidPhoto }) {
 Header.propTypes = {
   title: PropTypes.string,
   text: PropTypes.string,
-  fluidPhoto: PropTypes.string,
+  fluidBackground: PropTypes.string,
 };
 export default Header;

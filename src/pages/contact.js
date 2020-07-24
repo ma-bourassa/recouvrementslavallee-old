@@ -14,7 +14,7 @@ export default function ContactPage({ data }) {
         title="Contactez-nous !"
         text="Pour toute demande au sujet de nos services, nos produit ou pour une estimation, veuillez remplir le
               formulaire ci-dessous. Nous communiquerons avec vous dans les plus bref délais."
-        fluidPhoto={data.contactImage.childImageSharp.fluid}
+        fluidBackground={data.headerBackground.childImageSharp.fluid}
       ></Header>
       <section className="flex flex-wrap justify-start items-start max-w-6xl mx-auto mb-6 ">
         <div className="w-full md:w-1/3 p-6">
@@ -80,7 +80,7 @@ export default function ContactPage({ data }) {
 
 export const query = graphql`
   query {
-    contactImage: file(relativePath: { eq: "floor5.jpg" }) {
+    headerBackground: file(relativePath: { eq: "floor5.jpg" }) {
       childImageSharp {
         fluid(quality: 90) {
           ...GatsbyImageSharpFluid
