@@ -26,11 +26,7 @@ function Footer() {
           <div className="flex flex-col justify-center md:flex-row ">
             <div className="w-full py-6 px-4 md:px-10 text-center">
               <Link to="/">
-                <Img
-                  className="w-1/2 sm:w-1/3 md:w-1/2 mx-auto"
-                  alt={siteTitle()}
-                  fluid={data.logo.childImageSharp.fluid}
-                ></Img>
+                <Img className="w-1/2 sm:w-1/3 mx-auto" alt={siteTitle()} fluid={data.logo.childImageSharp.fluid}></Img>
               </Link>
               <ul className="mt-4 list-none md:text-lg leading-loose">
                 <li>

@@ -22,7 +22,7 @@ function Header() {
 
   return (
     <header className="bg-grey-dark">
-      <div className="flex flex-wrap items-end md:items-center justify-between px-2 py-4 md:justify-around">
+      <div className="flex flex-wrap items-baseline md:items-center justify-between px-2 py-4 md:justify-around">
         <Link className="w-4/5 md:w-1/4 px-2" to="/">
           <Img alt={siteTitle()} fluid={data.logo.childImageSharp.fluid}></Img>
         </Link>
