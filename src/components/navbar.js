@@ -5,7 +5,7 @@ import siteTitle from "./title";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Img from "gatsby-image";
 
-function Header() {
+function NavBar() {
   const [isExpanded, toggleExpansion] = useState(false);
 
   const data = useStaticQuery(graphql`
@@ -78,4 +78,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default NavBar;
