@@ -1,11 +1,24 @@
 import React from "react";
 import siteTitle from "./title";
-import { Link } from "gatsby";
-import logo from "../images/logo2.png";
+import { Link, graphql, useStaticQuery } from "gatsby";
+import Img from "gatsby-image";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../utils/fontawesome";
 
 function Footer() {
+  const data = useStaticQuery(graphql`
+    query {
+      logo: file(relativePath: { eq: "logo2.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <footer>
       <section className="bg-grey text-white">
@@ -13,7 +26,11 @@ function Footer() {
           <div className="flex flex-col justify-center md:flex-row ">
             <div className="w-full py-6 px-4 md:px-10 text-center">
               <Link to="/">
-                <img className="object-scale-down w-full h-24 md:h-24" src={logo} alt={siteTitle()} />
+                <Img
+                  className="w-1/2 sm:w-1/3 md:w-1/2 mx-auto"
+                  alt={siteTitle()}
+                  fluid={data.logo.childImageSharp.fluid}
+                ></Img>
               </Link>
               <ul className="mt-4 list-none md:text-lg leading-loose">
                 <li>

@@ -19,7 +19,6 @@ function Header() {
       }
     }
   `);
-  console.log(data.logo);
 
   return (
     <header className="bg-grey-dark">
