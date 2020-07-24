@@ -12,8 +12,8 @@ function Header() {
     query {
       logo: file(relativePath: { eq: "logo1.png" }) {
         childImageSharp {
-          fixed(width: 300) {
-            ...GatsbyImageSharpFixed
+          fluid {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -23,20 +23,14 @@ function Header() {
 
   return (
     <header className="bg-grey-dark">
-      <div className="flex flex-wrap items-center justify-between px-2 py-3 md:justify-around">
-        <div className="flex p-2 items-baseline">
-          <Link to="/">
-            <Img
-              className="flex object-scale-down pr-4"
-              alt={siteTitle()}
-              fixed={data.logo.childImageSharp.fixed}
-            ></Img>
-          </Link>
+      <div className="flex flex-wrap items-end md:items-center justify-between px-2 py-4 md:justify-around">
+        <Link className="w-4/5 md:w-1/4 px-2" to="/">
+          <Img alt={siteTitle()} fluid={data.logo.childImageSharp.fluid}></Img>
+        </Link>
 
-          <button className="flex px-3 text-white  md:hidden" onClick={() => toggleExpansion(!isExpanded)}>
-            <FontAwesomeIcon icon="bars" size="2x" />
-          </button>
-        </div>
+        <button className="w-1/5 text-white  md:hidden" onClick={() => toggleExpansion(!isExpanded)}>
+          <FontAwesomeIcon icon="bars" size="2x" color="white" />
+        </button>
         <nav className={`${isExpanded ? `block` : `hidden`}  mt-2 md:flex md:items-center w-full md:w-auto`}>
           {[
             {
