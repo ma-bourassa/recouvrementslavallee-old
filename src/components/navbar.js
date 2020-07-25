@@ -33,7 +33,7 @@ function NavBar() {
         <nav className={`${isExpanded ? `block` : `hidden`}  mt-2 md:flex md:items-center w-full md:w-auto`}>
           {[
             {
-              route: `/`,
+              route: ``,
               title: `Accueil`,
             },
             {
@@ -53,7 +53,7 @@ function NavBar() {
               className="block px-4 py-3 text-white border-t-2 md:border-t-0 text-lg font-semibold md:inline-block hover:bg-grey-darker"
               activeClassName="md:border-b-2 md:border-blue2 "
               key={link.title}
-              to={link.route}
+              to={`${link.route}/`}
             >
               {link.title}
             </Link>

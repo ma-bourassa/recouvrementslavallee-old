@@ -21,6 +21,6 @@ function Header({ title, text, fluidBackground }) {
 Header.propTypes = {
   title: PropTypes.string,
   text: PropTypes.string,
-  fluidBackground: PropTypes.string,
+  fluidBackground: PropTypes.object,
 };
 export default Header;
