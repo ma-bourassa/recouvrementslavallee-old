@@ -26,6 +26,7 @@ export default function ServicesPage({ data }) {
         ]}
         reverseOrder={false}
         photo={data.vinyle.childImageSharp.fluid}
+        distributor={["beaulieu"]}
       ></ProductSection>
       <ProductSection
         title="Planchers d'ingénierie"

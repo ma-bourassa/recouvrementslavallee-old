@@ -40,5 +40,5 @@ export const query = graphql`
 `;
 
 IndexPage.propTypes = {
-  data: PropTypes.string,
+  data: PropTypes.object,
 };

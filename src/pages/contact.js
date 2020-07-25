@@ -91,5 +91,5 @@ export const query = graphql`
 `;
 
 ContactPage.propTypes = {
-  data: PropTypes.string,
+  data: PropTypes.object,
 };
