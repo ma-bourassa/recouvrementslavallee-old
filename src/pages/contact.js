@@ -63,7 +63,7 @@ export default function ContactPage({ data }) {
 
         <ContactForm />
       </section>
-      <section className="rounded border">
+      <section>
         <iframe
           scrolling="no"
           marginHeight="0"
