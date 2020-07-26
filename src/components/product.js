@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
+import Distributor from "./distributor";
 import beaulieu from "../images/products/beaulieu.jpg";
 
-function ProductSection({ title, paragraphes, photo, reverseOrder }) {
+function Product({ title, paragraphes, photo, reverseOrder, distributors }) {
   return (
     <section className="py-6 md:py-12">
       <div className="container mx-auto px-16 items-center flex flex-col md:flex-row ">
@@ -23,16 +24,12 @@ function ProductSection({ title, paragraphes, photo, reverseOrder }) {
             ))}
           </div>
         </div>
-        <div className={`flex flex-col hidden w-1/2 md:block ${reverseOrder && `order-last md:order-first`}`}>
+        <div className={`hidden w-1/2 md:block ${reverseOrder && `order-last md:order-first`}`}>
           <Img alt={title} fluid={photo}></Img>
           <div className="flex space-x-6 mt-2">
-            <a
-              href="https://beaulieucanada.com/fr/retail/flooring/luxuryvinyl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img width="50" height="50" src={beaulieu}></img>
-            </a>
+            {distributors.map((distributor, i) => (
+              <Distributor key={i} distributor={distributor} />
+            ))}
           </div>
         </div>
       </div>
@@ -40,11 +37,16 @@ function ProductSection({ title, paragraphes, photo, reverseOrder }) {
   );
 }
 
-export default ProductSection;
+export default Product;
 
-ProductSection.propTypes = {
+Product.defaultProps = {
+  distributors: [],
+};
+
+Product.propTypes = {
   title: PropTypes.string,
   paragraphes: PropTypes.arrayOf(PropTypes.string),
   photo: PropTypes.object,
   reverseOrder: PropTypes.bool,
+  distributors: PropTypes.arrayOf(PropTypes.string),
 };

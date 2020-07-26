@@ -1,10 +1,10 @@
 import React from "react";
-import siteTitle from "./title";
+import siteTitle from "../title";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../utils/fontawesome";
+import "../../utils/fontawesome";
 
 function Footer() {
   const data = useStaticQuery(graphql`

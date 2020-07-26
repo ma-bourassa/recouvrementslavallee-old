@@ -1,6 +1,6 @@
 import { Link, graphql, useStaticQuery } from "gatsby";
 import React, { useState } from "react";
-import siteTitle from "./title";
+import siteTitle from "../title";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Img from "gatsby-image";

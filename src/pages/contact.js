@@ -1,6 +1,6 @@
 import React from "react";
 
-import Layout from "../components/layout";
+import Layout from "../components/layout/layout";
 import ContactForm from "../components/contact-form";
 import SEO from "../components/seo";
 import { graphql } from "gatsby";
