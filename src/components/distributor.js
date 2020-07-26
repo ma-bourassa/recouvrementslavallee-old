@@ -1,13 +1,32 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
-import beaulieu from "../images/distributors/beaulieu.jpg";
+import { useStaticQuery, graphql } from "gatsby";
 
-function Distributor({ distributor }) {
+function Distributor({ distributor, link }) {
+  const query = useStaticQuery(graphql`
+    {
+      distributors: allFile(filter: { sourceInstanceName: { eq: "distributors" } }) {
+        edges {
+          node {
+            name
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluidLimitPresentationSize
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const logo = query.distributors.edges.find((edge) => edge.node.name === distributor);
   return (
-    <div>
-      <a href="https://beaulieucanada.com/fr/retail/flooring/luxuryvinyl" target="_blank" rel="noopener noreferrer">
-        <img width="50" height="50" src={beaulieu}></img>
+    <div className="w-1/4 md:w-1/6 self-center">
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        <Img fluid={logo.node.childImageSharp.fluid}></Img>
       </a>
     </div>
   );
@@ -16,4 +35,5 @@ export default Distributor;
 
 Distributor.propTypes = {
   distributor: PropTypes.string,
+  link: PropTypes.string,
 };
