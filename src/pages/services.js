@@ -90,22 +90,14 @@ export default function ServicesPage({ data }) {
 
 export const query = graphql`
   query {
-    headerBackground: file(relativePath: { eq: "floor4.jpg" }) {
+    headerBackground: file(sourceInstanceName: { eq: "images" }, relativePath: { eq: "floor4.jpg" }) {
       childImageSharp {
         fluid(quality: 100) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    vinyle: file(relativePath: { eq: "products/vinyle.webp" }) {
-      childImageSharp {
-        fluid(quality: 100) {
-          ...GatsbyImageSharpFluid
-          ...GatsbyImageSharpFluidLimitPresentationSize
-        }
-      }
-    }
-    ceramique: file(relativePath: { eq: "products/ceramique.webp" }) {
+    vinyle: file(sourceInstanceName: { eq: "products" }, relativePath: { eq: "vinyle.webp" }) {
       childImageSharp {
         fluid(quality: 100) {
           ...GatsbyImageSharpFluid
@@ -113,7 +105,7 @@ export const query = graphql`
         }
       }
     }
-    flottant: file(relativePath: { eq: "products/flottant.webp" }) {
+    ceramique: file(sourceInstanceName: { eq: "products" }, relativePath: { eq: "ceramique.webp" }) {
       childImageSharp {
         fluid(quality: 100) {
           ...GatsbyImageSharpFluid
@@ -121,7 +113,7 @@ export const query = graphql`
         }
       }
     }
-    ingenerie: file(relativePath: { eq: "products/ingenerie.webp" }) {
+    flottant: file(sourceInstanceName: { eq: "products" }, relativePath: { eq: "flottant.webp" }) {
       childImageSharp {
         fluid(quality: 100) {
           ...GatsbyImageSharpFluid
@@ -129,7 +121,7 @@ export const query = graphql`
         }
       }
     }
-    prelart: file(relativePath: { eq: "products/prelart.webp" }) {
+    ingenerie: file(sourceInstanceName: { eq: "products" }, relativePath: { eq: "ingenerie.webp" }) {
       childImageSharp {
         fluid(quality: 100) {
           ...GatsbyImageSharpFluid
@@ -137,7 +129,7 @@ export const query = graphql`
         }
       }
     }
-    tapis: file(relativePath: { eq: "products/tapis.webp" }) {
+    prelart: file(sourceInstanceName: { eq: "products" }, relativePath: { eq: "prelart.webp" }) {
       childImageSharp {
         fluid(quality: 100) {
           ...GatsbyImageSharpFluid
@@ -145,7 +137,15 @@ export const query = graphql`
         }
       }
     }
-    linoleum: file(relativePath: { eq: "products/linoleum.webp" }) {
+    tapis: file(sourceInstanceName: { eq: "products" }, relativePath: { eq: "tapis.webp" }) {
+      childImageSharp {
+        fluid(quality: 100) {
+          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluidLimitPresentationSize
+        }
+      }
+    }
+    linoleum: file(sourceInstanceName: { eq: "products" }, relativePath: { eq: "linoleum.webp" }) {
       childImageSharp {
         fluid(quality: 100) {
           ...GatsbyImageSharpFluid

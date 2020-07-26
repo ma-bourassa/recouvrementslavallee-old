@@ -2,7 +2,6 @@ const resolveConfig = require("tailwindcss/resolveConfig");
 const tailwindConfig = require("./tailwind.config.js");
 
 const fullConfig = resolveConfig(tailwindConfig);
-const path = require(`path`);
 
 module.exports = {
   siteMetadata: {
@@ -14,8 +13,22 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: path.join(__dirname, `src`, `images`),
+        name: "products",
+        path: `${__dirname}/src/images/products/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "distributors",
+        path: `${__dirname}/src/images/distributors/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "images",
+        path: `${__dirname}/src/images/`,
       },
     },
     `gatsby-plugin-sharp`,

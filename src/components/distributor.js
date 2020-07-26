@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
-import beaulieu from "../images/products/beaulieu.jpg";
+import beaulieu from "../images/distributors/beaulieu.jpg";
 
 function Distributor({ distributor }) {
   return (
@@ -14,6 +14,6 @@ function Distributor({ distributor }) {
 }
 export default Distributor;
 
-Distributor.PropTypes = {
+Distributor.propTypes = {
   distributor: PropTypes.string,
 };

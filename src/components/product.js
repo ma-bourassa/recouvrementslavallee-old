@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
 import Distributor from "./distributor";
-import beaulieu from "../images/products/beaulieu.jpg";
 
 function Product({ title, paragraphes, photo, reverseOrder, distributors }) {
   return (
@@ -13,7 +12,11 @@ function Product({ title, paragraphes, photo, reverseOrder, distributors }) {
           <div className="flex flex-col md:hidden mt-6 w-full">
             <Img alt={title} fluid={photo}></Img>
             <div className="flex space-x-6 mt-2">
-              <img width="50" height="50" src={beaulieu}></img>
+              <div className="flex space-x-6 mt-2">
+                {distributors.map((distributor, i) => (
+                  <Distributor key={i} distributor={distributor} />
+                ))}
+              </div>
             </div>
           </div>
           <div>
