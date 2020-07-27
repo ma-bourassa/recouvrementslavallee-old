@@ -82,7 +82,7 @@ export default function ProductsPage({ data }) {
         reverseOrder={false}
         photo={data.flottant.childImageSharp.fluid}
       ></ProductSection>
-      <div className="mt-6 md:mt-10"></div>
+      <div className="mt-6 lg:mt-10"></div>
     </Layout>
   );
 }

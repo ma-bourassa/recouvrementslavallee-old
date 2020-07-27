@@ -45,7 +45,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="w-full md:w-2/3 p-6">
+    <div className="w-full lg:w-2/3 p-6">
       <form
         name="Contact v1"
         action="/success/"
@@ -107,7 +107,7 @@ export default function ContactForm() {
 
         <label>
           <span className="block text-gray-700 font-semibold">
-            Joindre vos fichiers <span className="hidden md:inline">(plans, photos, etc.)</span>
+            Joindre vos fichiers <span className="hidden lg:inline">(plans, photos, etc.)</span>
           </span>
 
           <span className="mt-1 btn bg-transparent border border-grey hover:bg-grey hover:text-white ">

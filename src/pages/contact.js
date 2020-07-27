@@ -17,7 +17,7 @@ export default function ContactPage({ data }) {
         fluidBackground={data.headerBackground.childImageSharp.fluid}
       ></Header>
       <section className="flex flex-wrap justify-start items-start max-w-6xl mx-auto mb-6 ">
-        <div className="w-full md:w-1/3 p-6">
+        <div className="w-full lg:w-1/3 p-6">
           <div className="mb-5">
             <h4 className="text-xl font-bold mb-1">Téléphones</h4>
             <ul className="list-none leading-relaxed text-blue2">

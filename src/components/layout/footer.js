@@ -22,13 +22,13 @@ function Footer() {
   return (
     <footer>
       <section className="bg-grey text-white">
-        <div className="w-full md:px-24 mx-auto">
-          <div className="flex flex-col justify-center md:flex-row ">
-            <div className="w-full py-6 px-4 md:px-10 text-center">
+        <div className="w-full lg:px-24 mx-auto">
+          <div className="flex flex-col justify-center lg:flex-row ">
+            <div className="w-full py-6 px-4 lg:px-10 text-center">
               <Link to="/">
                 <Img className="w-1/2 sm:w-1/3 mx-auto" alt={siteTitle()} fluid={data.logo.childImageSharp.fluid}></Img>
               </Link>
-              <ul className="mt-4 list-none md:text-lg leading-loose">
+              <ul className="mt-4 list-none lg:text-lg leading-loose">
                 <li>
                   <FontAwesomeIcon className="mr-2" icon="phone-alt" />
                   <a className="font-semibold" href="tel:+14503573127">
@@ -43,7 +43,7 @@ function Footer() {
                 </li>
                 <li>
                   <FontAwesomeIcon className="mr-2" icon="envelope" />
-                  <a className="font-semibold text-sm md:text-base" href="mailto:lesrecouvrementslavallee@gmail.com">
+                  <a className="font-semibold text-sm lg:text-base" href="mailto:lesrecouvrementslavallee@gmail.com">
                     lesrecouvrementslavallee@gmail.com
                   </a>
                 </li>
@@ -59,7 +59,7 @@ function Footer() {
               </ul>
             </div>
 
-            <div className="w-full bg-blue2 py-6 px-6 md:px-10 al">
+            <div className="w-full bg-blue2 py-6 px-6 lg:px-10 al">
               <p className="text-center font-semibold text-lg">Accréditations</p>
               <ul className="p-2 list-disc leading-relaxed max-w-2xl mx-auto">
                 <li className="mt-2">
@@ -82,7 +82,7 @@ function Footer() {
               </ul>
             </div>
 
-            <div className="w-full py-6 px-6 md:px-10 text-center ">
+            <div className="w-full py-6 px-6 lg:px-10 text-center ">
               <p className="text-center font-semibold text-lg">Navigation</p>
 
               <nav className={`mt-2 leading-loose items-center`}>
@@ -115,7 +115,7 @@ function Footer() {
         </div>
       </section>
       <section className="bg-grey-dark p-4 text-sm">
-        <div className="container mx-auto flex flex-wrap md:justify-around leading-relaxed">
+        <div className="container mx-auto flex flex-wrap lg:justify-around leading-relaxed">
           <p className="flex flex-wrap text-white font-semibold">
             <span>{siteTitle()}&nbsp;</span>
             <span>&copy; {new Date().getFullYear()} Tous droits réservés.</span>

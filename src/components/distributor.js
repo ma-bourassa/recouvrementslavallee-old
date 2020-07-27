@@ -24,7 +24,7 @@ function Distributor({ distributor, link }) {
 
   const logo = query.distributors.edges.find((edge) => edge.node.name === distributor);
   return (
-    <div className="w-1/4 md:w-1/6 self-center">
+    <div className="w-1/4 lg:w-1/6 self-center">
       <a href={link} target="_blank" rel="noopener noreferrer">
         <Img alt={logo.node.name} fluid={logo.node.childImageSharp.fluid}></Img>
       </a>

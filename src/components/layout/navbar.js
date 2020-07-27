@@ -22,15 +22,15 @@ function NavBar() {
 
   return (
     <header className="bg-grey-dark">
-      <div className="flex flex-wrap items-baseline md:items-center justify-between px-2 py-4 md:justify-around">
-        <Link className="w-4/5 md:w-1/4 px-2" to="/">
+      <div className="flex flex-wrap items-baseline lg:items-center justify-between px-2 py-4 lg:justify-around">
+        <Link className="w-4/5 lg:w-1/4 px-2" to="/">
           <Img alt={siteTitle()} fluid={data.logo.childImageSharp.fluid}></Img>
         </Link>
 
-        <button className="w-1/5 text-white  md:hidden" onClick={() => toggleExpansion(!isExpanded)}>
+        <button className="w-1/5 text-white  lg:hidden" onClick={() => toggleExpansion(!isExpanded)}>
           <FontAwesomeIcon icon="bars" size="2x" color="white" />
         </button>
-        <nav className={`${isExpanded ? `block` : `hidden`}  mt-2 md:flex md:items-center w-full md:w-auto`}>
+        <nav className={`${isExpanded ? `block` : `hidden`}  mt-2 lg:flex lg:items-center w-full lg:w-auto`}>
           {[
             {
               route: ``,
@@ -50,17 +50,17 @@ function NavBar() {
             },
           ].map((link) => (
             <Link
-              className="block px-4 py-3 text-white border-t-2 md:border-t-0 text-lg font-semibold md:inline-block hover:bg-grey-darker"
-              activeClassName="md:border-b-2 md:border-blue2 "
+              className="block px-4 py-3 text-white border-t-2 lg:border-t-0 text-lg font-semibold lg:inline-block hover:bg-grey-darker"
+              activeClassName="lg:border-b-2 lg:border-blue2 "
               key={link.title}
               to={`${link.route}/`}
             >
               {link.title}
             </Link>
           ))}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <a
-              className="border border-white text-white text-lg font-semibold py-3 px-4 rounded-full hover:bg-white hover:text-black md:ml-6 md:mr-4"
+              className="border border-white text-white text-lg font-semibold py-3 px-4 rounded-full hover:bg-white hover:text-black lg:ml-6 lg:mr-4"
               href="tel:+14503573127"
             >
               450.357.3127
