@@ -26,7 +26,7 @@ function Distributor({ distributor, link }) {
   return (
     <div className="w-1/4 md:w-1/6 self-center">
       <a href={link} target="_blank" rel="noopener noreferrer">
-        <Img fluid={logo.node.childImageSharp.fluid}></Img>
+        <Img alt={logo.node.name} fluid={logo.node.childImageSharp.fluid}></Img>
       </a>
     </div>
   );
