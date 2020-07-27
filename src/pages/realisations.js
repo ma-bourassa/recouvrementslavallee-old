@@ -1,13 +1,14 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout/layout";
+import Header from "../components/header";
 import PropTypes from "prop-types";
 import SEO from "../components/seo";
 import Gallery from "@browniebroke/gatsby-image-gallery";
 import "@browniebroke/gatsby-image-gallery/dist/style.css";
 
 export default function RealisationsPage({ data }) {
-  const images = data.allFile.edges.map(({ node }) => node.childImageSharp);
+  const images = data.imagesForGallery.edges.map(({ node }) => node.childImageSharp);
   const lightboxOptions = {
     imageLoadErrorMessage: "Impossible de charger cette image",
     nextLabel: "Image suivante",
@@ -20,6 +21,11 @@ export default function RealisationsPage({ data }) {
   return (
     <Layout>
       <SEO keywords={["realisations", "modeles"]} title="Realisations" />
+      <Header
+        title="Réalisations"
+        text="Voici quelques-unes de nos plus récentes réalisations"
+        fluidBackground={data.headerBackground.childImageSharp.fluid}
+      ></Header>
       <div className="max-w-screen-lg mx-auto">
         <Gallery images={images} lightboxOptions={lightboxOptions} />
       </div>
@@ -28,8 +34,8 @@ export default function RealisationsPage({ data }) {
 }
 
 export const query = graphql`
-  query ImagesForGallery {
-    allFile(filter: { sourceInstanceName: { eq: "realisations" } }) {
+  query {
+    imagesForGallery: allFile(filter: { sourceInstanceName: { eq: "realisations" } }) {
       edges {
         node {
           childImageSharp {
@@ -41,6 +47,13 @@ export const query = graphql`
               ...GatsbyImageSharpFluid
             }
           }
+        }
+      }
+    }
+    headerBackground: file(sourceInstanceName: { eq: "images" }, relativePath: { eq: "floor4.jpg" }) {
+      childImageSharp {
+        fluid(quality: 100) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
