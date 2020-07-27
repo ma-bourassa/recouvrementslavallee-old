@@ -4,10 +4,10 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
 import Header from "../components/header";
-import Product from "../components/product";
+import ProductSection from "../components/productSection";
 import PropTypes from "prop-types";
 
-export default function ServicesPage({ data }) {
+export default function ProductsPage({ data }) {
   return (
     <Layout>
       <SEO keywords={[`service, vente, produits, projet, renovation, plancher`]} title="Services et produits" />
@@ -16,7 +16,7 @@ export default function ServicesPage({ data }) {
         text="Nous offrons un large éventail de produits ainsi que le service d'installation de plancher."
         fluidBackground={data.headerBackground.childImageSharp.fluid}
       ></Header>
-      <Product
+      <ProductSection
         title="Lattes de Vinyle"
         paragraphes={[
           "Le revêtement de plancher en lattes de vinyle est un type innovateur de vinyle qui a l'allure du vrai bois et qui en donne la sensation.",
@@ -26,8 +26,8 @@ export default function ServicesPage({ data }) {
         ]}
         reverseOrder={false}
         photo={data.vinyle.childImageSharp.fluid}
-      ></Product>
-      <Product
+      ></ProductSection>
+      <ProductSection
         title="Planchers d'ingénierie"
         paragraphes={[
           "Puisque le bois d’ingénierie est fabriqué à partir de vrai bois, il est aussi beau que le bois franc massif!",
@@ -36,8 +36,8 @@ export default function ServicesPage({ data }) {
         ]}
         reverseOrder={true}
         photo={data.ingenerie.childImageSharp.fluid}
-      ></Product>
-      <Product
+      ></ProductSection>
+      <ProductSection
         title="Tapis"
         paragraphes={[
           "Le tapis est doux pour les pieds, il protège contre les glissements et il atténue le niveau de bruit grâce à ses propriétés d'absorbotion des chocs, et améliore l'isolation du plancher.",
@@ -45,8 +45,8 @@ export default function ServicesPage({ data }) {
         ]}
         reverseOrder={false}
         photo={data.tapis.childImageSharp.fluid}
-      ></Product>
-      <Product
+      ></ProductSection>
+      <ProductSection
         title="Céramiques"
         paragraphes={[
           "La céramique a plusieurs avantages. Elle est résistante et aura une longue durée de vie. Ce matériau nécessite peu d'entretien et réagi bien à l'eau.",
@@ -54,8 +54,8 @@ export default function ServicesPage({ data }) {
         ]}
         reverseOrder={true}
         photo={data.ceramique.childImageSharp.fluid}
-      ></Product>
-      <Product
+      ></ProductSection>
+      <ProductSection
         title="Prélart"
         paragraphes={[
           "Le vinyle en rouleau, appelé « prélart », est souple, s’adapte aux courbes d’un sous-plancher imparfait et peut se faire sans joints apparents.",
@@ -63,8 +63,8 @@ export default function ServicesPage({ data }) {
         ]}
         reverseOrder={false}
         photo={data.prelart.childImageSharp.fluid}
-      ></Product>
-      <Product
+      ></ProductSection>
+      <ProductSection
         title="Linoléum et Marmoléum"
         paragraphes={[
           "Certifié LEED, le marmoléum est avantageux parce qu’il est écologique, durable, facile d’entretien, flexible, ignifuge et hygiénique, en plus de posséder des propriétés antistatiques et antimicrobiennes.",
@@ -72,8 +72,8 @@ export default function ServicesPage({ data }) {
         ]}
         reverseOrder={true}
         photo={data.linoleum.childImageSharp.fluid}
-      ></Product>
-      <Product
+      ></ProductSection>
+      <ProductSection
         title="Planchers Flottant"
         paragraphes={[
           "Abordables et faciles à entretenir, les planchers stratifiés ne sont pas affectés par la lumière. Ils offrent aussi une bonne résistance aux égratignures et aux impacts. ",
@@ -81,7 +81,7 @@ export default function ServicesPage({ data }) {
         ]}
         reverseOrder={false}
         photo={data.flottant.childImageSharp.fluid}
-      ></Product>
+      ></ProductSection>
       <div className="mt-6 md:mt-10"></div>
     </Layout>
   );
@@ -155,6 +155,6 @@ export const query = graphql`
   }
 `;
 
-ServicesPage.propTypes = {
+ProductsPage.propTypes = {
   data: PropTypes.object,
 };

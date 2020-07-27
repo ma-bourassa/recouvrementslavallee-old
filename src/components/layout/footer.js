@@ -92,8 +92,9 @@ function Footer() {
                     title: `Accueil`,
                   },
                   {
-                    route: `/services`,
-                    title: `Services`,
+                    route: `/produits`,
+                    title: `Produits
+                    `,
                   },
                   {
                     route: `/realisations`,
