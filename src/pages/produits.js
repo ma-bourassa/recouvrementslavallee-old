@@ -12,12 +12,12 @@ export default function ProductsPage({ data }) {
     <Layout>
       <SEO keywords={[`service, vente, produits, projet, renovation, plancher`]} title="Services et produits" />
       <Header
-        title="Services"
+        title="Produits"
         text="Nous offrons un large éventail de produits ainsi que le service d'installation de plancher."
         fluidBackground={data.headerBackground.childImageSharp.fluid}
       ></Header>
       <ProductSection
-        title="Lattes de Vinyle"
+        title="Lattes de vinyle"
         paragraphes={[
           "Le revêtement de plancher en lattes de vinyle est un type innovateur de vinyle qui a l'allure du vrai bois et qui en donne la sensation.",
           "En outre, il est étanche, ce qui permet de l'installer dans des pièces propices à l'humidité, tel que les sous-sols et les salles d'eau, là où les bois franc et stratifiés sont à proscrire.",
@@ -65,7 +65,7 @@ export default function ProductsPage({ data }) {
         photo={data.prelart.childImageSharp.fluid}
       ></ProductSection>
       <ProductSection
-        title="Linoléum et Marmoléum"
+        title="Linoléum et marmoléum"
         paragraphes={[
           "Certifié LEED, le marmoléum est avantageux parce qu’il est écologique, durable, facile d’entretien, flexible, ignifuge et hygiénique, en plus de posséder des propriétés antistatiques et antimicrobiennes.",
           "Gymnases, centres récréatifs, salles de danse, salles de classe, corridors nécessitent souvent un revêtement de vinyle ou de linoléum. Ces planchers sont extrêmement résistants à l’abrasion.",
@@ -74,7 +74,7 @@ export default function ProductsPage({ data }) {
         photo={data.linoleum.childImageSharp.fluid}
       ></ProductSection>
       <ProductSection
-        title="Planchers Flottant"
+        title="Planchers flottant"
         paragraphes={[
           "Abordables et faciles à entretenir, les planchers stratifiés ne sont pas affectés par la lumière. Ils offrent aussi une bonne résistance aux égratignures et aux impacts. ",
           "Le plancher en bois stratifié sera plus durable dans une pièce dépourvue d'humidité.",
