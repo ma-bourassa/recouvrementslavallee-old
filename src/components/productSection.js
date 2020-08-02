@@ -7,13 +7,12 @@ import distributors from "../data/distributors.json";
 function Product({ title, paragraphes, photo, reverseOrder }) {
   return (
     <section className="py-6 lg:py-12">
-      <div className="container mx-auto px-16 items-center flex flex-col lg:flex-row ">
-        <div className="lg:w-1/2 lg:pr-48">
-          <h3 className="text-3xl font-semibold leading-tight text-center lg:text-left">{title}</h3>
-          <div className="flex flex-col lg:hidden mt-6">
-            <Img alt={title} fluid={photo}></Img>
-            <p className="mt-2 font-light text-sm">Nos distributeurs :</p>
-            <div className="flex space-x-6 mt-2">
+      <div className="container mx-auto px-1 lg:px-6 items-center flex flex-col lg:flex-row ">
+        <div className="lg:w-1/2 lg:pr-32">
+          <h3 className="text-3xl font-semibold leading-tight text-center lg:text-left mb-6">{title}</h3>
+          <div className="flex flex-col lg:hidden">
+            <Img alt={title} fluid={photo} className="container mx-auto"></Img>
+            <div className="flex space-x-6 container mx-auto justify-center">
               {Object.entries(distributors[title]).map(([distributor, link]) => (
                 <Distributor key={distributor} distributor={distributor} link={link} />
               ))}
@@ -27,10 +26,9 @@ function Product({ title, paragraphes, photo, reverseOrder }) {
             ))}
           </div>
         </div>
-        <div className={`hidden w-1/2 lg:block ${reverseOrder && `order-last lg:order-first`}`}>
+        <div className={`hidden w-1/2 lg:block lg:pr-32 ${reverseOrder && `order-last lg:order-first`}`}>
           <Img alt={title} fluid={photo}></Img>
-          <p className="mt-2 font-light text-sm">Nos distributeurs :</p>
-          <div className="flex space-x-6 mt-2">
+          <div className="flex space-x-6">
             {Object.entries(distributors[title]).map(([distributor, link]) => (
               <Distributor key={distributor} distributor={distributor} link={link} />
             ))}
