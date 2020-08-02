@@ -27,7 +27,7 @@ function NavBar() {
           <Img alt={siteTitle()} fluid={data.logo.childImageSharp.fluid}></Img>
         </Link>
 
-        <button className="w-1/5 text-white  lg:hidden" onClick={() => toggleExpansion(!isExpanded)}>
+        <button className="w-1/5 text-white lg:hidden focus:outline-none" onClick={() => toggleExpansion(!isExpanded)}>
           <FontAwesomeIcon icon="bars" size="2x" color="white" />
         </button>
         <nav className={`${isExpanded ? `block` : `hidden`}  mt-2 lg:flex lg:items-center w-full lg:w-auto`}>

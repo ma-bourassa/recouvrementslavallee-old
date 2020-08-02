@@ -6,8 +6,8 @@ import distributors from "../data/distributors.json";
 
 function Product({ title, paragraphes, photo, reverseOrder }) {
   return (
-    <section className="py-6 lg:py-12">
-      <div className="container mx-auto px-1 lg:px-6 items-center flex flex-col lg:flex-row ">
+    <section>
+      <div className="container mx-auto px-6 py-6 lg:py-12 items-center flex flex-col lg:flex-row">
         <div className="lg:w-1/2 lg:pr-32">
           <h3 className="text-3xl font-semibold leading-tight text-center lg:text-left mb-6">{title}</h3>
           <div className="flex flex-col lg:hidden">

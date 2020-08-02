@@ -110,7 +110,7 @@ export default function ContactForm() {
             Joindre vos fichiers <span className="hidden lg:inline">(plans, photos, etc.)</span>
           </span>
 
-          <span className="mt-1 btn bg-transparent border border-grey hover:bg-grey hover:text-white ">
+          <span className="mt-1 btn bg-transparent border border-grey hover:bg-grey hover:text-white focus:outline-none">
             <FontAwesomeIcon icon="cloud-upload-alt" className="mr-2" />
             <span className="mt-2 text-base leading-normal">Selectionner un fichier</span>
           </span>
@@ -127,7 +127,7 @@ export default function ContactForm() {
         <button
           id="submitBtn"
           type="submit"
-          className={`${submitting ? `opacity-50 cursor-default` : ``} btn btn-blue mt-8 block `}
+          className={`${submitting ? `opacity-50 cursor-default` : ``} btn btn-blue mt-8 block focus:outline-none`}
           disabled={submitting ? "disabled" : ""}
         >
           {submitting && <FontAwesomeIcon icon="circle-notch" spin className="mr-2" />}
