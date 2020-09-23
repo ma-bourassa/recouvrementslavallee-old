@@ -18,5 +18,9 @@
   @apply border-blue2 border-t-4 w-40 mx-auto my-4;
 }
 
+.img {
+  cursor: pointer;
+}
+
 /*! purgecss end ignore */
 @tailwind utilities;

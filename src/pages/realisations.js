@@ -27,7 +27,7 @@ export default function RealisationsPage({ data }) {
         fluidBackground={data.headerBackground.childImageSharp.fluid}
       ></Header>
       <div className="max-w-screen-lg mx-auto">
-        <Gallery images={images} lightboxOptions={lightboxOptions} />
+        <Gallery images={images} imgClass={"img"} lightboxOptions={lightboxOptions} />
       </div>
     </Layout>
   );
