@@ -66,7 +66,7 @@ export default function IndexPage({ data }) {
             <br />
             <p>N&apos;hésitez pas à nous soumettre vos projets pour une estimation gratuite!</p>
             <Link to="/contact/">
-              <button className="mt-6 py-2 px-4 font-semibold inline-block shadow-md cursor-pointer text-lg border border-blue2 hover:bg-blue2 hover:text-white rounded-full focus:outline-none">
+              <button className="mt-6 py-2 px-4 font-semibold inline-block shadow-md cursor-pointer text-lg border border-blue2 hover:bg-blue2 hover:text-white rounded-full focus:outline-none transition duration-500">
                 Contactez-nous
               </button>
             </Link>
@@ -86,7 +86,7 @@ export default function IndexPage({ data }) {
               lattes de vinyle, les tapis, les carreaux de tapis, le linoléum, les prélarts et les bois d’ingénieries.
             </p>
             <Link to="/produits/">
-              <button className="mt-6 py-2 px-4 font-semibold inline-block shadow-md cursor-pointer border border-blue2 hover:bg-blue2 hover:text-white rounded-full focus:outline-none">
+              <button className="mt-6 py-2 px-4 font-semibold inline-block shadow-md cursor-pointer border border-blue2 hover:bg-blue2 hover:text-white rounded-full focus:outline-none transition duration-500 ease-in-out">
                 Plus d&apos;informations
               </button>
             </Link>

@@ -3,7 +3,7 @@
 @tailwind components;
 
 .btn {
-  @apply py-3 px-6 font-semibold rounded-lg inline-block shadow-md cursor-pointer;
+  @apply py-3 px-6 font-semibold rounded-lg inline-block shadow-md cursor-pointer transition duration-500;
 }
 
 .btn-blue {
