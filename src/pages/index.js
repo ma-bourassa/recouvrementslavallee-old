@@ -106,7 +106,7 @@ export const query = graphql`
         }
       }
     }
-    productImage: file(relativePath: { eq: "floor.jpg" }) {
+    productImage: file(relativePath: { eq: "floor1.jpg" }) {
       childImageSharp {
         fluid(quality: 90) {
           ...GatsbyImageSharpFluid

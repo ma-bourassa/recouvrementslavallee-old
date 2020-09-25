@@ -27,7 +27,7 @@ export default function RealisationsPage({ data }) {
         fluidBackground={data.headerBackground.childImageSharp.fluid}
       ></Header>
       <div className="max-w-screen-lg mx-auto">
-        <Gallery images={images} imgClass={"img"} lightboxOptions={lightboxOptions} />
+        <Gallery images={images} imgClass={"img"} gutter={"0.5rem"} lightboxOptions={lightboxOptions} />
       </div>
     </Layout>
   );
@@ -39,7 +39,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            thumb: fluid(maxWidth: 300, maxHeight: 300) {
+            thumb: fluid(maxWidth: 250, maxHeight: 250) {
               ...GatsbyImageSharpFluid
               ...GatsbyImageSharpFluidLimitPresentationSize
             }
