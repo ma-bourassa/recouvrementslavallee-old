@@ -22,5 +22,9 @@
   cursor: pointer;
 }
 
+.gallery {
+  min-height: 50vh;
+}
+
 /*! purgecss end ignore */
 @tailwind utilities;

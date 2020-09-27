@@ -7,6 +7,11 @@ module.exports = {
   purge: ["./src/**/*.js"],
   theme: {
     extend: {
+      minHeight: {
+        "1/4": "25%",
+        "1/2": "50%",
+        "3/4": "75%",
+      },
       colors: {
         grey: {
           light: "#e2e0e3",

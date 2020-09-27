@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
 import Img from "gatsby-image";
-import Distributor from "./distributor";
+import PropTypes from "prop-types";
+import React from "react";
 import distributors from "../data/distributors.json";
+import Distributor from "./distributor";
 
 function Product({ title, paragraphes, photo, reverseOrder }) {
   return (

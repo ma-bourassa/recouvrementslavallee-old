@@ -1,10 +1,12 @@
-import React, { useState } from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/layout/layout";
-import Header from "../components/header";
+import Img from "gatsby-image";
 import PropTypes from "prop-types";
-import SEO from "../components/seo";
+import React, { useState } from "react";
 import Gallery from "../components/gallery";
+import Header from "../components/header";
+import Layout from "../components/layout/layout";
+import SEO from "../components/seo";
+import useDeviceDetect from "../utils/useDeviceDetect";
 
 export default function RealisationsPage({ data }) {
   let gallery = {};
@@ -14,16 +16,20 @@ export default function RealisationsPage({ data }) {
       .filter(({ node }) => node.relativeDirectory === edge.node.relativePath)
       .map(({ node }, i) => {
         if (i === 0) {
-          thumbnails.push(node.childImageSharp);
+          thumbnails.push(node.childImageSharp.thumbnail);
         }
+        console.log(node.childImageSharp);
         return {
           original: node.childImageSharp.full.src,
-          thumbnail: node.childImageSharp.thumb.src,
+          thumbnail: node.childImageSharp.thumbnail.src,
         };
       });
   });
   const [images, setImages] = useState(gallery[Object.keys(gallery)[0]]);
+  const [activeGallery, setActiveGallery] = useState("");
+  const { isMobile } = useDeviceDetect();
 
+  console.log(thumbnails);
   return (
     <Layout>
       <SEO keywords={["realisations", "modeles"]} title="Realisations" />
@@ -34,23 +40,29 @@ export default function RealisationsPage({ data }) {
       ></Header>
 
       <section className="bg-gray-200">
-        <div className="container mx-auto flex flex-col lg:flex-row p-6 lg:p-12">
-          {Object.keys(gallery).map((project) => (
-            <div
-              key={project}
-              className="bg-white group hover:bg-gray-100 cursor-pointer rounded-lg shadow-xl p-4 m-4"
-              onClick={() => setImages(gallery[project])}
-            >
-              <img className="w-full" src={gallery[project][0].thumbnail}></img>
+        <div className="container mx-auto flex flex-col lg:flex-row   p-6 lg:p-12">
+          {Object.keys(gallery).map((project, i) => (
+            <>
+              <div
+                key={project}
+                className="bg-white group hover:bg-gray-100 cursor-pointer rounded-lg shadow-xl p-4 mx-4 my-4 flex-1"
+                onClick={() => {
+                  setImages(gallery[project]);
+                  setActiveGallery(project);
+                }}
+              >
+                <Img className="w-full mx-auto" fluid={thumbnails[i]}></Img>
 
-              <div className="py-4">
-                <div className="font-bold text-xl text-center">{project}</div>
+                <div className="py-4">
+                  <div className="font-bold text-xl text-center">{project}</div>
+                </div>
               </div>
-            </div>
+              <div className="mx-2 my-4 ">{isMobile && activeGallery === project && <Gallery images={images} />}</div>
+            </>
           ))}
         </div>
       </section>
-      <Gallery images={images} />
+      <div className="gallery max-w-screen-md mx-auto lg:my-10">{!isMobile && <Gallery images={images} />}</div>
     </Layout>
   );
 }
@@ -76,9 +88,8 @@ export const query = graphql`
         node {
           relativeDirectory
           childImageSharp {
-            thumb: fluid(maxWidth: 300, maxHeight: 200) {
+            thumbnail: fluid {
               ...GatsbyImageSharpFluid
-              ...GatsbyImageSharpFluidLimitPresentationSize
             }
             full: fluid(quality: 100, maxWidth: 1024) {
               ...GatsbyImageSharpFluid
