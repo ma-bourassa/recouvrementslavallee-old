@@ -26,10 +26,8 @@ export default function RealisationsPage({ data }) {
       });
   });
   const [images, setImages] = useState(gallery[Object.keys(gallery)[0]]);
-  const [activeGallery, setActiveGallery] = useState("");
   const { isMobile } = useDeviceDetect();
 
-  console.log(thumbnails);
   return (
     <Layout>
       <SEO keywords={["realisations", "modeles"]} title="Realisations" />
@@ -40,24 +38,23 @@ export default function RealisationsPage({ data }) {
       ></Header>
 
       <section className="bg-gray-200">
-        <div className="container mx-auto flex flex-col lg:flex-row   p-6 lg:p-12">
+        <div className="container mx-auto flex flex-col lg:flex-row lg:p-12">
           {Object.keys(gallery).map((project, i) => (
             <>
               <div
                 key={project}
-                className="bg-white group hover:bg-gray-100 cursor-pointer rounded-lg shadow-xl p-4 mx-4 my-4 flex-1"
+                className="bg-white group hover:bg-gray-100 cursor-pointer rounded-lg shadow-xl p-4 mx-2 my-4 flex-1"
                 onClick={() => {
                   setImages(gallery[project]);
-                  setActiveGallery(project);
                 }}
               >
-                <Img className="w-full mx-auto" fluid={thumbnails[i]}></Img>
+                {!isMobile && <Img className="w-full mx-auto" fluid={thumbnails[i]}></Img>}
 
                 <div className="py-4">
                   <div className="font-bold text-xl text-center">{project}</div>
                 </div>
+                <div className="w-full mx-auto">{isMobile && <Gallery images={gallery[project]} />}</div>
               </div>
-              <div className="mx-2 my-4 ">{isMobile && activeGallery === project && <Gallery images={images} />}</div>
             </>
           ))}
         </div>
