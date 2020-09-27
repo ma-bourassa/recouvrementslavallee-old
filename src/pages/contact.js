@@ -35,13 +35,6 @@ export default function ContactPage({ data }) {
           </div>
 
           <div className="mb-5">
-            <h4 className="text-xl font-bold mb-1">Courriel</h4>
-            <a className="font-semibold underline text-blue2" href="mailto:lesrecouvrementslavallee@gmail.com">
-              lesrecouvrementslavallee@gmail.com
-            </a>
-          </div>
-
-          <div className="mb-5">
             <h4 className="text-xl font-bold mb-1">Zone de service</h4>
             <ul className="font-semibold text-blue2 mb-2 leading-relaxed">
               <li>Montérégie</li>

@@ -42,12 +42,6 @@ function Footer() {
                   </a>
                 </li>
                 <li>
-                  <FontAwesomeIcon className="mr-2" icon="envelope" />
-                  <a className="font-semibold text-sm lg:text-base" href="mailto:lesrecouvrementslavallee@gmail.com">
-                    lesrecouvrementslavallee@gmail.com
-                  </a>
-                </li>
-                <li>
                   <a
                     className="font-semibold"
                     href="https://www.facebook.com/Les-recouvrements-de-sols-Andr%C3%A9-Lavall%C3%A9einc-135823087133035"
