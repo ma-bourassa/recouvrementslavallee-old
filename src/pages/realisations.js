@@ -62,7 +62,7 @@ export default function RealisationsPage({ data }) {
           ))}
         </div>
       </section>
-      <div className="gallery max-w-screen-md mx-auto lg:my-10">{!isMobile && <Gallery images={images} />}</div>
+      <div className="min-h-1/2 max-w-screen-md mx-auto lg:my-10">{!isMobile && <Gallery images={images} />}</div>
     </Layout>
   );
 }
