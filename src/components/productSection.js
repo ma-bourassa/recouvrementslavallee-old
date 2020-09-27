@@ -20,7 +20,7 @@ function Product({ title, paragraphes, photo, reverseOrder }) {
           </div>
           <div>
             {paragraphes.map((paragraphe, i) => (
-              <p key={i} className="mt-4 lg:text-lg font-light text-justify">
+              <p key={i} className="mt-4 lg:text-lg text-justify">
                 {paragraphe}
               </p>
             ))}
