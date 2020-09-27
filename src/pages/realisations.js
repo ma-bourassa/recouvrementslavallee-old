@@ -4,19 +4,17 @@ import Layout from "../components/layout/layout";
 import Header from "../components/header";
 import PropTypes from "prop-types";
 import SEO from "../components/seo";
-import Gallery from "@browniebroke/gatsby-image-gallery";
-import "@browniebroke/gatsby-image-gallery/dist/style.css";
+import Gallery from "../components/gallery";
 
 export default function RealisationsPage({ data }) {
-  const images = data.imagesForGallery.edges.map(({ node }) => node.childImageSharp);
-  const lightboxOptions = {
-    imageLoadErrorMessage: "Impossible de charger cette image",
-    nextLabel: "Image suivante",
-    prevLabel: "Image précédente",
-    zoomInLabel: "Zoomer",
-    zoomOutLabel: "Dézoomer",
-    closeLabel: "Fermer",
-  };
+  const images = data.imagesForGallery.edges
+    .filter(({ node }) => node.relativeDirectory === "product1")
+    .map(({ node }) => {
+      return {
+        original: node.childImageSharp.full.src,
+        thumbnail: node.childImageSharp.thumb.src,
+      };
+    });
 
   return (
     <Layout>
@@ -27,7 +25,7 @@ export default function RealisationsPage({ data }) {
         fluidBackground={data.headerBackground.childImageSharp.fluid}
       ></Header>
       <div className="max-w-screen-lg mx-auto">
-        <Gallery images={images} imgClass={"img"} gutter={"0.5rem"} lightboxOptions={lightboxOptions} />
+        <Gallery images={images} />
       </div>
     </Layout>
   );
@@ -35,18 +33,10 @@ export default function RealisationsPage({ data }) {
 
 export const query = graphql`
   query {
-    imagesForGallery: allFile(filter: { sourceInstanceName: { eq: "realisations" } }) {
+    productDirectories: allDirectory(filter: { sourceInstanceName: { eq: "realisations" }, relativePath: { ne: "" } }) {
       edges {
         node {
-          childImageSharp {
-            thumb: fluid(maxWidth: 250, maxHeight: 250) {
-              ...GatsbyImageSharpFluid
-              ...GatsbyImageSharpFluidLimitPresentationSize
-            }
-            full: fluid(quality: 100, maxWidth: 1024) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+          relativePath
         }
       }
     }
@@ -54,6 +44,22 @@ export const query = graphql`
       childImageSharp {
         fluid(quality: 100) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    imagesForGallery: allFile(filter: { sourceInstanceName: { eq: "realisations" } }) {
+      edges {
+        node {
+          relativeDirectory
+          childImageSharp {
+            thumb: fluid(maxWidth: 200, maxHeight: 200) {
+              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluidLimitPresentationSize
+            }
+            full: fluid(quality: 100, maxWidth: 1024) {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
       }
     }
