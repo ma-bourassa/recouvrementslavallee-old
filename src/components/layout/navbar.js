@@ -10,7 +10,7 @@ function NavBar() {
 
   const data = useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "logo1.png" }) {
+      logo: file(relativePath: { eq: "logo1.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
