@@ -7,7 +7,7 @@
 }
 
 .btn-blue {
-  @apply bg-blue-600 text-white;
+  @apply bg-blue2 text-white;
 }
 
 .btn-blue:hover {

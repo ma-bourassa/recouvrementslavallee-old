@@ -19,7 +19,7 @@ export default function ContactPage({ data }) {
       <section className="flex flex-wrap justify-start items-start max-w-6xl mx-auto mb-6 ">
         <div className="w-full lg:w-1/3 p-6">
           <div className="mb-5">
-            <h4 className="text-xl font-bold mb-1">Téléphones</h4>
+            <h2 className="text-xl font-bold mb-1">Téléphones</h2>
             <ul className="list-none leading-relaxed text-blue2">
               <li>
                 <a className="font-semibold underline" href="tel:+14503573127">
@@ -35,7 +35,7 @@ export default function ContactPage({ data }) {
           </div>
 
           <div className="mb-5">
-            <h4 className="text-xl font-bold mb-1">Zone de service</h4>
+            <h2 className="text-xl font-bold mb-1">Zone de service</h2>
             <ul className="font-semibold text-blue2 mb-2 leading-relaxed">
               <li>Montérégie</li>
               <li>Rive-sud de Montréal</li>
@@ -43,7 +43,7 @@ export default function ContactPage({ data }) {
           </div>
 
           <div className="mb-5">
-            <h4 className="text-xl font-bold mb-1">Adresse</h4>
+            <h2 className="text-xl font-bold mb-1">Adresse</h2>
             <p className=" mb-2 font-semibold text-blue2 ">
               166 rang Saint-André
               <br />
@@ -58,6 +58,7 @@ export default function ContactPage({ data }) {
       </section>
       <section>
         <iframe
+          title="Map"
           scrolling="no"
           marginHeight="0"
           marginWidth="0"
