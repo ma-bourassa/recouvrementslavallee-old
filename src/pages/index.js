@@ -17,9 +17,9 @@ export default function IndexPage({ data }) {
             <div>
               <h1 className="font-bold text-2xl lg:text-5xl">Vente et installation de plancher</h1>
               <hr className="hr" />
-              <h4 className="lg:max-w-3xl lg:mx-auto text-lg lg:text-2xl">
+              <h2 className="lg:max-w-3xl lg:mx-auto text-lg lg:text-2xl">
                 Contactez nous pour une soumission gratuite
-              </h4>
+              </h2>
               <Link to="/contact/">
                 <button className="mt-6 btn btn-blue text-xl rounded-full">Soumission</button>
               </Link>

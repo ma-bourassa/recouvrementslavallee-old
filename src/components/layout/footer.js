@@ -43,10 +43,10 @@ function Footer() {
                 </li>
                 <li>
                   <a
+                    aria-label="Facebook"
                     className="font-semibold"
                     href="https://www.facebook.com/Les-recouvrements-de-sols-Andr%C3%A9-Lavall%C3%A9einc-135823087133035"
                   >
-                    {" "}
                     <FontAwesomeIcon icon={["fab", "facebook"]} size="2x" className="mt-2" />
                   </a>
                 </li>
