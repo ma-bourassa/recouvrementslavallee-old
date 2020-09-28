@@ -9,7 +9,7 @@ import "../../utils/fontawesome";
 function Footer() {
   const data = useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "logo2.jpg" }) {
+      logo: file(relativePath: { eq: "logo2.webp" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
@@ -99,7 +99,7 @@ function Footer() {
                     title: `Contactez-nous`,
                   },
                 ].map((link) => (
-                  <Link className="block hover:text-blue2" key={link.title} to={link.route}>
+                  <Link className="sm:py-2 lg:py-0 block hover:text-blue2" key={link.title} to={link.route}>
                     {link.title}
                   </Link>
                 ))}
