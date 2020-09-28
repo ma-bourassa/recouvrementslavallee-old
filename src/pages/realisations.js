@@ -6,7 +6,6 @@ import Gallery from "../components/gallery";
 import Header from "../components/header";
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
-import useDeviceDetect from "../utils/useDeviceDetect";
 
 export default function RealisationsPage({ data }) {
   let gallery = {};
@@ -18,7 +17,6 @@ export default function RealisationsPage({ data }) {
         if (i === 0) {
           thumbnails.push(node.childImageSharp.thumbnail);
         }
-        console.log(node.childImageSharp);
         return {
           original: node.childImageSharp.full.src,
           thumbnail: node.childImageSharp.thumbnail.src,
@@ -26,7 +24,6 @@ export default function RealisationsPage({ data }) {
       });
   });
   const [images, setImages] = useState(gallery[Object.keys(gallery)[0]]);
-  const { isMobile } = useDeviceDetect();
 
   return (
     <Layout>
@@ -48,18 +45,22 @@ export default function RealisationsPage({ data }) {
                   setImages(gallery[project]);
                 }}
               >
-                {!isMobile && <Img className="w-full mx-auto" fluid={thumbnails[i]}></Img>}
-
+                <Img className="hidden lg:block w-full mx-auto " fluid={thumbnails[i]}></Img>
                 <div className="py-4">
                   <div className="font-bold text-xl text-center">{project}</div>
                 </div>
-                <div className="w-full mx-auto">{isMobile && <Gallery images={gallery[project]} />}</div>
+                <div className="w-full mx-auto sm:block lg:hidden">
+                  <Gallery images={gallery[project]} />
+                </div>
               </div>
             </>
           ))}
         </div>
       </section>
-      <div className="min-h-1/2 max-w-screen-md mx-auto lg:my-10">{!isMobile && <Gallery images={images} />}</div>
+
+      <div className="hidden lg:block min-h-1/2 max-w-screen-md mx-auto lg:my-10">
+        <Gallery images={images} />
+      </div>
     </Layout>
   );
 }
