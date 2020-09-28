@@ -62,7 +62,7 @@ export default function IndexPage({ data }) {
           <div className="lg:w-1/3 lg:mx-12 ">
             <p>
               Comme toute compagnie professionnelle incorporée, nous avons une assurance afin de vous protéger de tout
-              imprévus liés à notre passage ou à toutes erreurs de construction.
+              imprévu lié à notre passage ou à toutes erreurs de construction.
             </p>
             <br />
             <p>N&apos;hésitez pas à nous soumettre vos projets pour une estimation gratuite!</p>

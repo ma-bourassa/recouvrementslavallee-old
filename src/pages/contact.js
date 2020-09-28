@@ -12,8 +12,8 @@ export default function ContactPage({ data }) {
       <SEO keywords={["contact", "soumission", "courriel", "telephone", "adresse"]} title="Contact" />
       <Header
         title="Contactez-nous !"
-        text="Pour toute demande au sujet de nos services, nos produit ou pour une estimation, veuillez remplir le
-              formulaire ci-dessous. Nous communiquerons avec vous dans les plus bref délais."
+        text="Pour toute demande au sujet de nos services, nos produits ou pour une estimation, veuillez remplir le
+              formulaire ci-dessous. Nous communiquerons avec vous dans les plus brefs délais."
         fluidBackground={data.headerBackground.childImageSharp.fluid}
       ></Header>
       <section className="flex flex-wrap justify-start items-start max-w-6xl mx-auto mb-6 ">

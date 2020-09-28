@@ -20,7 +20,7 @@ export default function ProductsPage({ data }) {
         title="Lattes de vinyle"
         paragraphes={[
           "Le revêtement de plancher en lattes de vinyle est un type innovateur de vinyle qui a l'allure du vrai bois et qui en donne la sensation.",
-          "En outre, il est étanche, ce qui permet de l'installer dans des pièces propices à l'humidité, tel que les sous-sols et les salles d'eau, là où les bois franc et stratifiés sont à proscrire.",
+          "En outre, il est étanche, ce qui permet de l'installer dans des pièces propices à l'humidité, telle que les sous-sols et les salles d'eau, là où les bois francs et stratifiés sont à proscrire.",
           "De plus, le revêtement de sol en planches de vinyle est silencieux, résistant et chaud sous les pieds. C'est aussi l'un des choix les plus abordables sur le marché.",
           "Les lattes de vinyles tendent à dépasser en popularité le plancher de stratifié (plancher flottant).",
         ]}
@@ -40,7 +40,7 @@ export default function ProductsPage({ data }) {
       <ProductSection
         title="Tapis"
         paragraphes={[
-          "Le tapis est doux pour les pieds, il protège contre les glissements et il atténue le niveau de bruit grâce à ses propriétés d'absorbotion des chocs, et améliore l'isolation du plancher.",
+          "Le tapis est doux pour les pieds, il protège contre les glissements et il atténue le niveau de bruit grâce à ses propriétés d'absorption des chocs, et améliore l'isolation du plancher.",
           "Grâce à ses multiples styles, textures et couleurs, le tapis est un élément de décoration qui vous permet de créer l'ambiance désirée dans votre résidence.",
         ]}
         reverseOrder={false}
@@ -49,7 +49,7 @@ export default function ProductsPage({ data }) {
       <ProductSection
         title="Céramiques"
         paragraphes={[
-          "La céramique a plusieurs avantages. Elle est résistante et aura une longue durée de vie. Ce matériau nécessite peu d'entretien et réagi bien à l'eau.",
+          "La céramique a plusieurs avantages. Elle est résistante et aura une longue durée de vie. Ce matériau nécessite peu d'entretien et réagit bien à l'eau.",
           "On peut l'utiliser pour les planchers, mais également comme recouvrement pour les murs et les dosserets de cuisine.",
         ]}
         reverseOrder={true}
@@ -59,7 +59,7 @@ export default function ProductsPage({ data }) {
         title="Prélart"
         paragraphes={[
           "Le vinyle en rouleau, appelé « prélart », est souple, s’adapte aux courbes d’un sous-plancher imparfait et peut se faire sans joints apparents.",
-          "Il est idéal pour être posé directement sur une variété de matières dont le béton, le contreplaqué ou les revêtements de vinyle existants. Il est durable et supporte bien les différentes conditions de température et d’humidité.",
+          "Il est idéal pour être posé directement sur une variété de matières, dont le béton, le contreplaqué ou les revêtements de vinyle existants. Il est durable et supporte bien les différentes conditions de température et d’humidité.",
         ]}
         reverseOrder={false}
         photo={data.prelart.childImageSharp.fluid}
