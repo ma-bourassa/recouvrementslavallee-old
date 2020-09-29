@@ -10,7 +10,7 @@ function Header({ title, text, fluidBackground }) {
           <div>
             <h1 className=" font-bold text-2xl lg:text-5xl mb-2">{title}</h1>
             <hr className="hr" />
-            <p className="leading-loose lg:text-xl lg:max-w-4xl lg:mx-auto mt-2">{text}</p>
+            <p className="leading-loose lg:text-xl lg:max-w-4xl lg:mx-auto m-2">{text}</p>
           </div>
         </div>
       </section>

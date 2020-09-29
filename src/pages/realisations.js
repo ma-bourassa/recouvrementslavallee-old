@@ -37,23 +37,23 @@ export default function RealisationsPage({ data }) {
       <section className="bg-gray-200">
         <div className="container mx-auto flex flex-col lg:flex-row lg:p-12">
           {Object.keys(gallery).map((project, i) => (
-            <>
-              <div
-                key={project}
-                className="bg-white group hover:bg-gray-100 cursor-pointer rounded-lg shadow-xl p-4 mx-2 my-4 flex-1"
-                onClick={() => {
-                  setImages(gallery[project]);
-                }}
-              >
-                <Img className="hidden lg:block w-full mx-auto " fluid={thumbnails[i]}></Img>
-                <div className="py-4">
-                  <div className="font-bold text-xl text-center">{project}</div>
-                </div>
-                <div className="w-full mx-auto sm:block lg:hidden">
-                  <Gallery images={gallery[project]} />
-                </div>
+            <div
+              key={i}
+              className="bg-white group hover:bg-gray-100 cursor-pointer rounded-lg shadow-xl p-4 mx-2 my-4 flex-1"
+              onClick={() => {
+                setImages(gallery[project]);
+              }}
+            >
+              <div className="hidden lg:block w-full mx-auto">
+                <Img fixed={thumbnails[i]}></Img>
               </div>
-            </>
+              <div className="py-4">
+                <div className="font-bold text-xl text-center">{project}</div>
+              </div>
+              <div className="w-full mx-auto sm:block lg:hidden">
+                <Gallery images={gallery[project]} />
+              </div>
+            </div>
           ))}
         </div>
       </section>
@@ -86,8 +86,8 @@ export const query = graphql`
         node {
           relativeDirectory
           childImageSharp {
-            thumbnail: fluid {
-              ...GatsbyImageSharpFluid
+            thumbnail: fixed(width: 120, height: 80) {
+              ...GatsbyImageSharpFixed
             }
             full: fluid(quality: 100, maxWidth: 1024) {
               ...GatsbyImageSharpFluid

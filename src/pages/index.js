@@ -15,9 +15,9 @@ export default function IndexPage({ data }) {
         <section className="py-8 lg:py-16 text-center text-white">
           <div className="bg-grey py-4 bg-opacity-75">
             <div>
-              <h1 className="font-bold text-2xl lg:text-5xl">Vente et installation de plancher</h1>
+              <h1 className="mx-1 font-bold text-2xl lg:text-5xl">Vente et installation de plancher</h1>
               <hr className="hr" />
-              <h2 className="lg:max-w-3xl lg:mx-auto text-lg lg:text-2xl">
+              <h2 className="mx-2 lg:max-w-3xl lg:mx-auto text-lg lg:text-2xl">
                 Contactez nous pour une soumission gratuite
               </h2>
               <Link to="/contact/">
