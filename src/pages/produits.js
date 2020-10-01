@@ -10,7 +10,12 @@ import PropTypes from "prop-types";
 export default function ProductsPage({ data }) {
   return (
     <Layout>
-      <SEO keywords={[`service, vente, produits, projet, renovation, plancher`]} title="Services et produits" />
+      <SEO
+        keywords={[
+          `service, vente, produits, projet, renovation, plancher, latte de vinyle, vinyle, bois d'ingenierie, tapis, prelart, linoleum, marmoleum, plancher flottant`,
+        ]}
+        title="Services et produits"
+      />
       <Header
         title="Produits"
         text="Nous offrons un large éventail de produits ainsi que le service d'installation de plancher."
