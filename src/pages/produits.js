@@ -47,21 +47,12 @@ export default function ProductsPage({ data }) {
         photo={data.tapis.childImageSharp.fluid}
       ></ProductSection>
       <ProductSection
-        title="Céramiques"
-        paragraphes={[
-          "La céramique a plusieurs avantages. Elle est résistante et aura une longue durée de vie. Ce matériau nécessite peu d'entretien et réagit bien à l'eau.",
-          "On peut l'utiliser pour les planchers, mais également comme recouvrement pour les murs et les dosserets de cuisine.",
-        ]}
-        reverseOrder={true}
-        photo={data.ceramique.childImageSharp.fluid}
-      ></ProductSection>
-      <ProductSection
         title="Prélart"
         paragraphes={[
           "Le vinyle en rouleau, appelé « prélart », est souple, s’adapte aux courbes d’un sous-plancher imparfait et peut se faire sans joints apparents.",
           "Il est idéal pour être posé directement sur une variété de matières, dont le béton, le contreplaqué ou les revêtements de vinyle existants. Il est durable et supporte bien les différentes conditions de température et d’humidité.",
         ]}
-        reverseOrder={false}
+        reverseOrder={true}
         photo={data.prelart.childImageSharp.fluid}
       ></ProductSection>
       <ProductSection
@@ -70,7 +61,7 @@ export default function ProductsPage({ data }) {
           "Certifié LEED, le marmoléum est avantageux parce qu’il est écologique, durable, facile d’entretien, flexible, ignifuge et hygiénique, en plus de posséder des propriétés antistatiques et antimicrobiennes.",
           "Gymnases, centres récréatifs, salles de danse, salles de classe, corridors nécessitent souvent un revêtement de vinyle ou de linoléum. Ces planchers sont extrêmement résistants à l’abrasion.",
         ]}
-        reverseOrder={true}
+        reverseOrder={false}
         photo={data.linoleum.childImageSharp.fluid}
       ></ProductSection>
       <ProductSection
@@ -79,8 +70,17 @@ export default function ProductsPage({ data }) {
           "Abordables et faciles à entretenir, les planchers stratifiés ne sont pas affectés par la lumière. Ils offrent aussi une bonne résistance aux égratignures et aux impacts. ",
           "Le plancher en bois stratifié sera plus durable dans une pièce dépourvue d'humidité.",
         ]}
-        reverseOrder={false}
+        reverseOrder={true}
         photo={data.flottant.childImageSharp.fluid}
+      ></ProductSection>
+      <ProductSection
+        title="Céramiques"
+        paragraphes={[
+          "La céramique a plusieurs avantages. Elle est résistante et aura une longue durée de vie. Ce matériau nécessite peu d'entretien et réagit bien à l'eau.",
+          "On peut l'utiliser pour les planchers, mais également comme recouvrement pour les murs et les dosserets de cuisine.",
+        ]}
+        reverseOrder={false}
+        photo={data.ceramique.childImageSharp.fluid}
       ></ProductSection>
       <div className="mt-6 lg:mt-10"></div>
     </Layout>

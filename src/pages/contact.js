@@ -26,11 +26,6 @@ export default function ContactPage({ data }) {
                   450-357-3127
                 </a>
               </li>
-              <li>
-                <a className="font-semibold underline" href="tel:+15147933743">
-                  514-793-3743
-                </a>
-              </li>
             </ul>
           </div>
 

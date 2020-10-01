@@ -68,7 +68,7 @@ export default function IndexPage({ data }) {
             <p>N&apos;hésitez pas à nous soumettre vos projets pour une estimation gratuite!</p>
             <div className="text-center lg:text-justify">
               <Link to="/contact/">
-                <button className="mt-6 py-2 px-4 font-semibold shadow-md cursor-pointer text-lg border border-blue2 hover:bg-blue2 hover:text-white rounded-full focus:outline-none transition duration-500">
+                <button className="mt-6 py-2 px-4 font-semibold cursor-pointer text-lg border border-blue2 hover:bg-blue2 hover:text-white rounded-full focus:outline-none transition duration-500">
                   Contactez-nous
                 </button>
               </Link>
@@ -90,7 +90,7 @@ export default function IndexPage({ data }) {
             </p>
             <div className="text-center lg:text-justify">
               <Link to="/produits/">
-                <button className="mt-6 py-2 px-4 font-semibold text-lg inline-block shadow-md cursor-pointer border border-blue2 hover:bg-blue2 hover:text-white rounded-full focus:outline-none transition duration-500 ease-in-out">
+                <button className="mt-6 py-2 px-4 font-semibold text-lg inline-block cursor-pointer border border-blue2 hover:bg-blue2 hover:text-white rounded-full focus:outline-none transition duration-500 ease-in-out">
                   Plus d&apos;informations
                 </button>
               </Link>

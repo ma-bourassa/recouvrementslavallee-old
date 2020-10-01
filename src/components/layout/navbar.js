@@ -64,16 +64,10 @@ function NavBar() {
           ))}
           <div className="hidden lg:block">
             <a
-              className="border border-white text-white text-lg font-semibold py-3 px-4 rounded-full hover:bg-white hover:text-black lg:ml-6 lg:mr-4 transition duration-500"
+              className="border-2 border-white text-white text-lg font-semibold py-3 px-4 rounded-lg hover:bg-white hover:text-black lg:ml-6 lg:mr-4 transition duration-500"
               href="tel:+14503573127"
             >
               450.357.3127
-            </a>
-            <a
-              className="border border-white text-white text-lg font-semibold py-3 px-4 rounded-full hover:bg-white hover:text-black transition duration-500"
-              href="tel:+15147933743"
-            >
-              514.793.3743
             </a>
           </div>
         </nav>
