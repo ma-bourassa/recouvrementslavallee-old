@@ -26,19 +26,17 @@ function Footer() {
           <div className="flex flex-col justify-center lg:flex-row ">
             <div className="w-full py-6 px-4 lg:px-10 text-center">
               <Link to="/">
-                <Img className="w-1/2 sm:w-1/3 mx-auto" alt={siteTitle()} fluid={data.logo.childImageSharp.fluid}></Img>
+                <Img
+                  className="w-1/2 sm:w-1/3 lg:w-1/2 mx-auto"
+                  alt={siteTitle()}
+                  fluid={data.logo.childImageSharp.fluid}
+                ></Img>
               </Link>
               <ul className="mt-4 list-none lg:text-lg leading-loose">
-                <li>
+                <li className="py-2">
                   <FontAwesomeIcon className="mr-2" icon="phone-alt" />
-                  <a className="font-semibold" href="tel:+14503573127">
+                  <a className="text-xl font-semibold" href="tel:+14503573127">
                     450-357-3127
-                  </a>
-                </li>
-                <li>
-                  <FontAwesomeIcon className="mr-2" icon="phone-alt" />
-                  <a className="font-semibold" href="tel:+15147933743">
-                    514-793-3743
                   </a>
                 </li>
                 <li>
@@ -99,7 +97,7 @@ function Footer() {
                     title: `Contactez-nous`,
                   },
                 ].map((link) => (
-                  <Link className="sm:py-2 lg:py-0 block hover:text-blue2" key={link.title} to={link.route}>
+                  <Link className="py-2 lg:py-0 block hover:text-blue2" key={link.title} to={link.route}>
                     {link.title}
                   </Link>
                 ))}

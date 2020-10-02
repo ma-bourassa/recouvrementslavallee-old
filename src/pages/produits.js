@@ -1,11 +1,11 @@
-import React from "react";
 import { graphql } from "gatsby";
-
-import Layout from "../components/layout/layout";
-import SEO from "../components/seo";
-import Header from "../components/header";
-import ProductSection from "../components/productSection";
 import PropTypes from "prop-types";
+import React from "react";
+import Header from "../components/header";
+import Layout from "../components/layout/layout";
+import ProductSection from "../components/productSection";
+import SEO from "../components/seo";
+import products from "../data/products.json";
 
 export default function ProductsPage({ data }) {
   return (
@@ -21,6 +21,7 @@ export default function ProductsPage({ data }) {
         text="Nous offrons un large éventail de produits ainsi que le service d'installation de plancher."
         fluidBackground={data.headerBackground.childImageSharp.fluid}
       ></Header>
+
       <ProductSection
         title="Lattes de vinyle"
         paragraphes={[
@@ -31,7 +32,9 @@ export default function ProductsPage({ data }) {
         ]}
         reverseOrder={false}
         photo={data.vinyle.childImageSharp.fluid}
+        products={products["Lattes de vinyle"]}
       ></ProductSection>
+
       <ProductSection
         title="Planchers d'ingénierie"
         paragraphes={[
@@ -41,7 +44,9 @@ export default function ProductsPage({ data }) {
         ]}
         reverseOrder={true}
         photo={data.ingenerie.childImageSharp.fluid}
+        products={products["Planchers d'ingénierie"]}
       ></ProductSection>
+
       <ProductSection
         title="Tapis"
         paragraphes={[
@@ -50,7 +55,9 @@ export default function ProductsPage({ data }) {
         ]}
         reverseOrder={false}
         photo={data.tapis.childImageSharp.fluid}
+        products={products["Tapis"]}
       ></ProductSection>
+
       <ProductSection
         title="Prélart"
         paragraphes={[
@@ -59,7 +66,9 @@ export default function ProductsPage({ data }) {
         ]}
         reverseOrder={true}
         photo={data.prelart.childImageSharp.fluid}
+        products={products["Prélart"]}
       ></ProductSection>
+
       <ProductSection
         title="Linoléum et marmoléum"
         paragraphes={[
@@ -68,7 +77,9 @@ export default function ProductsPage({ data }) {
         ]}
         reverseOrder={false}
         photo={data.linoleum.childImageSharp.fluid}
+        products={products["Linoléum et marmoléum"]}
       ></ProductSection>
+
       <ProductSection
         title="Planchers flottant"
         paragraphes={[
@@ -77,7 +88,9 @@ export default function ProductsPage({ data }) {
         ]}
         reverseOrder={true}
         photo={data.flottant.childImageSharp.fluid}
+        products={products["Planchers flottant"]}
       ></ProductSection>
+
       <ProductSection
         title="Céramiques"
         paragraphes={[
@@ -86,7 +99,9 @@ export default function ProductsPage({ data }) {
         ]}
         reverseOrder={false}
         photo={data.ceramique.childImageSharp.fluid}
+        products={products["Céramiques"]}
       ></ProductSection>
+
       <div className="mt-6 lg:mt-10"></div>
     </Layout>
   );

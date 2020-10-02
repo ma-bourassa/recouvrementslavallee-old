@@ -1,9 +1,8 @@
 import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import React from "react";
-import products from "../data/products.json";
 
-function Product({ title, paragraphes, photo, reverseOrder }) {
+function Product({ title, paragraphes, photo, reverseOrder, products }) {
   return (
     <section>
       <div className="container mx-auto px-6 py-6 lg:py-12 items-center flex flex-col lg:flex-row">
@@ -12,20 +11,24 @@ function Product({ title, paragraphes, photo, reverseOrder }) {
           {/* Mobile */}
           <div className="flex flex-col lg:hidden">
             <Img alt={title} fluid={photo} className="container mx-auto"></Img>
-            <p className="mt-6 mb-2 font-bold text-center">Voir les produits disponibles</p>
-            <div className="flex flex-wrap space-x-4  justify-center">
-              {Object.entries(products[title]).map(([product, link]) => (
-                <a
-                  key={product}
-                  className="border border-grey text-center text-sm font-semibold py-2 px-3 rounded hover:bg-grey hover:text-white transition duration-500"
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {product}
-                </a>
-              ))}
-            </div>
+            {Object.keys(products).length !== 0 && (
+              <div>
+                <p className="mt-6 mb-2 font-bold text-center">Voir les produits disponibles</p>
+                <div className="flex flex-wrap space-x-4  justify-center">
+                  {Object.entries(products).map(([product, link]) => (
+                    <a
+                      key={product}
+                      className="border border-grey text-center text-sm font-semibold py-2 px-3 rounded hover:bg-grey hover:text-white transition duration-500"
+                      href={link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {product}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
           <div>
             {paragraphes.map((paragraphe, i) => (
@@ -40,7 +43,7 @@ function Product({ title, paragraphes, photo, reverseOrder }) {
           <Img alt={title} fluid={photo}></Img>
           <p className="mt-6 mb-2 font-bold">Voir les produits disponibles</p>
           <div className="flex flex-wrap space-x-4">
-            {Object.entries(products[title]).map(([product, link]) => (
+            {Object.entries(products).map(([product, link]) => (
               <a
                 key={product}
                 className="border border-grey text-center text-sm font-semibold py-2 px-3 rounded hover:bg-grey hover:text-white transition duration-500"
@@ -65,4 +68,5 @@ Product.propTypes = {
   paragraphes: PropTypes.arrayOf(PropTypes.string),
   photo: PropTypes.object,
   reverseOrder: PropTypes.bool,
+  products: PropTypes.object,
 };
