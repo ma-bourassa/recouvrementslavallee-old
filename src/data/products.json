@@ -3,7 +3,7 @@
     "Vinyle de luxe": "https://beaulieucanada.com/fr/retail/flooring/luxuryvinyl",
     "Vinyle de luxe d'ingénierie": "https://beaulieucanada.com/fr/retail/flooring/engineeredluxuryvinyl"
   },
-  "Planchers d'ingénierie": {
+  "Bois d'ingénierie": {
     "Bois d'ingénierie": "https://beaulieucanada.com/fr/retail/flooring/engineeredhardwood"
   },
   "Tapis": {
@@ -14,6 +14,8 @@
     "Prélart": "https://beaulieucanada.com/fr/retail/flooring/sheetvinyl"
   },
   "Linoléum et marmoléum": {},
-  "Planchers flottant": {},
+  "Planchers flottant": {
+    "Laminé": "https://beaulieucanada.com/fr/yhs/flooring/laminate"
+  },
   "Céramiques": {}
 }

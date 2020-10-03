@@ -36,24 +36,12 @@ export default function ProductsPage({ data }) {
       ></ProductSection>
 
       <ProductSection
-        title="Planchers d'ingénierie"
-        paragraphes={[
-          "Puisque le bois d’ingénierie est fabriqué à partir de vrai bois, il est aussi beau que le bois franc massif!",
-          "Il est composé de plusieurs couches de bois qui sont collées ensemble et couvertes d’une fine plaque de vrai bois franc en surface. Par sa conception, le bois ne se contractera pas à cause des changements de niveaux d’humidité et de température. Il ne s'ouvrira pas comme certains bois francs peuvent le faire.",
-          "Tout comme pour les planchers de bois franc massif, celui d’ingénierie est offert dans une grande variété d’essences. Choisissez parmi les choix de largeur de planche, de texture, de lustre et bien plus!",
-        ]}
-        reverseOrder={true}
-        photo={data.ingenerie.childImageSharp.fluid}
-        products={products["Planchers d'ingénierie"]}
-      ></ProductSection>
-
-      <ProductSection
         title="Tapis"
         paragraphes={[
           "Le tapis est doux pour les pieds, il protège contre les glissements et il atténue le niveau de bruit grâce à ses propriétés d'absorption des chocs, et améliore l'isolation du plancher.",
           "Grâce à ses multiples styles, textures et couleurs, le tapis est un élément de décoration qui vous permet de créer l'ambiance désirée dans votre résidence.",
         ]}
-        reverseOrder={false}
+        reverseOrder={true}
         photo={data.tapis.childImageSharp.fluid}
         products={products["Tapis"]}
       ></ProductSection>
@@ -64,20 +52,21 @@ export default function ProductsPage({ data }) {
           "Le vinyle en rouleau, appelé « prélart », est souple, s’adapte aux courbes d’un sous-plancher imparfait et peut se faire sans joints apparents.",
           "Il est idéal pour être posé directement sur une variété de matières, dont le béton, le contreplaqué ou les revêtements de vinyle existants. Il est durable et supporte bien les différentes conditions de température et d’humidité.",
         ]}
-        reverseOrder={true}
+        reverseOrder={false}
         photo={data.prelart.childImageSharp.fluid}
         products={products["Prélart"]}
       ></ProductSection>
 
       <ProductSection
-        title="Linoléum et marmoléum"
+        title="Bois d'ingénierie"
         paragraphes={[
-          "Certifié LEED, le marmoléum est avantageux parce qu’il est écologique, durable, facile d’entretien, flexible, ignifuge et hygiénique, en plus de posséder des propriétés antistatiques et antimicrobiennes.",
-          "Gymnases, centres récréatifs, salles de danse, salles de classe, corridors nécessitent souvent un revêtement de vinyle ou de linoléum. Ces planchers sont extrêmement résistants à l’abrasion.",
+          "Puisque le bois d’ingénierie est fabriqué à partir de vrai bois, il est aussi beau que le bois franc massif!",
+          "Il est composé de plusieurs couches de bois qui sont collées ensemble et couvertes d’une fine plaque de vrai bois franc en surface. Par sa conception, le bois ne se contractera pas à cause des changements de niveaux d’humidité et de température. Il ne s'ouvrira pas comme certains bois francs peuvent le faire.",
+          "Tout comme pour les planchers de bois franc massif, celui d’ingénierie est offert dans une grande variété d’essences. Choisissez parmi les choix de largeur de planche, de texture, de lustre et bien plus!",
         ]}
-        reverseOrder={false}
-        photo={data.linoleum.childImageSharp.fluid}
-        products={products["Linoléum et marmoléum"]}
+        reverseOrder={true}
+        photo={data.ingenerie.childImageSharp.fluid}
+        products={products["Bois d'ingénierie"]}
       ></ProductSection>
 
       <ProductSection
@@ -86,9 +75,20 @@ export default function ProductsPage({ data }) {
           "Abordables et faciles à entretenir, les planchers stratifiés ne sont pas affectés par la lumière. Ils offrent aussi une bonne résistance aux égratignures et aux impacts. ",
           "Le plancher en bois stratifié sera plus durable dans une pièce dépourvue d'humidité.",
         ]}
-        reverseOrder={true}
+        reverseOrder={false}
         photo={data.flottant.childImageSharp.fluid}
         products={products["Planchers flottant"]}
+      ></ProductSection>
+
+      <ProductSection
+        title="Linoléum et marmoléum"
+        paragraphes={[
+          "Certifié LEED, le marmoléum est avantageux parce qu’il est écologique, durable, facile d’entretien, flexible, ignifuge et hygiénique, en plus de posséder des propriétés antistatiques et antimicrobiennes.",
+          "Gymnases, centres récréatifs, salles de danse, salles de classe, corridors nécessitent souvent un revêtement de vinyle ou de linoléum. Ces planchers sont extrêmement résistants à l’abrasion.",
+        ]}
+        reverseOrder={true}
+        photo={data.linoleum.childImageSharp.fluid}
+        products={products["Linoléum et marmoléum"]}
       ></ProductSection>
 
       <ProductSection
