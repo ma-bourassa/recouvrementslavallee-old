@@ -28,11 +28,7 @@ export default function RealisationsPage({ data }) {
   return (
     <Layout>
       <SEO keywords={["realisations", "modeles"]} title="Realisations" />
-      <Header
-        title="Réalisations"
-        text="Voici quelques-unes de nos plus récentes réalisations"
-        fluidBackground={data.headerBackground.childImageSharp.fluid}
-      ></Header>
+      <Header title="Réalisations" text="Voici quelques-unes de nos plus récentes réalisations"></Header>
 
       <section className="bg-gray-200">
         <div className="container mx-auto flex flex-col lg:flex-row lg:p-12">
@@ -74,13 +70,7 @@ export const query = graphql`
         }
       }
     }
-    headerBackground: file(sourceInstanceName: { eq: "images" }, relativePath: { eq: "floor4.jpg" }) {
-      childImageSharp {
-        fluid(quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
+
     imagesForGallery: allFile(filter: { sourceInstanceName: { eq: "realisations" } }) {
       edges {
         node {

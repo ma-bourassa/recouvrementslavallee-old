@@ -19,7 +19,6 @@ export default function ProductsPage({ data }) {
       <Header
         title="Produits"
         text="Nous offrons un large éventail de produits ainsi que le service d'installation de plancher."
-        fluidBackground={data.headerBackground.childImageSharp.fluid}
       ></Header>
 
       <ProductSection
@@ -84,7 +83,7 @@ export default function ProductsPage({ data }) {
         title="Linoléum et marmoléum"
         paragraphes={[
           "Certifié LEED, le marmoléum est avantageux parce qu’il est écologique, durable, facile d’entretien, flexible, ignifuge et hygiénique, en plus de posséder des propriétés antistatiques et antimicrobiennes.",
-          "Gymnases, centres récréatifs, salles de danse, salles de classe, corridors nécessitent souvent un revêtement de vinyle ou de linoléum. Ces planchers sont extrêmement résistants à l’abrasion.",
+          "Les gymnases, centres récréatifs, salles de danse, salles de classe, corridors nécessitent souvent un revêtement de vinyle ou de linoléum. Ces planchers sont extrêmement résistants à l’abrasion.",
         ]}
         reverseOrder={true}
         photo={data.linoleum.childImageSharp.fluid}
@@ -109,13 +108,6 @@ export default function ProductsPage({ data }) {
 
 export const query = graphql`
   query {
-    headerBackground: file(sourceInstanceName: { eq: "images" }, relativePath: { eq: "floor4.jpg" }) {
-      childImageSharp {
-        fluid(quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
     vinyle: file(sourceInstanceName: { eq: "products" }, relativePath: { eq: "vinyle.webp" }) {
       childImageSharp {
         fluid(quality: 100) {
@@ -124,7 +116,7 @@ export const query = graphql`
         }
       }
     }
-    ceramique: file(sourceInstanceName: { eq: "products" }, relativePath: { eq: "ceramique.webp" }) {
+    ceramique: file(sourceInstanceName: { eq: "products" }, relativePath: { eq: "ceramique.jpg" }) {
       childImageSharp {
         fluid(quality: 100) {
           ...GatsbyImageSharpFluid

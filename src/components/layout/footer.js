@@ -27,7 +27,7 @@ function Footer() {
             <div className="w-full py-6 px-4 lg:px-10 text-center">
               <Link to="/">
                 <Img
-                  className="w-1/2 sm:w-1/3 lg:w-1/2 mx-auto"
+                  className="w-1/2 sm:w-1/3 lg:w-1/2 xl:w-1/3 mx-auto"
                   alt={siteTitle()}
                   fluid={data.logo.childImageSharp.fluid}
                 ></Img>

@@ -4,29 +4,18 @@ import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
 import { Link, graphql } from "gatsby";
 import PropTypes from "prop-types";
-import BackgroundImage from "gatsby-background-image";
 import Img from "gatsby-image";
+import Header from "../components/header";
 
 export default function IndexPage({ data }) {
   return (
     <Layout>
       <SEO title="Accueil" />
-      <BackgroundImage fluid={data.headerImage.childImageSharp.fluid}>
-        <section className="py-8 lg:py-16 text-center text-white">
-          <div className="bg-grey py-4 bg-opacity-75">
-            <div>
-              <h1 className="mx-1 font-bold text-2xl lg:text-5xl">Vente et installation de plancher</h1>
-              <hr className="hr" />
-              <h2 className="mx-2 lg:max-w-3xl lg:mx-auto text-lg lg:text-2xl">
-                Contactez nous pour une soumission gratuite
-              </h2>
-              <Link to="/contact/">
-                <button className="mt-6 btn btn-blue text-xl rounded-full">Soumission</button>
-              </Link>
-            </div>
-          </div>
-        </section>
-      </BackgroundImage>
+      <Header title="Vente et installation de plancher" text="Contactez nous pour une soumission gratuite">
+        <Link to="/contact/">
+          <button className="mt-4 btn btn-blue text-xl rounded-lg">Soumission</button>
+        </Link>
+      </Header>
 
       <section className="container mx-auto px-6 py-6 lg:py-12 lg:max-w-5xl leading-relaxed">
         <h3 className="text-xl lg:text-3xl font-semibold text-center">Vos experts en pose de plancher</h3>
@@ -60,15 +49,15 @@ export default function IndexPage({ data }) {
             <br />
           </div>
           <div className="lg:w-1/3 lg:mx-12 ">
-            <p>
-              Comme toute compagnie professionnelle incorporée, nous avons une assurance afin de vous protéger de tout
-              imprévu lié à notre passage ou à toutes erreurs de construction.
-            </p>
+            <p></p>
             <br />
-            <p>N&apos;hésitez pas à nous soumettre vos projets pour une estimation gratuite!</p>
+            <p>
+              Nous nous déplaçons sans frais N&apos;hésitez pas à nous soumettre vos projets pour une{" "}
+              <strong>soumission gratuite</strong>.
+            </p>
             <div className="text-center lg:text-justify">
               <Link to="/contact/">
-                <button className="mt-6 py-2 px-4 font-semibold cursor-pointer text-lg border border-blue2 hover:bg-blue2 hover:text-white rounded-full focus:outline-none transition duration-500">
+                <button className="mt-6 py-2 px-4 font-semibold cursor-pointer text-lg border border-blue2 hover:bg-blue2 hover:text-white rounded-lg focus:outline-none transition duration-500">
                   Contactez-nous
                 </button>
               </Link>
@@ -82,15 +71,18 @@ export default function IndexPage({ data }) {
           <div className="hidden lg:block lg:w-1/3">
             <Img fluid={data.productImage.childImageSharp.fluid}></Img>
           </div>
-          <div className="lg:w-2/3 lg:mx-12 ">
-            <h4 className="text-2xl text-center lg:text-left font-semibold mb-6">Nos spécialitées</h4>
-            <p className="text-justify lg:text-left">
-              Nous pouvons poser pratiquement tous les types de revêtements de sols. Nos spécialités sont toutefois les
-              lattes de vinyle, les tapis, les carreaux de tapis, le linoléum, les prélarts et les bois d’ingénieries.
-            </p>
-            <div className="text-center lg:text-justify">
+          <div className="lg:w-2/3 lg:mx-12 text-center lg:text-left">
+            <h4 className="text-2xl font-semibold mb-6">Nos spécialitées</h4>
+            <ul className="text-lg">
+              <li>Lattes de vinyle</li>
+              <li>Tapis</li>
+              <li>Prélart</li>
+              <li>Bois d&apos;ingérnierie</li>
+              <li>Plancher flottant</li>
+            </ul>
+            <div>
               <Link to="/produits/">
-                <button className="mt-6 py-2 px-4 font-semibold text-lg inline-block cursor-pointer border border-blue2 hover:bg-blue2 hover:text-white rounded-full focus:outline-none transition duration-500 ease-in-out">
+                <button className="mt-6 py-2 px-4 font-semibold text-lg inline-block cursor-pointer border border-blue2 hover:bg-blue2 hover:text-white rounded-lg focus:outline-none transition duration-500 ease-in-out">
                   Plus d&apos;informations
                 </button>
               </Link>
@@ -104,13 +96,6 @@ export default function IndexPage({ data }) {
 
 export const query = graphql`
   query {
-    headerImage: file(relativePath: { eq: "floor4.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
     productImage: file(relativePath: { eq: "floor1.jpg" }) {
       childImageSharp {
         fluid(quality: 90) {

@@ -3,10 +3,9 @@ import React from "react";
 import Layout from "../components/layout/layout";
 import ContactForm from "../components/contact-form";
 import SEO from "../components/seo";
-import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import Header from "../components/header";
-export default function ContactPage({ data }) {
+export default function ContactPage() {
   return (
     <Layout>
       <SEO keywords={["contact", "soumission", "courriel", "telephone", "adresse"]} title="Contact" />
@@ -14,7 +13,6 @@ export default function ContactPage({ data }) {
         title="Contactez-nous !"
         text="Pour toute demande au sujet de nos services, nos produits ou pour une estimation, veuillez remplir le
               formulaire ci-dessous. Nous communiquerons avec vous dans les plus brefs délais."
-        fluidBackground={data.headerBackground.childImageSharp.fluid}
       ></Header>
       <section className="flex flex-wrap justify-start items-start max-w-6xl mx-auto mb-6 ">
         <div className="w-full lg:w-1/3 p-6">
@@ -66,18 +64,6 @@ export default function ContactPage({ data }) {
     </Layout>
   );
 }
-
-export const query = graphql`
-  query {
-    headerBackground: file(relativePath: { eq: "floor5.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`;
 
 ContactPage.propTypes = {
   data: PropTypes.object,
