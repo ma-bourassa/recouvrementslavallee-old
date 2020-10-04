@@ -15,7 +15,6 @@ export default function Header({ title, text, children }) {
       }
     }
   `);
-  console.log(data);
 
   return (
     <BackgroundImage fluid={data.background.childImageSharp.fluid}>

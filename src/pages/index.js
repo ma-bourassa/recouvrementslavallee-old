@@ -28,40 +28,44 @@ export default function IndexPage({ data }) {
       </section>
 
       <section className="bg-gray-200 ">
-        <div className="container mx-auto flex flex-col lg:flex-row px-6 py-6 lg:py-12 leading-relaxed text-justify">
-          <div className="lg:w-1/3 lg:mx-12">
-            <hr className="border-blue2 border-t-2 my-6" />
-            <h4 className="text-xl lg:text-2xl font-semibold text-center">
-              Pourquoi choisir notre entreprise pour vos travaux&nbsp;?
-            </h4>
-            <hr className="border-blue2 border-t-2 my-6" />
-          </div>
-          <div className="lg:w-1/3  lg:mx-12 ">
-            <p>
-              Chez nous, il n&apos;y a pas de demie-mesure, car la qualité et la finition sont capitales. Notre service
-              est clé en main et 100% adapté à vos souhaits!
-            </p>
-            <br />
-            <p>
-              Avec nous, vous aurez l&apos;occasion d&apos;acheter vos matériaux de recouvrement de sols au meilleur
-              prix et d&apos;avoir la meilleure équipe de pose sur le marché.
-            </p>
-            <br />
-          </div>
-          <div className="lg:w-1/3 lg:mx-12 ">
-            <p></p>
-            <br />
-            <p>
-              Nous nous déplaçons sans frais N&apos;hésitez pas à nous soumettre vos projets pour une{" "}
-              <strong>soumission gratuite</strong>.
-            </p>
-            <div className="text-center lg:text-justify">
-              <Link to="/contact/">
-                <button className="mt-6 py-2 px-4 font-semibold cursor-pointer text-lg border border-blue2 hover:bg-blue2 hover:text-white rounded-lg focus:outline-none transition duration-500">
-                  Contactez-nous
-                </button>
-              </Link>
+        <div className="container mx-auto px-6 py-6 lg:py-12 leading-relaxed">
+          <h4 className=" text-xl lg:text-2xl font-semibold text-center ">
+            Pourquoi choisir notre entreprise pour vos travaux&nbsp;?
+          </h4>
+          <hr className="border-blue2 border-t-2 my-6 lg:max-w-lg mx-auto" />
+
+          <div className="flex flex-col lg:flex-row ">
+            <div className="flex-1 lg:w-1/3 bg-white shadow-2xl rounded-lg px-4 py-8 border-solid border-gray-200 text-center m-4">
+              <h1 className="text-xl font-semibold text-center mb-4">Qualité</h1>
+              <p>
+                Chez nous, il n&apos;y a pas de demie-mesure, car la qualité et la finition sont capitales. Notre
+                service est clé en main et 100% adapté à vos souhaits!
+              </p>
             </div>
+
+            <div className="flex-1 lg:w-1/3 bg-white shadow-2xl rounded-lg px-4 py-8 border-solid border-gray-200 text-center m-4">
+              <h1 className="text-xl font-semibold text-center mb-4">Service</h1>
+              <p>
+                Avec nous, vous aurez l&apos;occasion d&apos;acheter vos matériaux de recouvrement de sols au meilleur
+                prix et d&apos;avoir la meilleure équipe de pose sur le marché.
+              </p>
+            </div>
+
+            <div className="flex-1 lg:w-1/3 bg-white shadow-2xl rounded-lg px-4 py-8 border-solid border-gray-200 text-center m-4">
+              <h1 className="text-xl font-semibold text-center mb-4">Soumission gratuite</h1>
+              <p>
+                Nous nous déplaçons, quelque soit votre projet, afin de vous présenter nos produits et vous offrir une
+                évaluation gratuitement.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex justify-center">
+            <Link to="/contact/">
+              <button className="mt-6 py-3 px-5 font-semibold cursor-pointer text-lg border border-blue2 hover:bg-blue2 hover:text-white rounded-lg focus:outline-none transition duration-500">
+                Contactez-nous
+              </button>
+            </Link>
           </div>
         </div>
       </section>
