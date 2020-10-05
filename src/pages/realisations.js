@@ -1,29 +1,28 @@
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import PropTypes from "prop-types";
-import React, { useState } from "react";
-import Gallery from "../components/gallery";
+import React from "react";
 import Header from "../components/header";
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
 
 export default function RealisationsPage({ data }) {
-  let gallery = {};
-  let thumbnails = [];
-  data.productDirectories.edges.forEach((edge) => {
-    gallery[edge.node.relativePath] = data.imagesForGallery.edges
-      .filter(({ node }) => node.relativeDirectory === edge.node.relativePath)
+  let projects = [];
+  data.projects.edges.forEach((edge) => {
+    data.projectsThumbnail.edges
+      .filter(({ node }) => {
+        return node.relativeDirectory === edge.node.relativePath;
+      })
       .map(({ node }, i) => {
         if (i === 0) {
-          thumbnails.push(node.childImageSharp.thumbnail);
+          projects.push({
+            projectName: node.relativeDirectory,
+            thumbnail: node.childImageSharp.thumbnail,
+          });
         }
-        return {
-          original: node.childImageSharp.full.src,
-          thumbnail: node.childImageSharp.thumbnail.src,
-        };
+        return node.childImageSharp;
       });
   });
-  const [images, setImages] = useState(gallery[Object.keys(gallery)[0]]);
 
   return (
     <Layout>
@@ -32,38 +31,29 @@ export default function RealisationsPage({ data }) {
 
       <section className="bg-gray-200">
         <div className="container mx-auto flex flex-col lg:flex-row lg:p-12">
-          {Object.keys(gallery).map((project, i) => (
-            <div
-              key={i}
+          {projects.map((project) => (
+            <Link
+              to={`/${project.projectName}/`}
+              key={project.thumbnail}
               className="bg-white group hover:bg-gray-100 cursor-pointer rounded-lg shadow-xl p-4 mx-2 my-4 flex-1"
-              onClick={() => {
-                setImages(gallery[project]);
-              }}
             >
               <div className="hidden lg:block w-full mx-auto">
-                <Img fixed={thumbnails[i]}></Img>
+                <Img fixed={project.thumbnail}></Img>
               </div>
               <div className="py-4">
-                <div className="font-bold text-xl text-center">{project}</div>
+                <div className="font-bold text-xl text-center">{project.projectName}</div>
               </div>
-              <div className="w-full mx-auto sm:block lg:hidden">
-                <Gallery images={gallery[project]} />
-              </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
-
-      <div className="hidden lg:block min-h-1/2 max-w-screen-md mx-auto lg:my-10">
-        <Gallery images={images} />
-      </div>
     </Layout>
   );
 }
 
 export const query = graphql`
   query {
-    productDirectories: allDirectory(filter: { sourceInstanceName: { eq: "realisations" }, relativePath: { ne: "" } }) {
+    projects: allDirectory(filter: { sourceInstanceName: { eq: "realisations" }, relativePath: { ne: "" } }) {
       edges {
         node {
           relativePath
@@ -71,16 +61,13 @@ export const query = graphql`
       }
     }
 
-    imagesForGallery: allFile(filter: { sourceInstanceName: { eq: "realisations" } }) {
+    projectsThumbnail: allFile(filter: { sourceInstanceName: { eq: "realisations" } }) {
       edges {
         node {
           relativeDirectory
           childImageSharp {
-            thumbnail: fixed(width: 120, height: 80) {
+            thumbnail: fixed(width: 200, height: 200) {
               ...GatsbyImageSharpFixed
-            }
-            full: fluid(quality: 100, maxWidth: 1024) {
-              ...GatsbyImageSharpFluid
             }
           }
         }

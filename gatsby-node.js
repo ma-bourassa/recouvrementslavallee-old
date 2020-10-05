@@ -7,3 +7,26 @@ exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
     };
   }
 };
+
+exports.createPages = async function ({ actions, graphql }) {
+  const { data } = await graphql(`
+    query {
+      projects: allDirectory(filter: { sourceInstanceName: { eq: "realisations" }, relativePath: { ne: "" } }) {
+        edges {
+          node {
+            relativePath
+          }
+        }
+      }
+    }
+  `);
+
+  data.projects.edges.forEach((edge) => {
+    const projectName = edge.node.relativePath;
+    actions.createPage({
+      path: projectName,
+      component: require.resolve(`./src/templates/project-gallery.js`),
+      context: { projectName: `/${projectName}/` },
+    });
+  });
+};

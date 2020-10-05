@@ -76,15 +76,20 @@ export default function IndexPage({ data }) {
             <Img fluid={data.productImage.childImageSharp.fluid}></Img>
           </div>
           <div className="lg:w-2/3 lg:mx-12 text-center lg:text-left">
-            <h4 className="text-2xl font-semibold mb-6">Nos spécialitées</h4>
-            <ul className="text-lg">
-              <li>Lattes de vinyle</li>
-              <li>Tapis</li>
-              <li>Prélart</li>
-              <li>Bois d&apos;ingérnierie</li>
-              <li>Plancher flottant</li>
-            </ul>
-            <div>
+            <h4 className="text-2xl font-semibold mb-6 text-center">Nos spécialitées</h4>
+            <hr className="border-blue2 border-t-2 my-6 lg:max-w-xs mx-auto" />
+
+            <div className="justify-center flex">
+              <ul className="text-xl font-medium">
+                <li>Lattes de vinyle</li>
+                <li>Tapis</li>
+                <li>Prélart</li>
+                <li>Bois d&apos;ingérnierie</li>
+                <li>Laminé</li>
+              </ul>
+            </div>
+
+            <div className="mt-4 flex justify-center">
               <Link to="/produits/">
                 <button className="mt-6 py-2 px-4 font-semibold text-lg inline-block cursor-pointer border border-blue2 hover:bg-blue2 hover:text-white rounded-lg focus:outline-none transition duration-500 ease-in-out">
                   Plus d&apos;informations
