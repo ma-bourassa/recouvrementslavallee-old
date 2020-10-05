@@ -17,7 +17,7 @@ export default function IndexPage({ data }) {
         </Link>
       </Header>
 
-      <section className="container mx-auto px-6 py-6 lg:py-12 lg:max-w-5xl leading-relaxed">
+      <section className="container mx-auto px-6 pb-6 lg:pb-12 lg:max-w-5xl leading-relaxed">
         <h3 className="text-xl lg:text-3xl font-semibold text-center">Vos experts en pose de plancher</h3>
         <hr className="border-blue2 border-t-2 mx-auto my-6 w-full" />
         <div className="text-justify lg:text-center lg:text-lg">
@@ -79,8 +79,8 @@ export default function IndexPage({ data }) {
             <h4 className="text-2xl font-semibold mb-6 text-center">Nos spécialitées</h4>
             <hr className="border-blue2 border-t-2 my-6 lg:max-w-xs mx-auto" />
 
-            <div className="justify-center flex">
-              <ul className="text-xl font-medium">
+            <div className="justify-center text-center flex">
+              <ul className="text-xl space-y-1">
                 <li>Lattes de vinyle</li>
                 <li>Tapis</li>
                 <li>Prélart</li>
