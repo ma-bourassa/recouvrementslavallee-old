@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { navigate } from "gatsby-link";
+import MaskedInput from "react-text-mask";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -45,7 +46,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="w-full lg:w-2/3 p-6">
+    <div className="w-full lg:w-2/3 p-6 text-lg font-semibold">
       <form
         name="Contact v1"
         action="/success/"
@@ -61,43 +62,45 @@ export default function ContactForm() {
           </label>
         </div>
         <label className="block">
-          <span className="text-gray-700 font-semibold">Nom *</span>
+          <span>Nom *</span>
           <input
             type="text"
             name="Nom"
-            className="form-input mt-1 mb-4 block w-full"
+            className="form-input mt-1 mb-4 block w-full text-lg"
             required
             onChange={handleChange}
           />
         </label>
 
         <label className="block">
-          <span className="text-gray-700 font-semibold">Téléphone *</span>
-          <input
+          <span>Téléphone *</span>
+          <MaskedInput
+            mask={["(", /[1-9]/, /\d/, /\d/, ")", " ", /\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/, /\d/]}
+            guide={false}
             type="tel"
             name="Téléphone"
-            className="form-input mt-1 mb-4 block w-full"
+            className="form-input mt-1 mb-4 block w-full text-lg"
             required
             onChange={handleChange}
           />
         </label>
 
         <label className="block">
-          <span className="text-gray-700 font-semibold">Courriel *</span>
+          <span>Courriel *</span>
           <input
             type="email"
             name="Courriel"
-            className="form-input mt-1 mb-4 block w-full"
+            className="form-input mt-1 mb-4 block w-full text-lg"
             required
             onChange={handleChange}
           />
         </label>
 
         <label className="block">
-          <span className="text-gray-700 font-semibold">Message</span>
+          <span>Message</span>
           <textarea
             name="Message"
-            className="form-textarea mt-1 mb-4 block w-full"
+            className="form-textarea mt-1 mb-4 block w-full text-lg"
             id="message"
             placeholder="Précisez votre demande"
             rows="4"
@@ -106,7 +109,7 @@ export default function ContactForm() {
         </label>
 
         <label>
-          <span className="block text-gray-700 font-semibold">
+          <span className="block">
             Joindre vos fichiers <span className="hidden lg:inline">(plans, photos, etc.)</span>
           </span>
 

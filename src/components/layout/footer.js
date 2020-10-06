@@ -93,7 +93,7 @@ function Footer() {
                     title: `Réalisations`,
                   },
                   {
-                    route: `/contact`,
+                    route: `/contactez-nous`,
                     title: `Contactez-nous`,
                   },
                 ].map((link) => (
