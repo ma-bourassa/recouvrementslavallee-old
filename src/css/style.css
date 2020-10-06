@@ -19,8 +19,19 @@
 }
 
 .img {
-  cursor: pointer;
-  border-radius: 0.25rem;
+  @apply transition duration-500 ease-in-out transform rounded cursor-pointer;
+}
+
+.img:hover {
+  @apply -translate-y-1 scale-105;
+}
+
+._card {
+  @apply transition duration-500 ease-in-out transform;
+}
+
+._card:hover {
+  @apply -translate-y-1 scale-110;
 }
 
 /*! purgecss end ignore */

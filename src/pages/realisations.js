@@ -31,11 +31,11 @@ export default function RealisationsPage({ data }) {
 
       <section className="bg-gray-200">
         <div className="container mx-auto flex flex-col lg:flex-row flex-wrap p-12 lg:p-12 justify-center">
-          {projects.map((project) => (
+          {projects.map((project, i) => (
             <Link
               to={`/realisations/${project.projectName}/`}
-              key={project.thumbnail}
-              className="bg-white group hover:bg-gray-100 cursor-pointer rounded-lg shadow-xl p-6 m-4 flex-1 flex-grow-0"
+              key={i}
+              className="bg-white group hover:bg-gray-100 cursor-pointer rounded-lg shadow-xl p-6 m-4 flex-1 flex-grow-0 _card"
             >
               <div className="w-full text-center">
                 <Img className="rounded-lg" fixed={project.thumbnail}></Img>

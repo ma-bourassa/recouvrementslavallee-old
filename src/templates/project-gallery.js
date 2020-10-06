@@ -17,19 +17,18 @@ export default function ProjectGallery({ data, pageContext }) {
     closeLabel: "Fermer",
   };
 
-  console.log(pageContext);
   const images = data.imagesForGallery.edges.map(({ node }) => node.childImageSharp);
 
   return (
     <Layout>
       <SEO keywords={[`realisations`]} title={pageContext.projectName} />
       <Header title={pageContext.projectName} text=""></Header>
-      <div className="max-w-screen-lg mx-auto mb-4">
-        <Link to={`/realisations/`} className="text-xl font-semibold">
+      <div className="max-w-screen-lg mx-auto px-4">
+        <Link to={`/realisations/`} className="text-lg lg:text-xl font-semibold">
           &lt; Retour à nos réalisations
         </Link>
       </div>
-      <div className="max-w-screen-lg mx-auto">
+      <div className="max-w-screen-lg mx-auto p-4">
         <Gallery images={images} imgClass={"img"} gutter={"0.5rem"} lightboxOptions={lightboxOptions} />
       </div>
     </Layout>
@@ -46,7 +45,7 @@ export const query = graphql`
             thumb: fluid(maxWidth: 270, maxHeight: 270) {
               ...GatsbyImageSharpFluid
             }
-            full: fluid(quality: 90) {
+            full: fluid(quality: 90, maxWidth: 1024) {
               ...GatsbyImageSharpFluid
             }
           }
