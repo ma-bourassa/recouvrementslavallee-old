@@ -12,9 +12,19 @@ export default function ProductsPage({ data }) {
     <Layout>
       <SEO
         keywords={[
-          `service, vente, produits, projet, renovation, plancher, latte de vinyle, vinyle, bois d'ingenierie, tapis, prelart, linoleum, marmoleum, plancher flottant`,
+          `service`,
+          `vente`,
+          `produits`,
+          `renovation`,
+          `plancher`,
+          `vinyle`,
+          `bois`,
+          `tapis`,
+          `prelart`,
+          `linoleum`,
+          `lamine`,
         ]}
-        title="Services et produits"
+        title="Produits"
       />
       <Header
         title="Produits"
@@ -116,7 +126,7 @@ export const query = graphql`
         }
       }
     }
-    ceramique: file(sourceInstanceName: { eq: "products" }, relativePath: { eq: "ceramique.jpg" }) {
+    ceramique: file(sourceInstanceName: { eq: "products" }, relativePath: { eq: "ceramique.webp" }) {
       childImageSharp {
         fluid(quality: 100) {
           ...GatsbyImageSharpFluid
@@ -132,7 +142,7 @@ export const query = graphql`
         }
       }
     }
-    ingenerie: file(sourceInstanceName: { eq: "products" }, relativePath: { eq: "ingenerie.webp" }) {
+    ingenerie: file(sourceInstanceName: { eq: "products" }, relativePath: { eq: "bois.webp" }) {
       childImageSharp {
         fluid(quality: 100) {
           ...GatsbyImageSharpFluid

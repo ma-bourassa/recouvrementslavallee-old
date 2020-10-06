@@ -24,9 +24,9 @@ exports.createPages = async function ({ actions, graphql }) {
   data.projects.edges.forEach((edge) => {
     const projectName = edge.node.relativePath;
     actions.createPage({
-      path: projectName,
+      path: `realisations/${projectName}`,
       component: require.resolve(`./src/templates/project-gallery.js`),
-      context: { projectName: `/${projectName}/` },
+      context: { projectPath: `/${projectName}/`, projectName: projectName },
     });
   });
 };

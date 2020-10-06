@@ -8,7 +8,7 @@ import Header from "../components/header";
 export default function ContactPage() {
   return (
     <Layout>
-      <SEO keywords={["contact", "soumission", "courriel", "telephone", "adresse"]} title="Contact" />
+      <SEO keywords={["contact", "soumission", "courriel", "telephone", "adresse"]} title="Contactez-nous" />
       <Header
         title="Contactez-nous !"
         text="Pour toute demande au sujet de nos services, nos produits ou pour une estimation, veuillez remplir le

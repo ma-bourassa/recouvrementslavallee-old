@@ -20,6 +20,7 @@
 
 .img {
   cursor: pointer;
+  border-radius: 0.25rem;
 }
 
 /*! purgecss end ignore */

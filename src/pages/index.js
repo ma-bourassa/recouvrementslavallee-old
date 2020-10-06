@@ -71,16 +71,16 @@ export default function IndexPage({ data }) {
       </section>
 
       <section>
-        <div className="container mx-auto flex flex-col lg:flex-row px-6 py-6 lg:py-12 leading-relaxed">
-          <div className="hidden lg:block lg:w-1/3">
-            <Img fluid={data.productImage.childImageSharp.fluid}></Img>
+        <div className="container mx-auto flex flex-col lg:flex-row px-6 py-6 lg:py-12 leading-relaxed items-center">
+          <div className="hidden lg:block lg:w-1/2">
+            <Img className="rounded" fluid={data.productImage.childImageSharp.fluid}></Img>
           </div>
-          <div className="lg:w-2/3 lg:mx-12 text-center lg:text-left">
+          <div className="lg:w-1/2 lg:mx-12 text-center lg:text-left">
             <h4 className="text-2xl font-semibold mb-6 text-center">Nos spécialitées</h4>
             <hr className="border-blue2 border-t-2 my-6 lg:max-w-xs mx-auto" />
 
             <div className="justify-center text-center flex">
-              <ul className="text-xl space-y-1">
+              <ul className="text-xl font-medium space-y-1">
                 <li>Lattes de vinyle</li>
                 <li>Tapis</li>
                 <li>Prélart</li>
@@ -105,9 +105,9 @@ export default function IndexPage({ data }) {
 
 export const query = graphql`
   query {
-    productImage: file(relativePath: { eq: "floor1.jpg" }) {
+    productImage: file(relativePath: { eq: "floor2.jpg" }) {
       childImageSharp {
-        fluid(quality: 90) {
+        fluid(quality: 100) {
           ...GatsbyImageSharpFluid
         }
       }

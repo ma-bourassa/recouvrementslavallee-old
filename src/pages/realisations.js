@@ -26,22 +26,22 @@ export default function RealisationsPage({ data }) {
 
   return (
     <Layout>
-      <SEO keywords={["realisations", "modeles"]} title="Realisations" />
+      <SEO keywords={["realisations", "modeles", "projets"]} title="Realisations" />
       <Header title="Réalisations" text="Voici quelques-unes de nos plus récentes réalisations"></Header>
 
       <section className="bg-gray-200">
-        <div className="container mx-auto flex flex-col lg:flex-row lg:p-12">
+        <div className="container mx-auto flex flex-col lg:flex-row flex-wrap p-12 lg:p-12 justify-center">
           {projects.map((project) => (
             <Link
-              to={`/${project.projectName}/`}
+              to={`/realisations/${project.projectName}/`}
               key={project.thumbnail}
-              className="bg-white group hover:bg-gray-100 cursor-pointer rounded-lg shadow-xl p-4 mx-2 my-4 flex-1"
+              className="bg-white group hover:bg-gray-100 cursor-pointer rounded-lg shadow-xl p-6 m-4 flex-1 flex-grow-0"
             >
-              <div className="hidden lg:block w-full mx-auto">
-                <Img fixed={project.thumbnail}></Img>
+              <div className="w-full text-center">
+                <Img className="rounded-lg" fixed={project.thumbnail}></Img>
               </div>
-              <div className="py-4">
-                <div className="font-bold text-xl text-center">{project.projectName}</div>
+              <div className="mt-2">
+                <div className="font-semibold text-xl text-center">{project.projectName}</div>
               </div>
             </Link>
           ))}
@@ -66,7 +66,7 @@ export const query = graphql`
         node {
           relativeDirectory
           childImageSharp {
-            thumbnail: fixed(width: 200, height: 200) {
+            thumbnail: fixed(width: 180, height: 180) {
               ...GatsbyImageSharpFixed
             }
           }
