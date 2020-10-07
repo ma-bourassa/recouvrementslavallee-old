@@ -110,8 +110,6 @@ export default function ProductsPage({ data }) {
         photo={data.ceramique.childImageSharp.fluid}
         products={products["Céramiques"]}
       ></ProductSection>
-
-      <div className="mt-6 lg:mt-10"></div>
     </Layout>
   );
 }
