@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { navigate } from "gatsby-link";
-import MaskedInput from "react-text-mask";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useForm } from "react-hook-form";
 
 function encode(data) {
   const formData = new FormData();
@@ -15,6 +15,8 @@ function encode(data) {
 }
 
 export default function ContactForm() {
+  const { handleSubmit, register, errors } = useForm();
+
   const [submitting, toggleSubmit] = useState(false);
 
   const [state, setState] = useState({});
@@ -27,18 +29,18 @@ export default function ContactForm() {
     setState({ ...state, [e.target.name]: e.target.files[0] });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = () => {
     toggleSubmit(true);
-    const form = e.target;
     fetch("/", {
       method: "POST",
       body: encode({
-        "form-name": form.getAttribute("name"),
+        "form-name": "Contact v1",
         ...state,
       }),
     })
-      .then(() => navigate(form.getAttribute("action")))
+      .then(() => {
+        navigate("/success/");
+      })
       .catch(() => {
         toggleSubmit(false);
         alert("Une erreur est survenue. Veuillez réessayer plus tard.");
@@ -48,64 +50,80 @@ export default function ContactForm() {
   return (
     <div className="w-full lg:w-2/3 p-6 text-lg font-semibold">
       <form
-        name="Contact v1"
-        action="/success/"
         method="post"
+        name="Contact v1"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit(onSubmit)}
       >
-        <input type="hidden" name="form-name" value="Contact v1" />
+        <input type="hidden" name="Contact v1" value="Contact v1" />
         <div className="hidden">
           <label>
             Don’t fill this out: <input name="bot-field" onChange={handleChange} />
           </label>
         </div>
-        <label className="block">
+        <label className="block mb-4">
           <span>Nom *</span>
           <input
             type="text"
             name="Nom"
-            className="form-input mt-1 mb-4 block w-full text-lg"
-            required
+            className={`${errors.Nom ? `border-red-600` : ``} form-input mt-1 mb-4 block w-full text-lg`}
             onChange={handleChange}
+            ref={register({
+              required: true,
+            })}
           />
+          {errors.Nom && <span className="text-red-600 text-base">Veuillez entrer votre nom.</span>}
         </label>
 
-        <label className="block">
+        <label className="block mb-4">
           <span>Téléphone *</span>
-          <MaskedInput
-            mask={["(", /[1-9]/, /\d/, /\d/, ")", " ", /\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/, /\d/]}
-            guide={false}
+          <input
             type="tel"
             name="Téléphone"
-            className="form-input mt-1 mb-4 block w-full text-lg"
-            required
+            className={`${errors.Téléphone ? `border-red-600` : ``} form-input mt-1 block w-full text-lg`}
             onChange={handleChange}
+            ref={register({
+              required: true,
+              pattern: {
+                value: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/,
+              },
+            })}
           />
+          {errors.Téléphone && <span className="text-red-600 text-base">Numéro de invalide.</span>}
         </label>
 
-        <label className="block">
+        <label className="block mb-4">
           <span>Courriel *</span>
           <input
-            type="email"
+            type="text"
             name="Courriel"
-            className="form-input mt-1 mb-4 block w-full text-lg"
-            required
+            className={`${errors.Courriel ? `border-red-600` : ``} form-input mt-1 block w-full text-lg`}
             onChange={handleChange}
+            ref={register({
+              required: true,
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              },
+            })}
           />
+          {errors.Courriel && <span className="text-red-600 text-base">Courriel invalide.</span>}
         </label>
 
-        <label className="block">
+        <label className="block mb-4">
           <span>Message</span>
           <textarea
             name="Message"
-            className="form-textarea mt-1 mb-4 block w-full text-lg"
+            className={`${errors.Message ? `border-red-600` : ``} form-textarea mt-1 block w-full text-lg`}
             id="message"
             placeholder="Précisez votre demande"
             rows="4"
             onChange={handleChange}
+            ref={register({
+              required: true,
+            })}
           />
+          {errors.Message && <span className="text-red-600 text-base">Veuillez entrer un message.</span>}
         </label>
 
         <label>
