@@ -43,10 +43,10 @@ export const query = graphql`
           relativeDirectory
           childImageSharp {
             thumb: fluid(maxWidth: 270, maxHeight: 270) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
             full: fluid(quality: 90, maxWidth: 1024) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

@@ -107,8 +107,8 @@ export const query = graphql`
   query {
     productImage: file(relativePath: { eq: "floor2.jpg" }) {
       childImageSharp {
-        fluid(quality: 100) {
-          ...GatsbyImageSharpFluid
+        fluid(quality: 90) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

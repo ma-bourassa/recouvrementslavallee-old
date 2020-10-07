@@ -67,7 +67,7 @@ export const query = graphql`
           relativeDirectory
           childImageSharp {
             thumbnail: fixed(width: 180, height: 180) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp
             }
           }
         }

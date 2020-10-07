@@ -6,10 +6,10 @@ import { graphql, useStaticQuery } from "gatsby";
 export default function Header({ title, text, children }) {
   const data = useStaticQuery(graphql`
     query {
-      background: file(sourceInstanceName: { eq: "images" }, relativePath: { eq: "header.webp" }) {
+      background: file(sourceInstanceName: { eq: "images" }, relativePath: { eq: "header.jpg" }) {
         childImageSharp {
           fluid(quality: 90) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }

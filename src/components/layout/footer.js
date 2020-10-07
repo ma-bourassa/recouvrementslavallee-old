@@ -9,10 +9,10 @@ import "../../utils/fontawesome";
 function Footer() {
   const data = useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "logo2.webp" }) {
+      logo: file(relativePath: { eq: "logo2.png" }) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
