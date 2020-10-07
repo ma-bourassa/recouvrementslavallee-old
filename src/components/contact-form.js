@@ -67,13 +67,13 @@ export default function ContactForm() {
           <input
             type="text"
             name="Nom"
-            className={`${errors.Nom ? `border-red-600` : ``} form-input mt-1 mb-4 block w-full text-lg`}
+            className={`${errors.Nom ? `border-red-600` : ``} form-input mt-1 block w-full text-lg`}
             onChange={handleChange}
             ref={register({
               required: true,
             })}
           />
-          {errors.Nom && <span className="text-red-600 text-base">Veuillez entrer votre nom.</span>}
+          {errors.Nom && <span className="text-red-600 text-sm">Veuillez entrer votre nom.</span>}
         </label>
 
         <label className="block mb-4">
@@ -90,7 +90,7 @@ export default function ContactForm() {
               },
             })}
           />
-          {errors.Téléphone && <span className="text-red-600 text-base">Numéro de invalide.</span>}
+          {errors.Téléphone && <span className="text-red-600 text-sm">Téléphone invalide.</span>}
         </label>
 
         <label className="block mb-4">
@@ -107,7 +107,7 @@ export default function ContactForm() {
               },
             })}
           />
-          {errors.Courriel && <span className="text-red-600 text-base">Courriel invalide.</span>}
+          {errors.Courriel && <span className="text-red-600 text-sm">Courriel invalide.</span>}
         </label>
 
         <label className="block mb-4">
@@ -123,7 +123,7 @@ export default function ContactForm() {
               required: true,
             })}
           />
-          {errors.Message && <span className="text-red-600 text-base">Veuillez entrer un message.</span>}
+          {errors.Message && <span className="text-red-600 text-sm">Veuillez entrer un message.</span>}
         </label>
 
         <label>
