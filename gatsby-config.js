@@ -14,6 +14,7 @@ module.exports = {
     "gatsby-plugin-robots-txt",
     `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-netlify`,
+    `gatsby-plugin-netlify-cms`,
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
