@@ -1,0 +1,14 @@
+backend:
+  name: git-gateway
+media_folder: static/assets
+public_folder: /assets
+collections:
+  - name: promotions
+    label: Promotions
+    folder: promotions
+    create: true
+    fields:
+      - { name: title, label: Title }
+      - { name: description, label: description, widget: markdown }
+      - { name: photo, label: Photo, widget: image }
+      - { name: url, label: Url, widget: string }
