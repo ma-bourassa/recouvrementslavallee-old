@@ -73,7 +73,7 @@ export default function IndexPage({ data }) {
       <section>
         <div className="container mx-auto flex flex-col lg:flex-row px-6 py-6 lg:py-12 leading-relaxed items-center">
           <div className="hidden lg:block lg:w-1/2">
-            <Img className="rounded" fluid={data.productImage.childImageSharp.fluid}></Img>
+            <Img className="rounded" fluid={data.homeImage.childImageSharp.fluid}></Img>
           </div>
           <div className="lg:w-1/2 lg:mx-12 text-center lg:text-left">
             <h4 className="text-2xl font-semibold mb-6 text-center">Nos spécialitées</h4>
@@ -105,7 +105,7 @@ export default function IndexPage({ data }) {
 
 export const query = graphql`
   query {
-    productImage: file(relativePath: { eq: "floor2.jpg" }) {
+    homeImage: file(relativePath: { eq: "homepage.jpg" }) {
       childImageSharp {
         fluid(quality: 90) {
           ...GatsbyImageSharpFluid_withWebp

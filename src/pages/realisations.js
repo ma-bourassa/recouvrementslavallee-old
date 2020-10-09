@@ -53,7 +53,13 @@ export default function RealisationsPage({ data }) {
 
 export const query = graphql`
   query {
-    projects: allDirectory(filter: { sourceInstanceName: { eq: "realisations" }, relativePath: { ne: "" } }) {
+    projects: allDirectory(
+      filter: {
+        sourceInstanceName: { eq: "realisations" }
+        relativePath: { ne: "" }
+        sort: { fields: modifiedTime, order: DESC }
+      }
+    ) {
       edges {
         node {
           relativePath
@@ -61,7 +67,7 @@ export const query = graphql`
       }
     }
 
-    projectsThumbnail: allFile(filter: { sourceInstanceName: { eq: "realisations" } }) {
+    projectsThumbnail: allFile(filter: { sourceInstanceName: { eq: "realisations" }, extension: { ne: "md" } }) {
       edges {
         node {
           relativeDirectory

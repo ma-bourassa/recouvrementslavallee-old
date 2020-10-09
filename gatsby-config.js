@@ -61,13 +61,6 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: "realisations",
-        path: `${__dirname}/src/images/realisations/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "realisationsMarkdown",
         path: `${__dirname}/src/pages/realisations/`,
       },
     },

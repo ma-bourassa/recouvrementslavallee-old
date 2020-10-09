@@ -18,7 +18,7 @@ export default function ProjectGallery({ data, pageContext }) {
   };
 
   const images = data.imagesForGallery.edges.map(({ node }) => node.childImageSharp);
-
+  console.log(images);
   return (
     <Layout>
       <SEO keywords={[`realisations`]} title={pageContext.projectName} />
@@ -37,7 +37,7 @@ export default function ProjectGallery({ data, pageContext }) {
 
 export const query = graphql`
   query($projectPath: String) {
-    imagesForGallery: allFile(filter: { relativePath: { regex: $projectPath } }) {
+    imagesForGallery: allFile(filter: { relativePath: { regex: $projectPath }, extension: { ne: "md" } }) {
       edges {
         node {
           relativeDirectory
