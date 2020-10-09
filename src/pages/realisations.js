@@ -54,11 +54,8 @@ export default function RealisationsPage({ data }) {
 export const query = graphql`
   query {
     projects: allDirectory(
-      filter: {
-        sourceInstanceName: { eq: "realisations" }
-        relativePath: { ne: "" }
-        sort: { fields: modifiedTime, order: DESC }
-      }
+      filter: { sourceInstanceName: { eq: "realisations" }, relativePath: { ne: "" } }
+      sort: { fields: modifiedTime, order: DESC }
     ) {
       edges {
         node {
