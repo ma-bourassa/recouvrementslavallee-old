@@ -19,8 +19,8 @@ collections:
     label: "Réalisations"
     folder: "src/pages/realisations"
     create: true
-    media_folder: ""
-    public_folder: ""
+    media_folder: "{{slug}}"
+    public_folder: "{{slug}}"
     fields:
       - { name: title, label: Title }
       - { name: photos, label: Photos, widget: list, field: { name: image, label: Image, widget: image } }
