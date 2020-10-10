@@ -49,6 +49,10 @@ function NavBar() {
               title: `Réalisations`,
             },
             {
+              route: `/promotions`,
+              title: `Promotions`,
+            },
+            {
               route: `/contactez-nous`,
               title: `Contactez-nous`,
             },
