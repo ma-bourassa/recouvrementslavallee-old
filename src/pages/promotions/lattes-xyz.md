@@ -6,6 +6,6 @@ description: >-
 
 
   L'offre se termine le **11/11/2222**
-photo: lattes-xyz/34145474_l.jpg
+photo: assets/34145474_l.jpg
 url: http://google.ca/
 ---

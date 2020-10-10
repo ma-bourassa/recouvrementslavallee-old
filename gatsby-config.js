@@ -67,8 +67,22 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: "promotions",
+        path: `${__dirname}/src/pages/promotions/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: "images",
         path: `${__dirname}/src/images/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "assets",
+        path: `${__dirname}/static/assets/`,
       },
     },
   ],
