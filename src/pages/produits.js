@@ -10,22 +10,7 @@ import products from "../data/products.json";
 export default function ProductsPage({ data }) {
   return (
     <Layout>
-      <SEO
-        keywords={[
-          `service`,
-          `vente`,
-          `produits`,
-          `renovation`,
-          `plancher`,
-          `vinyle`,
-          `bois`,
-          `tapis`,
-          `prelart`,
-          `linoleum`,
-          `lamine`,
-        ]}
-        title="Produits"
-      />
+      <SEO keywords={[`service`, `vente`, `produits`, `bois`, `prelart`, `linoleum`, `lamine`]} title="Produits" />
       <Header
         title="Produits"
         text="Nous offrons un large éventail de produits ainsi que le service d'installation de plancher."
