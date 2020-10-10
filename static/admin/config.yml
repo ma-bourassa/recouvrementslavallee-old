@@ -9,6 +9,8 @@ collections:
     label: Promotions
     folder: src/pages/promotions
     create: true
+    media_folder: "{{slug}}"
+    public_folder: "{{slug}}"
     fields:
       - { name: title, label: Titre }
       - { name: description, label: Description, widget: markdown }

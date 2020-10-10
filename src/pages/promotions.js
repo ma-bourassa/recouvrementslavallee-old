@@ -9,7 +9,7 @@ import SEO from "../components/seo";
 export default function PromotionsPage({ data }) {
   let promotions = [];
   if (data) {
-    promotions = data.promotions.edges.map(({ node }) => node);
+    promotions = data.promotions.nodes.map(({ childMarkdownRemark }) => childMarkdownRemark.frontmatter);
   }
   console.log(promotions);
   return (
@@ -21,16 +21,11 @@ export default function PromotionsPage({ data }) {
         <div className="container mx-auto lg:max-w-3xl flex flex-col p-12 lg:p-12">
           {promotions.length > 1 ? (
             promotions.map((promo, i) => {
-              <div
-                key={i}
-                href={promotions.childMarkdownRemark.frontmatter.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Img className="w-1/2" fluid={promo.childImageSharp.fluid}></Img>
+              <div key={i} href={promotions.url} target="_blank" rel="noopener noreferrer">
+                <Img className="w-1/2" fluid={promo.photo.childImageSharp.fluid}></Img>
                 <div className="w-1/2">
-                  <h3>{promotions.childMarkdownRemark.frontmatter.title}</h3>
-                  <p>{promotions.childMarkdownRemark.frontmatter.description}</p>
+                  <h3>{promotions.title}</h3>
+                  <p>{promotions.description}</p>
                 </div>
               </div>;
             })
@@ -46,19 +41,19 @@ export default function PromotionsPage({ data }) {
 export const query = graphql`
   query {
     promotions: allFile(filter: { sourceInstanceName: { eq: "promotions" }, extension: { eq: "md" } }) {
-      edges {
-        node {
-          childMarkdownRemark {
-            frontmatter {
-              description
-              title
-              url
-            }
-          }
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid_withWebp
-              ...GatsbyImageSharpFluidLimitPresentationSize
+      nodes {
+        childMarkdownRemark {
+          frontmatter {
+            title
+            description
+            url
+            photo {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluidLimitPresentationSize
+                }
+              }
             }
           }
         }
