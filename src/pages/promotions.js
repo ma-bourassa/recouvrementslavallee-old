@@ -12,7 +12,6 @@ export default function PromotionsPage({ data }) {
     .filter(({ childMarkdownRemark }) => childMarkdownRemark.frontmatter.title !== "default")
     .map(({ childMarkdownRemark }) => childMarkdownRemark.frontmatter);
 
-  console.log(promotions);
   return (
     <Layout>
       <SEO keywords={["promotions"]} title="Promotions" />

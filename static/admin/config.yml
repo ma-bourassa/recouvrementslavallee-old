@@ -1,6 +1,5 @@
 backend:
   name: git-gateway
-  repo: ma-bourassa/les-recouvrements-de-sols-lavallee
   branch: master
 media_folder: static/assets
 public_folder: /assets
@@ -9,8 +8,6 @@ collections:
     label: Promotions
     folder: src/pages/promotions
     create: true
-    media_folder: "{{slug}}"
-    public_folder: "{{slug}}"
     fields:
       - { name: title, label: Titre }
       - { name: description, label: Description, widget: markdown }

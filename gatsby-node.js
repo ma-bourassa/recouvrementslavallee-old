@@ -11,22 +11,29 @@ exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
 exports.createPages = async function ({ actions, graphql }) {
   const { data } = await graphql(`
     query {
-      projects: allDirectory(filter: { sourceInstanceName: { eq: "realisations" }, relativePath: { ne: "" } }) {
+      projects: allFile(filter: { sourceInstanceName: { eq: "realisations" }, extension: { eq: "md" } }) {
         edges {
           node {
-            relativePath
+            childMarkdownRemark {
+              frontmatter {
+                title
+              }
+            }
+            name
           }
         }
       }
     }
   `);
 
-  data.projects.edges.forEach((edge) => {
-    const projectName = edge.node.relativePath;
+  console.log(data);
+  data.projects.edges.forEach(({ node }) => {
+    const projectName = node.childMarkdownRemark.frontmatter.title;
+    const projectPath = node.name;
     actions.createPage({
       path: `realisations/${projectName}`,
       component: require.resolve(`./src/templates/project-gallery.js`),
-      context: { projectPath: `/${projectName}/`, projectName: projectName },
+      context: { projectPath: projectPath, projectName: projectName },
     });
   });
 };

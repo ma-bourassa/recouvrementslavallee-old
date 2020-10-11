@@ -17,8 +17,8 @@ export default function ProjectGallery({ data, pageContext }) {
     closeLabel: "Fermer",
   };
 
-  const images = data.imagesForGallery.edges.map(({ node }) => node.childImageSharp);
-  console.log(images);
+  const images = data.images.childMarkdownRemark.frontmatter.photos.map((photo) => photo.childImageSharp);
+
   return (
     <Layout>
       <SEO keywords={[`realisations`]} title={pageContext.projectName} />
@@ -37,16 +37,17 @@ export default function ProjectGallery({ data, pageContext }) {
 
 export const query = graphql`
   query($projectPath: String) {
-    imagesForGallery: allFile(filter: { relativePath: { regex: $projectPath }, extension: { ne: "md" } }) {
-      edges {
-        node {
-          relativeDirectory
-          childImageSharp {
-            thumb: fluid(maxWidth: 270, maxHeight: 270) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-            full: fluid(quality: 90, maxWidth: 1024) {
-              ...GatsbyImageSharpFluid_withWebp
+    images: file(sourceInstanceName: { eq: "realisations" }, name: { eq: $projectPath }, extension: { eq: "md" }) {
+      childMarkdownRemark {
+        frontmatter {
+          photos {
+            childImageSharp {
+              thumb: fluid(maxWidth: 270, maxHeight: 270) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+              full: fluid(quality: 90, maxWidth: 1024) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
             }
           }
         }

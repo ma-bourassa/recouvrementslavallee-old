@@ -1,8 +1,13 @@
 const resolveConfig = require("tailwindcss/resolveConfig");
 const tailwindConfig = require("./tailwind.config.js");
+const netlifyCmsPaths = {
+  resolve: `gatsby-plugin-netlify-cms-paths`,
+  options: {
+    cmsConfig: `/static/admin/config.yml`,
+  },
+};
 
 const fullConfig = resolveConfig(tailwindConfig);
-
 module.exports = {
   siteMetadata: {
     title: `Les recouvrements de sols André Lavallée`,
@@ -16,11 +21,29 @@ module.exports = {
     `gatsby-plugin-netlify`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-transformer-json`,
-    `gatsby-plugin-sharp`,
+    netlifyCmsPaths,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          netlifyCmsPaths, // Including in your Remark plugins will transform any paths in your markdown body
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 1024,
+              backgroundColor: "transparent", // required to display blurred image first
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -76,6 +99,13 @@ module.exports = {
       options: {
         name: "images",
         path: `${__dirname}/src/images/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "images",
+        path: `${__dirname}/static/assets/`,
       },
     },
   ],

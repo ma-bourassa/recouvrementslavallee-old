@@ -1,6 +1,6 @@
 ---
 title: default
 description: default
-photo: default/default.png
+photo: default.png
 url: default
 ---

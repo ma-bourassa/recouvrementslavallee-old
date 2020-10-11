@@ -7,21 +7,11 @@ import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
 
 export default function RealisationsPage({ data }) {
-  let projects = [];
-  data.projects.edges.forEach((edge) => {
-    data.projectsThumbnail.edges
-      .filter(({ node }) => {
-        return node.relativeDirectory === edge.node.relativePath;
-      })
-      .map(({ node }, i) => {
-        if (i === 0) {
-          projects.push({
-            projectName: node.relativeDirectory,
-            thumbnail: node.childImageSharp.thumbnail,
-          });
-        }
-        return node.childImageSharp;
-      });
+  const projects = data.projects.edges.map(({ node }) => {
+    return {
+      projectName: node.childMarkdownRemark.frontmatter.title,
+      thumbnail: node.childMarkdownRemark.frontmatter.photos[0].childImageSharp.fixed,
+    };
   });
 
   return (
@@ -53,24 +43,19 @@ export default function RealisationsPage({ data }) {
 
 export const query = graphql`
   query {
-    projects: allDirectory(
-      filter: { sourceInstanceName: { eq: "realisations" }, relativePath: { ne: "" } }
-      sort: { fields: modifiedTime, order: DESC }
-    ) {
+    projects: allFile(filter: { sourceInstanceName: { eq: "realisations" }, extension: { eq: "md" } }) {
       edges {
         node {
-          relativePath
-        }
-      }
-    }
-
-    projectsThumbnail: allFile(filter: { sourceInstanceName: { eq: "realisations" }, extension: { ne: "md" } }) {
-      edges {
-        node {
-          relativeDirectory
-          childImageSharp {
-            thumbnail: fixed(width: 180, height: 180) {
-              ...GatsbyImageSharpFixed_withWebp
+          childMarkdownRemark {
+            frontmatter {
+              title
+              photos {
+                childImageSharp {
+                  fixed(width: 180, height: 180) {
+                    ...GatsbyImageSharpFixed_withWebp
+                  }
+                }
+              }
             }
           }
         }
