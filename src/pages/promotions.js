@@ -19,7 +19,7 @@ export default function PromotionsPage({ data }) {
       <Header title="Promotions" text=""></Header>
 
       <section className="bg-gray-200">
-        <div className="container mx-auto max-w-5xl flex flex-col p-12">
+        <div className="container mx-auto max-w-5xl flex flex-col p-12 mb-6">
           {promotions.map((promo, i) => (
             <div className="flex flex-col lg:flex-row bg-0 p-8 rounded-lg shadow-2xl my-8 bg-white" key={i}>
               <Img className="w-full lg:w-1/2" fluid={promo.photo.childImageSharp.fluid}></Img>

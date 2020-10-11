@@ -35,9 +35,9 @@ export default function RealisationsPage({ data }) {
             <Link
               to={`/realisations/${project.projectName}/`}
               key={i}
-              className="bg-white group hover:bg-gray-100 cursor-pointer rounded-lg shadow-xl p-6 m-4 flex-1 flex-grow-0 _card"
+              className="bg-white cursor-pointer rounded-lg shadow-xl p-6 m-4 flex-1 flex-grow-0 _card "
             >
-              <div className="w-full text-center">
+              <div className=" text-center">
                 <Img className="rounded-lg" fixed={project.thumbnail}></Img>
               </div>
               <div className="mt-2">
