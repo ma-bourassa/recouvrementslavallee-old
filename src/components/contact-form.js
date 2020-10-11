@@ -85,9 +85,6 @@ export default function ContactForm() {
             onChange={handleChange}
             ref={register({
               required: true,
-              pattern: {
-                value: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/,
-              },
             })}
           />
           {errors.Téléphone && <span className="text-red-600 text-sm">Téléphone invalide.</span>}
