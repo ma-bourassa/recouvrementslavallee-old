@@ -1,5 +1,5 @@
 ---
-title: Tuiles de vinyle
+title: Lattes de vinyle de luxe
 photos:
   - /assets/ra19_resultat.jpg
   - /assets/ra18_resultat.jpg
