@@ -13,11 +13,16 @@ module.exports = {
     title: `Les recouvrements de sols André Lavallée`,
     description: `Entreprise familiale spécialisée en installation de plancher pour qui la satisfaction de la clientèle et la finition sont prioritaires.`,
     author: `mabourassa`,
-    siteUrl: `https://frosty-shockley-759a6c.netlify.app/`,
+    siteUrl: `https://recouvrementslavallee.com`,
   },
   plugins: [
     "gatsby-plugin-robots-txt",
-    `gatsby-plugin-advanced-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/success`, `/admin`],
+      },
+    },
     `gatsby-plugin-netlify`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-transformer-json`,

@@ -26,7 +26,6 @@ exports.createPages = async function ({ actions, graphql }) {
     }
   `);
 
-  console.log(data);
   data.projects.edges.forEach(({ node }) => {
     const projectName = node.childMarkdownRemark.frontmatter.title;
     const projectPath = node.name;
