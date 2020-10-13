@@ -66,11 +66,19 @@ function NavBar() {
               {link.title}
             </Link>
           ))}
+          <a
+            className="block lg:hidden px-4 py-3  text-white border-t-2 lg:border-t-0 text-lg font-semibold hover:bg-grey-darker transition duration-500"
+            href="tel:+14503573127"
+          >
+            <FontAwesomeIcon className="mr-2" icon="phone-alt" />
+            450.357.3127
+          </a>
           <div className="hidden lg:block">
             <a
               className="border-2 border-white text-white text-lg font-semibold py-3 px-4 rounded-lg hover:bg-white hover:text-black lg:ml-6 lg:mr-4 transition duration-500"
               href="tel:+14503573127"
             >
+              <FontAwesomeIcon className="mr-2" icon="phone-alt" />
               450.357.3127
             </a>
           </div>
