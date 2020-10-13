@@ -14,7 +14,7 @@ module.exports = {
     description: `Entreprise familiale spécialisée en venter et installation de plancher.`,
     author: `mabourassa`,
     siteUrl: `https://recouvrementslavallee.com`,
-    image: `src/images/logo_favicon.png`,
+    image: `logo.jpg`, //from static folder
   },
   plugins: [
     "gatsby-plugin-robots-txt",
