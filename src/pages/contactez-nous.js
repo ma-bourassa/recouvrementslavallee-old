@@ -15,6 +15,8 @@ export default function ContactPage() {
               formulaire ci-dessous. Nous communiquerons avec vous dans les plus brefs délais."
       ></Header>
       <section className="flex flex-wrap justify-start items-start max-w-6xl mx-auto mb-6 ">
+        <ContactForm />
+
         <div className="w-full lg:w-1/3 p-6">
           <div className="mb-5">
             <h2 className="text-xl font-bold mb-1">Téléphones</h2>
@@ -46,8 +48,6 @@ export default function ContactPage() {
             </p>
           </div>
         </div>
-
-        <ContactForm />
       </section>
       <section>
         <iframe

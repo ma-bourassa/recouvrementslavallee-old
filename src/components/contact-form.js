@@ -63,7 +63,7 @@ export default function ContactForm() {
           </label>
         </div>
         <label className="block mb-4">
-          <span>Nom *</span>
+          <span>Nom</span>
           <input
             type="text"
             name="Nom"
@@ -77,7 +77,7 @@ export default function ContactForm() {
         </label>
 
         <label className="block mb-4">
-          <span>Téléphone *</span>
+          <span>Téléphone</span>
           <input
             type="tel"
             name="Téléphone"
@@ -91,7 +91,7 @@ export default function ContactForm() {
         </label>
 
         <label className="block mb-4">
-          <span>Courriel *</span>
+          <span>Courriel</span>
           <input
             type="text"
             name="Courriel"
