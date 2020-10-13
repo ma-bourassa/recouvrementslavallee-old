@@ -18,6 +18,7 @@ function SEO({ description, lang, meta, keywords, title }) {
     }
   `);
 
+  const pageTitle = title || site.siteMetadata.title;
   const metaDescription = description || site.siteMetadata.description;
   const url = site.siteMetadata.url;
   const image = site.siteMetadata.image;
@@ -38,7 +39,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: pageTitle,
         },
         {
           property: `og:description`,
@@ -66,7 +67,7 @@ function SEO({ description, lang, meta, keywords, title }) {
             : []
         )
         .concat(meta)}
-      title={title}
+      title={pageTitle}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
     />
   );

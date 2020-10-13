@@ -10,7 +10,7 @@ import Header from "../components/header";
 export default function IndexPage({ data }) {
   return (
     <Layout>
-      <SEO title="Accueil" />
+      <SEO />
       <Header title="Vente et installation de plancher" text="Contactez nous pour une soumission gratuite">
         <Link to="/contactez-nous/">
           <button className="mt-4 btn btn-blue text-xl rounded-lg">Soumission</button>
