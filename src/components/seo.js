@@ -11,12 +11,16 @@ function SEO({ description, lang, meta, keywords, title }) {
           title
           description
           author
+          siteUrl
+          image
         }
       }
     }
   `);
 
   const metaDescription = description || site.siteMetadata.description;
+  const url = site.siteMetadata.url;
+  const image = site.siteMetadata.image;
 
   return (
     <Helmet
@@ -43,6 +47,14 @@ function SEO({ description, lang, meta, keywords, title }) {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:url`,
+          content: url,
+        },
+        {
+          property: `og:image`,
+          content: image,
         },
       ]
         .concat(

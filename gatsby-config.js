@@ -11,9 +11,10 @@ const fullConfig = resolveConfig(tailwindConfig);
 module.exports = {
   siteMetadata: {
     title: `Les recouvrements de sols André Lavallée`,
-    description: `Entreprise familiale spécialisée en installation de plancher pour qui la satisfaction de la clientèle et la finition sont prioritaires.`,
+    description: `Entreprise familiale spécialisée en venter et installation de plancher.`,
     author: `mabourassa`,
     siteUrl: `https://recouvrementslavallee.com`,
+    image: `src/images/logo_favicon.png`,
   },
   plugins: [
     "gatsby-plugin-robots-txt",

@@ -43,7 +43,7 @@ function ImageSection({ title, photo, products }) {
         {Object.entries(products).map(([product, link]) => (
           <a
             key={product}
-            className="border border-grey text-center text-sm font-semibold py-2 px-3 rounded hover:bg-grey hover:text-white transition duration-500"
+            className="border border-grey text-center text-sm font-semibold mt-2 py-2 px-2 rounded hover:bg-grey hover:text-white transition duration-500"
             href={link}
             target="_blank"
             rel="noopener noreferrer"
