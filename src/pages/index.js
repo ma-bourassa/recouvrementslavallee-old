@@ -20,7 +20,7 @@ export default function IndexPage({ data }) {
       <section className="container mx-auto px-6 pb-6 lg:pb-12 lg:max-w-5xl leading-relaxed">
         <h3 className="text-xl lg:text-3xl font-semibold text-center">Vos experts en pose de plancher</h3>
         <hr className="border-blue2 border-t-2 mx-auto my-6 w-full" />
-        <div className="text-justify lg:text-center lg:text-lg">
+        <div className="text-center lg:text-lg">
           Chers clients, nous sommes ravis de constater votre intérêt pour notre entreprise familiale qui se spécialise
           dans la pose et la vente de revêtements de sols souples. Sachez que nous sommes une compagnie sérieuse et
           établie qui opère depuis 1985 sur la Rive Sud de Montréal.
