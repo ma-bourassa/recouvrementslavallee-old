@@ -1,13 +1,11 @@
 import React from "react";
 
 import Layout from "../components/layout/layout";
-import SEO from "../components/seo";
 import { Link } from "gatsby";
 
 export default function NotFoundPage() {
   return (
     <Layout>
-      <SEO title="404: Not found" />
       <section className="mt-10 container mx-auto px-4 py-8 text-center">
         <div className="max-w-auto mx-auto">
           <div className="lg:max-w-lg mx-auto">

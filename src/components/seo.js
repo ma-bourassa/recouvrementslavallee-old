@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";
 
-function SEO({ description, lang, meta, keywords, title }) {
+function SEO({ lang, keywords, title }) {
   const { site } = useStaticQuery(graphql`
     query DefaultSEOQuery {
       site {
@@ -19,7 +19,7 @@ function SEO({ description, lang, meta, keywords, title }) {
   `);
 
   const pageTitle = title || site.siteMetadata.title;
-  const metaDescription = description || site.siteMetadata.description;
+  const metaDescription = site.siteMetadata.description;
   const url = site.siteMetadata.url;
   const image = site.siteMetadata.image;
 
@@ -57,16 +57,14 @@ function SEO({ description, lang, meta, keywords, title }) {
           property: `og:image`,
           content: image,
         },
-      ]
-        .concat(
-          keywords.length > 0
-            ? {
-                name: `keywords`,
-                content: keywords.join(`, `),
-              }
-            : []
-        )
-        .concat(meta)}
+      ].concat(
+        keywords.length > 0
+          ? {
+              name: `keywords`,
+              content: keywords.join(`, `),
+            }
+          : []
+      )}
       title={pageTitle}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
     />
@@ -75,16 +73,14 @@ function SEO({ description, lang, meta, keywords, title }) {
 
 SEO.defaultProps = {
   lang: `fr`,
-  keywords: ["plancher", "recouvrement", "andre lavallee", "latte", "vinyle", "tapis", "projet", "renovation"],
+  keywords: ["recouvrements", "sols", "andre lavallee", "plancher", "lavallee", "vinyle"],
   meta: [],
 };
 
 SEO.propTypes = {
-  description: PropTypes.string,
   keywords: PropTypes.arrayOf(PropTypes.string),
   lang: PropTypes.string,
-  meta: PropTypes.array,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 };
 
 export default SEO;
