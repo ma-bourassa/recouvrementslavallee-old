@@ -22,7 +22,7 @@ export default function ProjectGallery({ data, pageContext }) {
   return (
     <Layout>
       <SEO keywords={[`realisations`]} title={pageContext.projectName} />
-      <Header title={pageContext.projectName} text=""></Header>
+      <Header title={pageContext.projectName} text="" />
       <div className="max-w-screen-lg mx-auto px-4">
         <Link to={`/realisations/`} className="text-lg lg:text-xl font-semibold">
           &lt; Retour à nos réalisations

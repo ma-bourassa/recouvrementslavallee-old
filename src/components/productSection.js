@@ -11,7 +11,7 @@ export default function Product({ title, paragraphes, photo, reverseOrder, produ
 
           {/* Mobile */}
           <div className="flex flex-col lg:hidden">
-            <imageSection title={title} photo={photo} products={products}></imageSection>
+            <imageSection title={title} photo={photo} products={products} />
           </div>
 
           <div>
@@ -25,7 +25,7 @@ export default function Product({ title, paragraphes, photo, reverseOrder, produ
 
         {/* Desktop */}
         <div className={`hidden w-1/2 lg:flex lg:flex-col lg:pr-32 ${reverseOrder && `order-last lg:order-first`}`}>
-          <imageSection title={title} photo={photo} products={products}></imageSection>
+          <imageSection title={title} photo={photo} products={products} />
         </div>
       </div>
     </section>
@@ -35,7 +35,7 @@ export default function Product({ title, paragraphes, photo, reverseOrder, produ
 function imageSection({ title, photo, products }) {
   return (
     <>
-      <Img className="container mx-auto lg:mx-0" alt={title} fluid={photo}></Img>
+      <Img className="container mx-auto lg:mx-0" alt={title} fluid={photo} />
       {Object.keys(products).length > 0 && (
         <p className="mt-6 mb-2 font-bold text-center lg:text-left">Voir les produits disponibles</p>
       )}

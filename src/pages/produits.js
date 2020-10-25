@@ -14,7 +14,7 @@ export default function ProductsPage({ data }) {
       <Header
         title="Produits"
         text="Nous offrons un large éventail de produits ainsi que le service d'installation de plancher."
-      ></Header>
+      />
 
       <ProductSection
         title="Lattes de vinyle"
@@ -27,7 +27,7 @@ export default function ProductsPage({ data }) {
         reverseOrder={false}
         photo={data.vinyle.childImageSharp.fluid}
         products={products["Lattes de vinyle"]}
-      ></ProductSection>
+      />
 
       <ProductSection
         title="Tapis"
@@ -38,7 +38,7 @@ export default function ProductsPage({ data }) {
         reverseOrder={true}
         photo={data.tapis.childImageSharp.fluid}
         products={products["Tapis"]}
-      ></ProductSection>
+      />
 
       <ProductSection
         title="Prélart"
@@ -49,7 +49,7 @@ export default function ProductsPage({ data }) {
         reverseOrder={false}
         photo={data.prelart.childImageSharp.fluid}
         products={products["Prélart"]}
-      ></ProductSection>
+      />
 
       <ProductSection
         title="Bois d'ingénierie"
@@ -61,7 +61,7 @@ export default function ProductsPage({ data }) {
         reverseOrder={true}
         photo={data.ingenerie.childImageSharp.fluid}
         products={products["Bois d'ingénierie"]}
-      ></ProductSection>
+      />
 
       <ProductSection
         title="Planchers flottant"
@@ -72,7 +72,7 @@ export default function ProductsPage({ data }) {
         reverseOrder={false}
         photo={data.flottant.childImageSharp.fluid}
         products={products["Planchers flottant"]}
-      ></ProductSection>
+      />
 
       <ProductSection
         title="Linoléum et marmoléum"
@@ -83,7 +83,7 @@ export default function ProductsPage({ data }) {
         reverseOrder={true}
         photo={data.linoleum.childImageSharp.fluid}
         products={products["Linoléum et marmoléum"]}
-      ></ProductSection>
+      />
 
       <ProductSection
         title="Céramiques"
@@ -94,7 +94,7 @@ export default function ProductsPage({ data }) {
         reverseOrder={false}
         photo={data.ceramique.childImageSharp.fluid}
         products={products["Céramiques"]}
-      ></ProductSection>
+      />
     </Layout>
   );
 }

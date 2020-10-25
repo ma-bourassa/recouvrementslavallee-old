@@ -17,7 +17,7 @@ export default function RealisationsPage({ data }) {
   return (
     <Layout>
       <SEO keywords={["realisations", "modeles", "projets"]} title="Realisations" />
-      <Header title="Réalisations" text="Voici quelques-unes de nos plus récentes réalisations"></Header>
+      <Header title="Réalisations" text="Voici quelques-unes de nos plus récentes réalisations" />
 
       <section className="bg-gray-200">
         <div className="container mx-auto flex flex-col lg:flex-row flex-wrap p-12 lg:p-12 justify-center">
@@ -28,7 +28,7 @@ export default function RealisationsPage({ data }) {
               className="bg-white cursor-pointer rounded-lg shadow-xl p-6 m-4 flex-1 flex-grow-0 _card "
             >
               <div className=" text-center">
-                <Img className="rounded-lg" fixed={project.thumbnail}></Img>
+                <Img className="rounded-lg" fixed={project.thumbnail} />
               </div>
               <div className="mt-2">
                 <div className="font-semibold text-xl text-center">{project.projectName}</div>

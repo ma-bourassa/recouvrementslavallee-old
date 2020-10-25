@@ -3,8 +3,8 @@ import React from "react";
 import Layout from "../components/layout/layout";
 import ContactForm from "../components/contact-form";
 import SEO from "../components/seo";
-import PropTypes from "prop-types";
 import Header from "../components/header";
+
 export default function ContactPage() {
   return (
     <Layout>
@@ -13,7 +13,7 @@ export default function ContactPage() {
         title="Contactez-nous !"
         text="Pour toute demande au sujet de nos services, nos produits ou pour une estimation, veuillez remplir le
               formulaire ci-dessous. Nous communiquerons avec vous dans les plus brefs délais."
-      ></Header>
+      />
       <section className="flex flex-wrap justify-start items-start max-w-6xl mx-auto mb-6 ">
         <ContactForm />
 
@@ -59,12 +59,8 @@ export default function ContactPage() {
           width="100%"
           height="400"
           frameBorder="0"
-        ></iframe>
+        />
       </section>
     </Layout>
   );
 }
-
-ContactPage.propTypes = {
-  data: PropTypes.object,
-};
