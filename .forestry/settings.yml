@@ -12,7 +12,7 @@ sections:
 - type: directory
   path: content/realisations
   label: Réalisations
-  create: all
+  create: documents
   match: "**/*"
 upload_dir: content/images
 public_path: "/content/images"
