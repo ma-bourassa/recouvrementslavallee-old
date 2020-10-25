@@ -5,7 +5,7 @@ fields:
 - name: titre
   type: text
   config:
-    required: false
+    required: true
   label: Titre
   description: Titre de la réalisation.
 - name: photos
