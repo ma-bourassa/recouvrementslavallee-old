@@ -2,11 +2,11 @@
 label: Promotions
 hide_body: true
 fields:
-- name: titre
+- name: title
   type: text
   config:
     required: false
-  label: Titre
+  label: Title
   description: Titre de la promotion
 - name: description
   type: textarea
