@@ -2,11 +2,11 @@
 label: Réalisation
 hide_body: false
 fields:
-- name: titre
+- name: title
   type: text
   config:
     required: false
-  label: Titre
+  label: Title
   description: Titre de la réalisation.
 - name: photos
   type: image_gallery
