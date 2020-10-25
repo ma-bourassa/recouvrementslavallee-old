@@ -13,5 +13,3 @@ fields:
   config: {}
   label: Photos
   description: Les photos de la réalisations
-pages:
-- content/realisations/nouveau-projet.md
