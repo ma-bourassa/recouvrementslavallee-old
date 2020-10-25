@@ -19,27 +19,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify`,
+    `gatsby-transformer-remark`,
     `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: [
-          "gatsby-remark-relative-images",
-          "gatsby-remark-normalize-paths",
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              maxWidth: 1024,
-              linkImagesToOriginal: false,
-            },
-          },
-        ],
-      },
-    },
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -52,6 +38,7 @@ module.exports = {
         icon: `src/images/logo_favicon.png`,
       },
     },
+
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
@@ -62,6 +49,7 @@ module.exports = {
         ],
       },
     },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -102,6 +90,23 @@ module.exports = {
       options: {
         name: "images",
         path: `${__dirname}/static/assets/`,
+      },
+    },
+
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          "gatsby-remark-relative-images",
+          "gatsby-remark-normalize-paths",
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 1024,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
       },
     },
   ],
