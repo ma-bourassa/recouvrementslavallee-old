@@ -5,14 +5,14 @@ fields:
 - name: titre
   type: text
   config:
-    required: true
+    required: false
   label: Titre
   description: Titre de la promotion
 - name: description
   type: textarea
   default: ''
   config:
-    required: true
+    required: false
     wysiwyg: true
     schema:
       format: markdown
@@ -27,6 +27,6 @@ fields:
 - name: url
   type: text
   config:
-    required: true
+    required: false
   label: Url
   description: Lien vers le produit en promotion.
