@@ -9,6 +9,7 @@ sections:
   label: Promotions
   create: documents
   match: "**/*"
+  new_doc_ext: md
   templates:
   - promotions
 - type: directory
@@ -16,6 +17,7 @@ sections:
   label: Réalisations
   create: documents
   match: "**/*"
+  new_doc_ext: md
   templates:
   - realisation
 upload_dir: content/images
