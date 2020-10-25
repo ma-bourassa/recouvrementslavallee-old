@@ -9,11 +9,15 @@ sections:
   label: Promotions
   create: documents
   match: "**/*"
+  templates:
+  - promotions
 - type: directory
   path: content/realisations
   label: Réalisations
   create: documents
   match: "**/*"
+  templates:
+  - realisation
 upload_dir: content/images
 public_path: "/content/images"
 front_matter_path: ''
