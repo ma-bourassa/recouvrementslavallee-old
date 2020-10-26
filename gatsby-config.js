@@ -11,6 +11,71 @@ module.exports = {
     image: `logo.jpg`, //from static folder
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "assets",
+        path: `${__dirname}/static/assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "realisations",
+        path: `${__dirname}/content/realisations`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "promotions",
+        path: `${__dirname}/content/promotions`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "products",
+        path: `${__dirname}/src/images/products`,
+      },
+    },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "images",
+        path: `${__dirname}/src/images`,
+      },
+    },
+
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        defaultQuality: 75,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-relative-images`,
+          `gatsby-remark-normalize-paths`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: { maxWidth: 1024 },
+          },
+        ],
+      },
+    },
+
     "gatsby-plugin-robots-txt",
     {
       resolve: `gatsby-plugin-sitemap`,
@@ -21,10 +86,9 @@ module.exports = {
     `gatsby-plugin-netlify`,
     `gatsby-transformer-remark`,
     `gatsby-transformer-json`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-remark`,
 
     {
       resolve: `gatsby-plugin-manifest`,
@@ -46,66 +110,6 @@ module.exports = {
           require(`tailwindcss`)(tailwindConfig),
           require(`autoprefixer`),
           ...(process.env.NODE_ENV === `production` ? [require(`cssnano`)] : []),
-        ],
-      },
-    },
-
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `data`,
-        path: `${__dirname}/src/data/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "products",
-        path: `${__dirname}/src/images/products/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "realisations",
-        path: `${__dirname}/content/realisations/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "promotions",
-        path: `${__dirname}/content/promotions/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "images",
-        path: `${__dirname}/src/images/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "images",
-        path: `${__dirname}/static/assets/`,
-      },
-    },
-
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: [
-          "gatsby-remark-relative-images",
-          "gatsby-remark-normalize-paths",
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              maxWidth: 1024,
-              linkImagesToOriginal: false,
-            },
-          },
         ],
       },
     },
