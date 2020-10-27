@@ -14,8 +14,22 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "assets",
-        path: `${__dirname}/static/assets`,
+        name: `data`,
+        path: `${__dirname}/src/data`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "products",
+        path: `${__dirname}/src/images/products`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "images",
+        path: `${__dirname}/src/images`,
       },
     },
     {
@@ -35,23 +49,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `data`,
-        path: `${__dirname}/src/data`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "products",
-        path: `${__dirname}/src/images/products`,
-      },
-    },
-
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "images",
-        path: `${__dirname}/src/images`,
+        name: "assets",
+        path: `${__dirname}/content/images`,
       },
     },
 
@@ -63,14 +62,17 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-          `gatsby-remark-relative-images`,
-          `gatsby-remark-normalize-paths`,
+          "gatsby-remark-relative-images",
+          "gatsby-remark-normalize-paths",
           {
-            resolve: `gatsby-remark-images`,
-            options: { maxWidth: 1024 },
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 1024,
+              linkImagesToOriginal: false,
+            },
           },
         ],
       },

@@ -20,8 +20,8 @@ sections:
     new_doc_ext: md
     templates:
       - realisation
-upload_dir: static/assets
-public_path: "/assets"
+upload_dir: content/images
+public_path: "/content/images"
 front_matter_path: ""
 use_front_matter_path: false
 file_template: ":filename:"
