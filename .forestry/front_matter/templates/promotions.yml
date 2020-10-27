@@ -32,3 +32,4 @@ fields:
   description: Lien vers le produit en promotion.
 pages:
 - content/promotions/default.md
+- content/promotions/nouvelle-promo.md
