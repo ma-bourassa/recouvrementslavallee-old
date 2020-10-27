@@ -1,6 +1,6 @@
 ---
 title: default
 description: default
-photo: "/content/images/default.png"
+photo: "/content/images/ne_pas_supprimer.png"
 url: default
 ---
