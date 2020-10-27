@@ -31,4 +31,4 @@ fields:
   label: Url
   description: Lien vers le produit en promotion.
 pages:
-- content/promotions/nouvelle-promo.md
+- content/promotions/default.md
