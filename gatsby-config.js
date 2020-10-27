@@ -65,8 +65,13 @@ module.exports = {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-          "gatsby-remark-relative-images",
           "gatsby-remark-normalize-paths",
+          {
+            resolve: `gatsby-remark-relative-images`,
+            options: {
+              staticFolderName: "content/images",
+            },
+          },
           {
             resolve: "gatsby-remark-images",
             options: {
