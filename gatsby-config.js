@@ -67,12 +67,6 @@ module.exports = {
         plugins: [
           "gatsby-remark-normalize-paths",
           {
-            resolve: `gatsby-remark-relative-images`,
-            options: {
-              staticFolderName: "content/images",
-            },
-          },
-          {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 1024,
