@@ -14,22 +14,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `data`,
-        path: `${__dirname}/src/data`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "products",
-        path: `${__dirname}/src/images/products`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "images",
-        path: `${__dirname}/src/images`,
+        name: "assets",
+        path: `${__dirname}/content/images`,
       },
     },
     {
@@ -49,8 +35,22 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "assets",
-        path: `${__dirname}/content/images`,
+        name: `data`,
+        path: `${__dirname}/src/data`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "products",
+        path: `${__dirname}/src/images/products`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "images",
+        path: `${__dirname}/src/images`,
       },
     },
 
@@ -65,12 +65,23 @@ module.exports = {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-          "gatsby-remark-normalize-paths",
+          {
+            resolve: "gatsby-remark-relative-images",
+            options: {
+              name: "assets",
+            },
+          },
           {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 1024,
               withWebp: true,
+            },
+          },
+          {
+            resolve: "gatsby-remark-copy-linked-files",
+            options: {
+              destinationDir: "static",
             },
           },
         ],
