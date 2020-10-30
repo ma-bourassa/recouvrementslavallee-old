@@ -1,7 +1,7 @@
-exports.onCreateNode = ({ node }) => {
-  const { fmImagesToRelative } = require("gatsby-remark-relative-images");
-  fmImagesToRelative(node);
-};
+// exports.onCreateNode = ({ node }) => {
+//   const { fmImagesToRelative } = require("gatsby-remark-relative-images");
+//   fmImagesToRelative(node);
+// };
 
 exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
   const config = getConfig();
