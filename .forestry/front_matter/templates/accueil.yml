@@ -1,4 +1,53 @@
 ---
 label: Accueil
 hide_body: true
-fields: []
+fields:
+- name: title_intro
+  type: text
+  config:
+    required: true
+  label: Title intro
+- name: texte_intro
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Texte_intro
+- name: features
+  type: field_group_list
+  fields:
+  - name: title
+    type: text
+    config:
+      required: true
+    label: Title
+  - name: description
+    type: textarea
+    default: ''
+    config:
+      required: true
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Description
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Features
+- name: specialites
+  type: field_group_list
+  fields:
+  - name: specialite
+    type: text
+    config:
+      required: true
+    label: spécialité
+  config:
+    min: 1
+    max: 
+    labelField: 
+  label: Spécialités
