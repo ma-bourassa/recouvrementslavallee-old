@@ -112,5 +112,17 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Les recouvrements de sols André Lavallée.inc`,
+        short_name: `recouvrements-lavallee`,
+        start_url: `/`,
+        background_color: fullConfig.theme.colors.white,
+        theme_color: fullConfig.theme.colors.teal["400"],
+        display: `minimal-ui`,
+        icon: `src/images/logo_favicon.png`,
+      },
+    },
   ],
 };
