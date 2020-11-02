@@ -17,7 +17,7 @@ export default function ProjectGallery({ data, pageContext }) {
     closeLabel: "Fermer",
   };
 
-  const images = data.images.childMarkdownRemark.frontmatter.photos.map((photo) => photo.childImageSharp);
+  const images = data.images.frontmatter.photos.map((photo) => photo.childImageSharp);
 
   return (
     <Layout>
@@ -36,18 +36,16 @@ export default function ProjectGallery({ data, pageContext }) {
 }
 
 export const query = graphql`
-  query($projectPath: String) {
-    images: file(sourceInstanceName: { eq: "realisations" }, name: { eq: $projectPath }, extension: { eq: "md" }) {
-      childMarkdownRemark {
-        frontmatter {
-          photos {
-            childImageSharp {
-              thumb: fluid(maxWidth: 270, maxHeight: 270) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-              full: fluid(quality: 90, maxWidth: 1024) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
+  query($projectName: String) {
+    images: markdownRemark(frontmatter: { title: { eq: $projectName } }) {
+      frontmatter {
+        photos {
+          childImageSharp {
+            thumb: fluid(maxWidth: 270, maxHeight: 270) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+            full: fluid(quality: 90, maxWidth: 1024) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

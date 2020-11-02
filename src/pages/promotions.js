@@ -9,8 +9,8 @@ import SEO from "../components/seo";
 export default function PromotionsPage({ data }) {
   let promotions = [];
   promotions = data.promotions.nodes
-    .filter(({ childMarkdownRemark }) => childMarkdownRemark.frontmatter.title !== "default")
-    .map(({ childMarkdownRemark }) => childMarkdownRemark.frontmatter);
+    .filter(({ frontmatter }) => frontmatter.title !== "default")
+    .map(({ frontmatter }) => frontmatter);
 
   return (
     <Layout>
@@ -49,19 +49,17 @@ export default function PromotionsPage({ data }) {
 
 export const query = graphql`
   query {
-    promotions: allFile(filter: { sourceInstanceName: { eq: "promotions" }, extension: { eq: "md" } }) {
+    promotions: allMarkdownRemark(filter: { fields: { sourceName: { eq: "promotions" } } }) {
       nodes {
-        childMarkdownRemark {
-          frontmatter {
-            title
-            description
-            url
-            photo {
-              childImageSharp {
-                fluid(maxWidth: 300) {
-                  ...GatsbyImageSharpFluid_withWebp
-                  ...GatsbyImageSharpFluidLimitPresentationSize
-                }
+        frontmatter {
+          title
+          description
+          url
+          photo {
+            childImageSharp {
+              fluid(maxWidth: 300) {
+                ...GatsbyImageSharpFluid_withWebp
+                ...GatsbyImageSharpFluidLimitPresentationSize
               }
             }
           }

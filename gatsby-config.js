@@ -101,20 +101,7 @@ module.exports = {
     `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
-
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Les recouvrements de sols André Lavallée.inc`,
-        short_name: `recouvrements-lavalle`,
-        start_url: `/`,
-        background_color: fullConfig.theme.colors.white,
-        theme_color: fullConfig.theme.colors.teal["400"],
-        display: `minimal-ui`,
-        icon: `src/images/logo_favicon.png`,
-      },
-    },
-
+    `gatsby-remark-source-name`,
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
