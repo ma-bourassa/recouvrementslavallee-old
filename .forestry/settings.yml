@@ -12,7 +12,6 @@ sections:
 - type: document
   path: content/produits/produits.md
   label: Produits
-  match: "**/*"
 - type: directory
   path: content/realisations
   label: Réalisations
