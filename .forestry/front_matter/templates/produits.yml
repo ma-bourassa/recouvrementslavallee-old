@@ -44,3 +44,5 @@ fields:
     max: 
     labelField: 
   label: Produits
+pages:
+- content/produits/produits.md
