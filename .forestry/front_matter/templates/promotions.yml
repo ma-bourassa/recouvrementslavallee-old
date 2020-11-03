@@ -30,3 +30,5 @@ fields:
     required: false
   label: Url
   description: Lien vers le produit en promotion.
+pages:
+- content/promotions/test.json
