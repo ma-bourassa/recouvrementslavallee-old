@@ -13,10 +13,10 @@ fields:
   default: ''
   config:
     required: true
-    wysiwyg: false
+    wysiwyg: true
     schema:
       format: markdown
-  label: Texte_intro
+  label: Texte intro
 - name: features
   type: field_group_list
   fields:
