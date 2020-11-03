@@ -14,7 +14,7 @@ sections:
   label: Promotions
   create: documents
   match: "**/*"
-  new_doc_ext: json
+  new_doc_ext: md
   templates:
   - promotions
 - type: directory
