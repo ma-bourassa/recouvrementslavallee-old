@@ -22,7 +22,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: "accueil",
-        path: `${__dirname}/content/accueil.json`,
+        path: `${__dirname}/content/accueil`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "produits",
+        path: `${__dirname}/content/produits`,
       },
     },
     {
