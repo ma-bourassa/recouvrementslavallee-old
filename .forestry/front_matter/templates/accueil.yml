@@ -53,4 +53,4 @@ fields:
     labelField: 
   label: Spécialités
 pages:
-- content/accueil.json
+- content/accueil.md
