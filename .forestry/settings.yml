@@ -7,7 +7,7 @@ sections:
 - type: heading
   label: Content
 - type: document
-  path: content/accueil.md
+  path: content/accueil/accueil.md
   label: Accueil
 - type: directory
   path: content/promotions
