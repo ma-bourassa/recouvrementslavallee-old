@@ -84,7 +84,7 @@ export default function IndexPage({ data }) {
                 <li>Lattes de vinyle</li>
                 <li>Tapis</li>
                 <li>Prélart</li>
-                <li>Bois d&apos;ingérnierie</li>
+                <li>Bois d&apos;ingénierie</li>
                 <li>Laminé</li>
               </ul>
             </div>
