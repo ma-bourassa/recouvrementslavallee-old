@@ -52,5 +52,3 @@ fields:
     max: 
     labelField: 
   label: Spécialités
-pages:
-- content/accueil.md
