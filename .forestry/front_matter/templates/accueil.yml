@@ -35,8 +35,8 @@ fields:
         format: markdown
     label: Description
   config:
-    min: 
-    max: 
+    min: 3
+    max: 3
     labelField: 
   label: Features
 - name: specialites
