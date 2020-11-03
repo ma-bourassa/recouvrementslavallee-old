@@ -73,7 +73,7 @@ function SEO({ lang, keywords, title }) {
 
 SEO.defaultProps = {
   lang: `fr`,
-  keywords: ["recouvrements", "plancher", "recouvrement", "sols", "lattes de vinyle", "tapis", "lavallee"],
+  keywords: ["recouvrements de sols", "recouvrement de sol", "plancher", "lattes de vinyle", "tapis", "lavallee"],
   meta: [],
 };
 
