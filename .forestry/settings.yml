@@ -10,13 +10,12 @@ sections:
   path: content/accueil/accueil.md
   label: Accueil
 - type: directory
-  path: content/promotions
-  label: Promotions
+  path: content/produits
+  label: Produits
   create: documents
   match: "**/*"
-  new_doc_ext: md
   templates:
-  - promotions
+  - produits
 - type: directory
   path: content/realisations
   label: Réalisations
@@ -25,6 +24,14 @@ sections:
   new_doc_ext: md
   templates:
   - realisation
+- type: directory
+  path: content/promotions
+  label: Promotions
+  create: documents
+  match: "**/*"
+  new_doc_ext: md
+  templates:
+  - promotions
 upload_dir: static/uploads
 public_path: "/uploads"
 front_matter_path: ''
