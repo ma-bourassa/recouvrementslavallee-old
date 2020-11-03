@@ -13,7 +13,7 @@ fields:
   default: ''
   config:
     required: true
-    wysiwyg: false
+    wysiwyg: true
     schema:
       format: markdown
   label: Texte intro
@@ -30,7 +30,7 @@ fields:
     default: ''
     config:
       required: true
-      wysiwyg: false
+      wysiwyg: true
       schema:
         format: markdown
     label: Description
