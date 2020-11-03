@@ -16,67 +16,61 @@ produits:
       - name: Vinyle de luxe d'ingénierie
         url: https://beaulieucanada.com/fr/retail/flooring/engineeredluxuryvinyl
 
-  - title: Lattes de vinyle
+  - title: Tapis
     description: |-
-      Le revêtement de plancher en lattes de vinyle est un type innovateur de vinyle qui a l'allure du vrai bois et qui en donne la sensation.
+      Le tapis est doux pour les pieds, il protège contre les glissements et il atténue le niveau de bruit grâce à ses propriétés d'absorption des chocs, et améliore l'isolation du plancher.
 
-      En outre, il est étanche, ce qui permet de l'installer dans des pièces propices à l'humidité, telle que les sous-sols et les salles d'eau, là où les bois francs et stratifiés sont à proscrire.
-
-      De plus, le revêtement de sol en planches de vinyle est silencieux, résistant et chaud sous les pieds. C'est aussi l'un des choix les plus abordables sur le marché.
-
-      Les lattes de vinyles tendent à dépasser en popularité le plancher de stratifié (plancher flottant).
-    image: "/uploads/vinyle.jpg"
+      Grâce à ses multiples styles, textures et couleurs, le tapis est un élément de décoration qui vous permet de créer l'ambiance désirée dans votre résidence.
+    image: "/uploads/tapis.jpg"
     links:
-      - name: Vinyle de luxe d'ingénierie
-        url: https://beaulieucanada.com/fr/retail/flooring/engineeredluxuryvinyl
-      - name: Vinyle de luxe d'ingénierie
-        url: https://beaulieucanada.com/fr/retail/flooring/engineeredluxuryvinyl
+      - name: Tapis
+        url: https://beaulieucanada.com/fr/retail/flooring/carpet
+      - name: Carreaux de tapis
+        url: https://beaulieucanada.com/fr/retail/flooring/carpettiles
 
-  - title: Lattes de vinyle
+  - title: Prélart
     description: |-
-      Le revêtement de plancher en lattes de vinyle est un type innovateur de vinyle qui a l'allure du vrai bois et qui en donne la sensation.
+      Le vinyle en rouleau, appelé « prélart », est souple, s’adapte aux courbes d’un sous-plancher imparfait et peut se faire sans joints apparents.
 
-      En outre, il est étanche, ce qui permet de l'installer dans des pièces propices à l'humidité, telle que les sous-sols et les salles d'eau, là où les bois francs et stratifiés sont à proscrire.
-
-      De plus, le revêtement de sol en planches de vinyle est silencieux, résistant et chaud sous les pieds. C'est aussi l'un des choix les plus abordables sur le marché.
-
-      Les lattes de vinyles tendent à dépasser en popularité le plancher de stratifié (plancher flottant).
-    image: "/uploads/vinyle.jpg"
+      Il est idéal pour être posé directement sur une variété de matières, dont le béton, le contreplaqué ou les revêtements de vinyle existants. Il est durable et supporte bien les différentes conditions de température et d’humidité.
+    image: "/uploads/prelart.jpg"
     links:
-      - name: Vinyle de luxe d'ingénierie
-        url: https://beaulieucanada.com/fr/retail/flooring/engineeredluxuryvinyl
-      - name: Vinyle de luxe d'ingénierie
-        url: https://beaulieucanada.com/fr/retail/flooring/engineeredluxuryvinyl
+      - name: Prélart
+        url: https://beaulieucanada.com/fr/retail/flooring/sheetvinyl
 
-  - title: Lattes de vinyle
+  - title: Bois d'ingénierie
     description: |-
-      Le revêtement de plancher en lattes de vinyle est un type innovateur de vinyle qui a l'allure du vrai bois et qui en donne la sensation.
+      Puisque le bois d’ingénierie est fabriqué à partir de vrai bois, il est aussi beau que le bois franc massif!
 
-      En outre, il est étanche, ce qui permet de l'installer dans des pièces propices à l'humidité, telle que les sous-sols et les salles d'eau, là où les bois francs et stratifiés sont à proscrire.
+      Il est composé de plusieurs couches de bois qui sont collées ensemble et couvertes d’une fine plaque de vrai bois franc en surface. Par sa conception, le bois ne se contractera pas à cause des changements de niveaux d’humidité et de température. Il ne s'ouvrira pas comme certains bois francs peuvent le faire.
 
-      De plus, le revêtement de sol en planches de vinyle est silencieux, résistant et chaud sous les pieds. C'est aussi l'un des choix les plus abordables sur le marché.
-
-      Les lattes de vinyles tendent à dépasser en popularité le plancher de stratifié (plancher flottant).
-    image: "/uploads/vinyle.jpg"
+      Tout comme pour les planchers de bois franc massif, celui d’ingénierie est offert dans une grande variété d’essences. Choisissez parmi les choix de largeur de planche, de texture, de lustre et bien plus!
+    image: "/uploads/bois.jpg"
     links:
-      - name: Vinyle de luxe d'ingénierie
-        url: https://beaulieucanada.com/fr/retail/flooring/engineeredluxuryvinyl
-      - name: Vinyle de luxe d'ingénierie
-        url: https://beaulieucanada.com/fr/retail/flooring/engineeredluxuryvinyl
+      - name: Bois d'ingénierie
+        url: https://beaulieucanada.com/fr/retail/flooring/engineeredhardwood
 
-  - title: Lattes de vinyle
+  - title: Planchers flottant
     description: |-
-      Le revêtement de plancher en lattes de vinyle est un type innovateur de vinyle qui a l'allure du vrai bois et qui en donne la sensation.
+      Abordables et faciles à entretenir, les planchers stratifiés ne sont pas affectés par la lumière. Ils offrent aussi une bonne résistance aux égratignures et aux impacts.
 
-      En outre, il est étanche, ce qui permet de l'installer dans des pièces propices à l'humidité, telle que les sous-sols et les salles d'eau, là où les bois francs et stratifiés sont à proscrire.
-
-      De plus, le revêtement de sol en planches de vinyle est silencieux, résistant et chaud sous les pieds. C'est aussi l'un des choix les plus abordables sur le marché.
-
-      Les lattes de vinyles tendent à dépasser en popularité le plancher de stratifié (plancher flottant).
-    image: "/uploads/vinyle.jpg"
+      Le plancher en bois stratifié sera plus durable dans une pièce dépourvue d'humidité.
+    image: "/uploads/flottant.jpg"
     links:
-      - name: Vinyle de luxe d'ingénierie
-        url: https://beaulieucanada.com/fr/retail/flooring/engineeredluxuryvinyl
-      - name: Vinyle de luxe d'ingénierie
-        url: https://beaulieucanada.com/fr/retail/flooring/engineeredluxuryvinyl
+      - name: Laminé
+        url: https://beaulieucanada.com/fr/yhs/flooring/laminate
+
+  - title: Linoléum et marmoléum
+    description: |-
+      Certifié LEED, le marmoléum est avantageux parce qu’il est écologique, durable, facile d’entretien, flexible, ignifuge et hygiénique, en plus de posséder des propriétés antistatiques et antimicrobiennes.
+
+      Les gymnases, centres récréatifs, salles de danse, salles de classe, corridors nécessitent souvent un revêtement de vinyle ou de linoléum. Ces planchers sont extrêmement résistants à l’abrasion.
+    image: "/uploads/linoleum.jpg"
+
+    - title: Céramiques
+    description: |-
+      La céramique a plusieurs avantages. Elle est résistante et aura une longue durée de vie. Ce matériau nécessite peu d'entretien et réagit bien à l'eau.
+
+      On peut l'utiliser pour les planchers, mais également comme recouvrement pour les murs et les dosserets de cuisine.
+    image: "/uploads/ceramique.jpg"
 ---
