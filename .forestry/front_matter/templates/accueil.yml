@@ -13,10 +13,10 @@ fields:
   default: ''
   config:
     required: true
-    wysiwyg: false
+    wysiwyg: true
     schema:
       format: markdown
-  label: Texte_intro
+  label: Texte intro
 - name: features
   type: field_group_list
   fields:
@@ -35,8 +35,8 @@ fields:
         format: markdown
     label: Description
   config:
-    min: 
-    max: 
+    min: 3
+    max: 3
     labelField: 
   label: Features
 - name: specialites
@@ -52,3 +52,5 @@ fields:
     max: 
     labelField: 
   label: Spécialités
+pages:
+- content/accueil.json
