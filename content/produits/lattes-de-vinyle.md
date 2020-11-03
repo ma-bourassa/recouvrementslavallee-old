@@ -12,5 +12,7 @@ image: "/uploads/vinyle.jpg"
 links:
 - name: Vinyle de luxe
   url: https://beaulieucanada.com/fr/retail/flooring/luxuryvinyl
+- name: Vinyle de luxe d'ingénierie
+  url: https://beaulieucanada.com/fr/retail/flooring/engineeredluxuryvinyl
 
 ---
