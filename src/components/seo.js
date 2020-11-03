@@ -73,7 +73,7 @@ function SEO({ lang, keywords, title }) {
 
 SEO.defaultProps = {
   lang: `fr`,
-  keywords: ["recouvrements", "sols", "andre lavallee", "plancher", "lavallee", "vinyle"],
+  keywords: ["recouvrements", "plancher", "recouvrement", "sols", "lattes de vinyle", "tapis", "lavallee"],
   meta: [],
 };
 

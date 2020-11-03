@@ -17,7 +17,7 @@ export default function RealisationsPage({ data }) {
 
   return (
     <Layout>
-      <SEO keywords={["realisations", "modeles", "projets"]} title="Realisations" />
+      <SEO keywords={["realisations"]} title="Realisations" />
       <Header title="Réalisations" text="Voici quelques-unes de nos plus récentes réalisations" />
 
       <section className="bg-gray-200">
