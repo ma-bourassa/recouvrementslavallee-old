@@ -101,7 +101,7 @@ module.exports = {
         ],
       },
     },
-
+    `gatsby-transformer-json`,
     "gatsby-plugin-robots-txt",
     {
       resolve: `gatsby-plugin-sitemap`,
@@ -110,11 +110,8 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify`,
-    `gatsby-transformer-remark`,
-    `gatsby-transformer-json`,
     `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-remark`,
     `gatsby-remark-source-name`,
     {
       resolve: `gatsby-plugin-postcss`,
