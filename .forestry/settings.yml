@@ -9,13 +9,10 @@ sections:
 - type: document
   path: content/accueil/accueil.md
   label: Accueil
-- type: directory
-  path: content/produits
+- type: document
+  path: content/produits/produits.md
   label: Produits
-  create: documents
   match: "**/*"
-  templates:
-  - produits
 - type: directory
   path: content/realisations
   label: Réalisations
