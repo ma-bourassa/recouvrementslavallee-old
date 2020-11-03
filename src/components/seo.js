@@ -18,7 +18,7 @@ function SEO({ lang, keywords, title }) {
     }
   `);
 
-  const pageTitle = title || site.siteMetadata.title;
+  const defaultTitle = title || site.siteMetadata.title;
   const metaDescription = site.siteMetadata.description;
   const url = site.siteMetadata.url;
   const image = site.siteMetadata.image;
@@ -39,7 +39,7 @@ function SEO({ lang, keywords, title }) {
         },
         {
           property: `og:title`,
-          content: pageTitle,
+          content: defaultTitle,
         },
         {
           property: `og:description`,
@@ -65,8 +65,7 @@ function SEO({ lang, keywords, title }) {
             }
           : []
       )}
-      title={pageTitle}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={defaultTitle}
     />
   );
 }
