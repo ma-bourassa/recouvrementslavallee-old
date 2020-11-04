@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import React from "react";
 
 export default function Product({ title, description, photo, reverseOrder, links }) {
+  const formattedDescription = description.split(`\n\n`);
+
   return (
     <section>
       <div className="container mx-auto px-6 py-12 lg:py-20 flex flex-col lg:flex-row">
@@ -15,7 +17,11 @@ export default function Product({ title, description, photo, reverseOrder, links
           </div>
 
           <div>
-            <p className="mt-4 lg:text-lg text-justify">{description}</p>
+            {formattedDescription.map((paragraphe, i) => (
+              <p key={i} className="mt-4 lg:text-lg text-justify">
+                {paragraphe}
+              </p>
+            ))}
           </div>
         </div>
 
