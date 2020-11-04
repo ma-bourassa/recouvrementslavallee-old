@@ -9,8 +9,8 @@ import SEO from "../components/seo";
 export default function PromotionsPage({ data }) {
   let promotions = [];
   promotions = data.promotions.nodes
-    .filter(({ childMarkdownRemark }) => childMarkdownRemark.frontmatter.title !== "default")
-    .map(({ childMarkdownRemark }) => childMarkdownRemark.frontmatter);
+    .filter(({ frontmatter }) => frontmatter.title !== "default")
+    .map(({ frontmatter }) => frontmatter);
 
   return (
     <Layout>
@@ -21,8 +21,8 @@ export default function PromotionsPage({ data }) {
         <div className="container mx-auto max-w-5xl flex flex-col p-12 mb-6">
           {promotions.map((promo, i) => (
             <div className="flex flex-col lg:flex-row bg-0 p-8 rounded-lg shadow-2xl my-8 bg-white" key={i}>
-              <Img className="w-full lg:w-1/2" fluid={promo.photo.childImageSharp.fluid} />
-              <div className="w-full lg:w-1/2 pt-4 lg:pt-0 lg:pl-16 flex flex-col space-y-8">
+              <Img className="w-full lg:w-1/3" fluid={promo.photo.childImageSharp.fluid} />
+              <div className="w-full lg:w-2/3 pt-4 lg:pt-0 lg:pl-16 flex flex-col space-y-8">
                 <h3 className="text-3xl font-bold text-center">{promo.title}</h3>
                 <p className="text-lg font-medium text-center">{promo.description}</p>
                 <div className="text-center">
@@ -49,19 +49,17 @@ export default function PromotionsPage({ data }) {
 
 export const query = graphql`
   query {
-    promotions: allFile(filter: { sourceInstanceName: { eq: "promotions" }, extension: { eq: "md" } }) {
+    promotions: allMarkdownRemark(filter: { fields: { sourceName: { eq: "promotions" } } }) {
       nodes {
-        childMarkdownRemark {
-          frontmatter {
-            title
-            description
-            url
-            photo {
-              childImageSharp {
-                fluid(maxWidth: 300) {
-                  ...GatsbyImageSharpFluid_withWebp
-                  ...GatsbyImageSharpFluidLimitPresentationSize
-                }
+        frontmatter {
+          title
+          description
+          url
+          photo {
+            childImageSharp {
+              fluid(maxWidth: 300) {
+                ...GatsbyImageSharpFluid_withWebp
+                ...GatsbyImageSharpFluidLimitPresentationSize
               }
             }
           }

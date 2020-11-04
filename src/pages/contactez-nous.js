@@ -8,7 +8,7 @@ import Header from "../components/header";
 export default function ContactPage() {
   return (
     <Layout>
-      <SEO keywords={["contact", "soumission", "courriel", "telephone", "adresse"]} title="Contactez-nous" />
+      <SEO keywords={["contact", "soumission"]} title="Contactez-nous" />
       <Header
         title="Contactez-nous !"
         text="Pour toute demande au sujet de nos services, nos produits ou pour une estimation, veuillez remplir le
@@ -19,7 +19,7 @@ export default function ContactPage() {
 
         <div className="w-full lg:w-1/3 p-6">
           <div className="mb-5">
-            <h2 className="text-xl font-bold mb-1">Téléphones</h2>
+            <h3 className="text-xl font-bold mb-1">Téléphones</h3>
             <ul className="list-none leading-relaxed text-blue2">
               <li>
                 <a className="font-semibold underline" href="tel:+14503573127">
@@ -30,7 +30,7 @@ export default function ContactPage() {
           </div>
 
           <div className="mb-5">
-            <h2 className="text-xl font-bold mb-1">Zone de service</h2>
+            <h3 className="text-xl font-bold mb-1">Zone de service</h3>
             <ul className="font-semibold text-blue2 mb-2 leading-relaxed">
               <li>Montérégie</li>
               <li>Rive-sud de Montréal</li>
@@ -38,7 +38,7 @@ export default function ContactPage() {
           </div>
 
           <div className="mb-5">
-            <h2 className="text-xl font-bold mb-1">Adresse</h2>
+            <h3 className="text-xl font-bold mb-1">Adresse</h3>
             <p className=" mb-2 font-semibold text-blue2 ">
               166 rang Saint-André
               <br />
