@@ -8,10 +8,14 @@ import Header from "../components/header";
 export default function ContactPage() {
   return (
     <Layout>
-      <SEO keywords={["contact", "soumission"]} title="Contactez-nous" />
+      <SEO
+        keywords={["contact", "soumission"]}
+        title="Contactez-nous"
+        description="Pour toute demande au sujet de nos services, nos produits ou pour une estimation gratuite, veuillez remplir le formulaire ci-dessous. Nous communiquerons avec vous dans les plus brefs délais."
+      />
       <Header
         title="Contactez-nous !"
-        text="Pour toute demande au sujet de nos services, nos produits ou pour une estimation, veuillez remplir le
+        text="Pour toute demande au sujet de nos services, nos produits ou pour une estimation gratuite, veuillez remplir le
               formulaire ci-dessous. Nous communiquerons avec vous dans les plus brefs délais."
       />
       <section className="flex flex-wrap justify-start items-start max-w-6xl mx-auto mb-6 ">

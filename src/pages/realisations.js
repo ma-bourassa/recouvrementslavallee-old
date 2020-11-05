@@ -17,8 +17,15 @@ export default function RealisationsPage({ data }) {
 
   return (
     <Layout>
-      <SEO keywords={["realisations"]} title="Realisations" />
-      <Header title="Réalisations" text="Voici quelques-unes de nos plus récentes réalisations" />
+      <SEO
+        keywords={["réalisations"]}
+        title="Nos réalisations"
+        description="Découvrez nos plus récentes réalisations. Les projets suivants vous offre un aperçu de notre expertise et notre savoir-faire. Chaque projet est fait sur mesure et offre un service clé en main."
+      />
+      <Header
+        title="Nos réalisations"
+        text="Les projets suivants vous offre un aperçu de notre expertise et notre savoir-faire."
+      />
 
       <section className="bg-gray-200">
         <div className="container mx-auto flex flex-col lg:flex-row flex-wrap p-12 lg:p-12 justify-center">

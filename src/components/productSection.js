@@ -9,7 +9,7 @@ export default function Product({ title, description, photo, reverseOrder, links
     <section>
       <div className="container mx-auto px-6 py-12 lg:py-20 flex flex-col lg:flex-row">
         <div className="lg:w-1/2 lg:pr-32">
-          <h3 className="text-4xl font-semibold leading-tight text-center lg:text-left mb-6">{title}</h3>
+          <h2 className="text-4xl font-semibold leading-tight text-center lg:text-left mb-6">{title}</h2>
 
           {/* Mobile */}
           <div className="flex flex-col lg:hidden">

@@ -23,6 +23,9 @@ module.exports = {
       },
     },
   },
-  variants: { backgroundColor: ["responsive", "hover", "focus", "active"] },
+  variants: {
+    backgroundColor: ["responsive", "hover", "focus", "active"],
+    display: ["responsive", "group-hover", "group-focus"],
+  },
   plugins: [require("@tailwindcss/custom-forms"), require("tailwindcss"), require("autoprefixer")],
 };

@@ -10,10 +10,14 @@ export default function ProductsPage({ data }) {
   const produits = data.produits.frontmatter.produits;
   return (
     <Layout>
-      <SEO keywords={[`service`, `vente`, `produits`, `bois`, `prelart`, `linoleum`, `lamine`]} title="Produits" />
+      <SEO
+        keywords={[`lattes de vinyle`, `tapis`, `bois d'ingénierie`, `prélart`, `laminé`, `linoléum`]}
+        title="Nos produits"
+        description="Nous offrons un large éventail de recouvrement de sol ainsi que le service d'installation de plancher. Lattes de vinyle, tapis, bois d'ingénierie, prélart, laminé, linoléum, céramique."
+      />
       <Header
-        title="Produits"
-        text="Nous offrons un large éventail de produits ainsi que le service d'installation de plancher."
+        title="Nos produits"
+        text="Nous offrons un large éventail de recouvrement de sol ainsi que le service d'installation de plancher."
       />
       {produits.map((produit, i) => (
         <ProductSection

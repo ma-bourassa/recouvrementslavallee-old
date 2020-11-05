@@ -2,14 +2,16 @@ const resolveConfig = require("tailwindcss/resolveConfig");
 const tailwindConfig = require("./tailwind.config.js");
 
 const fullConfig = resolveConfig(tailwindConfig);
+
 module.exports = {
   siteMetadata: {
     title: `Les recouvrements de sols André Lavallée`,
-    description: `Entreprise familiale spécialisée en vente et installation de plancher.`,
+    description: `Entreprise familiale spécialisée dans l'installation de recouvrements de sols souples tels que lattes de vinyle, tapis, prélart, bois d’ingénierie et laminé depuis 1985. Nous nous déplaçons partout sur la Rive-Sud de Montréal. Contactez-nous pour une soumission gratuite.`,
     author: `mabourassa`,
     siteUrl: `https://recouvrementslavallee.com`,
     image: `logo.jpg`, //from static folder
   },
+
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,

@@ -2,10 +2,12 @@ import React from "react";
 
 import Layout from "../components/layout/layout";
 import { Link } from "gatsby";
+import SEO from "../components/seo";
 
 export default function NotFoundPage() {
   return (
     <Layout>
+      <SEO title="404" />
       <section className="mt-10 container mx-auto px-4 py-8 text-center">
         <div className="max-w-auto mx-auto">
           <div className="lg:max-w-lg mx-auto">
@@ -16,7 +18,7 @@ export default function NotFoundPage() {
               />
             </svg>
           </div>
-          <h2 className="mt-8 uppercase text-xl lg:text-4xl font-black">Désolé, cette page est introuvable.</h2>
+          <h1 className="mt-8 uppercase text-xl lg:text-4xl font-black">Désolé, cette page est introuvable.</h1>
           <p className="mt-6 text-xl text-gray-900">Vous pouvez nous en faire part en communiquant avec nous.</p>
           <Link className="btn btn-blue mt-8 inline-block" to="/">
             Retour
