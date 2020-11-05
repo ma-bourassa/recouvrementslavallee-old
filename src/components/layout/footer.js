@@ -89,8 +89,12 @@ function Footer() {
                     `,
                   },
                   {
-                    route: `/realisations`,
+                    route: `/realisations/`,
                     title: `Réalisations`,
+                  },
+                  {
+                    route: `/promotions`,
+                    title: `Promotions`,
                   },
                   {
                     route: `/contactez-nous`,

@@ -24,7 +24,7 @@ export default function RealisationsPage({ data }) {
         <div className="container mx-auto flex flex-col lg:flex-row flex-wrap p-12 lg:p-12 justify-center">
           {projects.map((project, i) => (
             <Link
-              to={`/realisations/${project.projectPath}/`}
+              to={`/realisations/${project.projectPath}`}
               key={i}
               className="bg-white cursor-pointer rounded-lg shadow-xl p-6 m-4 flex-1 flex-grow-0 _card "
             >

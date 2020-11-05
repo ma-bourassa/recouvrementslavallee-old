@@ -13,7 +13,7 @@ export default function IndexPage({ data }) {
     <Layout>
       <SEO />
       <Header title="Vente et installation de plancher" text="Contactez nous pour une soumission gratuite">
-        <Link to="/contactez-nous/">
+        <Link to="/contactez-nous">
           <button className="mt-4 btn btn-blue text-xl rounded-lg">Soumission</button>
         </Link>
       </Header>
@@ -34,7 +34,7 @@ export default function IndexPage({ data }) {
           <div className="flex flex-col lg:flex-row ">
             {pageData.features.map((feature) => (
               <div
-                key={feature}
+                key={feature.title}
                 className="flex-1 lg:w-1/3 bg-white shadow-2xl rounded-lg px-4 py-8 border-solid border-gray-200 text-center m-4"
               >
                 <h1 className="text-xl font-semibold text-center mb-4">{feature.title}</h1>
@@ -44,7 +44,7 @@ export default function IndexPage({ data }) {
           </div>
 
           <div className="flex justify-center">
-            <Link to="/contactez-nous/">
+            <Link to="/contactez-nous">
               <button className="mt-6 py-3 px-5 font-semibold cursor-pointer text-lg border border-blue2 hover:bg-blue2 hover:text-white rounded-lg focus:outline-none transition duration-500">
                 Contactez-nous
               </button>
@@ -65,13 +65,13 @@ export default function IndexPage({ data }) {
             <div className="justify-center text-center flex">
               <ul className="text-xl font-medium space-y-1">
                 {pageData.specialites.map((specialite) => (
-                  <li key={specialite}>{specialite.specialite}</li>
+                  <li key={specialite.specialite}>{specialite.specialite}</li>
                 ))}
               </ul>
             </div>
 
             <div className="mt-4 flex justify-center">
-              <Link to="/produits/">
+              <Link to="/produits">
                 <button className="mt-6 py-2 px-4 font-semibold text-lg inline-block cursor-pointer border border-blue2 hover:bg-blue2 hover:text-white rounded-lg focus:outline-none transition duration-500 ease-in-out">
                   Plus d&apos;informations
                 </button>

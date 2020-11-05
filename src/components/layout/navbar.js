@@ -37,7 +37,7 @@ function NavBar() {
         <nav className={`${isExpanded ? `block` : `hidden`}  mt-2 lg:flex lg:items-center w-full lg:w-auto`}>
           {[
             {
-              route: ``,
+              route: `/`,
               title: `Accueil`,
             },
             {
@@ -45,7 +45,7 @@ function NavBar() {
               title: `Produits`,
             },
             {
-              route: `/realisations`,
+              route: `/realisations/`,
               title: `Réalisations`,
             },
             {
@@ -61,7 +61,7 @@ function NavBar() {
               className="block px-4 py-3 text-white border-t-2 lg:border-t-0 text-lg font-semibold lg:inline-block hover:bg-grey-darker transition duration-500"
               activeClassName="lg:border-b-2 lg:border-blue2 "
               key={link.title}
-              to={`${link.route}/`}
+              to={`${link.route}`}
             >
               {link.title}
             </Link>
