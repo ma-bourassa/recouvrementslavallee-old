@@ -3,12 +3,21 @@ const tailwindConfig = require("./tailwind.config.js");
 
 const fullConfig = resolveConfig(tailwindConfig);
 
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = "https://recouvrementslavallee.com",
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV,
+} = process.env;
+const isNetlifyProduction = NETLIFY_ENV === "production";
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+
 module.exports = {
   siteMetadata: {
     title: `Les recouvrements de sols André Lavallée`,
     description: `Entreprise familiale spécialisée dans l'installation de recouvrements de sols souples tels que lattes de vinyle, tapis, prélart, bois d’ingénierie et laminé depuis 1985. Nous nous déplaçons partout sur la Rive-Sud de Montréal. Contactez-nous pour une soumission gratuite.`,
     author: `mabourassa`,
-    siteUrl: `https://recouvrementslavallee.com`,
+    siteUrl: NETLIFY_SITE_URL,
     image: `logo.jpg`, //from static folder
   },
 
@@ -90,7 +99,27 @@ module.exports = {
       },
     },
     `gatsby-transformer-json`,
-    "gatsby-plugin-robots-txt",
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: "*" }],
+          },
+          "branch-deploy": {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
+            sitemap: null,
+            host: null,
+          },
+          "deploy-preview": {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
+            sitemap: null,
+            host: null,
+          },
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
