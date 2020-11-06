@@ -21,7 +21,7 @@ export default function Header({ title, text, children }) {
       <section className="py-8 mb-6 lg:mb-10 lg:py-16 text-center text-white">
         <div className="bg-grey-dark py-4 bg-opacity-75">
           <div>
-            <h2 className=" font-bold text-2xl lg:text-5xl mb-2">{title}</h2>
+            <h1 className=" font-bold text-2xl lg:text-5xl mb-2">{title}</h1>
             <hr className="hr" />
             <p className="leading-loose lg:text-xl lg:max-w-4xl lg:mx-auto m-2">{text}</p>
             {children}

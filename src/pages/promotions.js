@@ -14,8 +14,12 @@ export default function PromotionsPage({ data }) {
 
   return (
     <Layout>
-      <SEO keywords={["promotions"]} title="Promotions" />
-      <Header title="Promotions" text="" />
+      <SEO
+        keywords={["nos promotions"]}
+        title="Nos promotions"
+        description="Profitez de nos promotions courantes et offres spéciales."
+      />
+      <Header title="Nos promotions" text="Profitez de nos promotions courantes et offres spéciales" />
 
       <section className="bg-gray-200">
         <div className="container mx-auto max-w-5xl flex flex-col p-12 mb-6">

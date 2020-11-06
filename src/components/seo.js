@@ -3,14 +3,13 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";
 
-function SEO({ lang, keywords, title }) {
+function SEO({ description, lang, meta, keywords, title }) {
   const { site } = useStaticQuery(graphql`
     query DefaultSEOQuery {
       site {
         siteMetadata {
           title
           description
-          author
           siteUrl
           image
         }
@@ -18,8 +17,7 @@ function SEO({ lang, keywords, title }) {
     }
   `);
 
-  const defaultTitle = title || site.siteMetadata.title;
-  const metaDescription = site.siteMetadata.description;
+  const metaDescription = description || site.siteMetadata.description;
   const url = site.siteMetadata.url;
   const image = site.siteMetadata.image;
 
@@ -28,6 +26,8 @@ function SEO({ lang, keywords, title }) {
       htmlAttributes={{
         lang,
       }}
+      title={title}
+      titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: "google-site-verification",
@@ -39,7 +39,7 @@ function SEO({ lang, keywords, title }) {
         },
         {
           property: `og:title`,
-          content: defaultTitle,
+          content: title,
         },
         {
           property: `og:description`,
@@ -57,29 +57,45 @@ function SEO({ lang, keywords, title }) {
           property: `og:image`,
           content: image,
         },
-      ].concat(
-        keywords.length > 0
-          ? {
-              name: `keywords`,
-              content: keywords.join(`, `),
-            }
-          : []
-      )}
-      title={defaultTitle}
+      ]
+        .concat(
+          keywords.length > 0
+            ? {
+                name: `keywords`,
+                content: keywords.join(`, `),
+              }
+            : []
+        )
+        .concat(meta)}
     />
   );
 }
 
 SEO.defaultProps = {
   lang: `fr`,
-  keywords: ["recouvrements de sols", "recouvrement de sol", "plancher", "lattes de vinyle", "tapis", "lavallee"],
+  keywords: [
+    "recouvrement de sol",
+    "vente et installation de plancher",
+    "installation de plancher rive-sud",
+    "installation de plancher de vinyle",
+    "installation de plancher de vinyle rive-sud",
+    "installation de tapis",
+    "installation de tapis rive-sud",
+    "pose de plancher rive-sud",
+    "pose de plancher de vinyle",
+    "pose de plancher de vinyle rive-sud",
+    "pose de tapis",
+    "pose de tapis rive-sud",
+  ],
   meta: [],
 };
 
 SEO.propTypes = {
+  description: PropTypes.string,
   keywords: PropTypes.arrayOf(PropTypes.string),
   lang: PropTypes.string,
-  title: PropTypes.string,
+  meta: PropTypes.array,
+  title: PropTypes.string.isRequired,
 };
 
 export default SEO;
