@@ -11,7 +11,7 @@ export default function IndexPage({ data }) {
   const pageData = data.accueil.frontmatter;
   return (
     <Layout>
-      <SEO title="Vente et installation de plancher" />
+      <SEO title="Pose de plancher" />
       <Header title="Vente et installation de plancher" text="Contactez nous pour une soumission gratuite">
         <Link to="/contactez-nous/">
           <button className="mt-4 btn btn-blue text-xl rounded-lg">Soumission</button>

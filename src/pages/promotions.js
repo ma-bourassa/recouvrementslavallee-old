@@ -8,16 +8,16 @@ import SEO from "../components/seo";
 
 export default function PromotionsPage({ data }) {
   let promotions = [];
-  promotions = data.promotions.nodes
-    .filter(({ frontmatter }) => frontmatter.title !== "default")
-    .map(({ frontmatter }) => frontmatter);
+  promotions = data.promotions.nodes.map(({ frontmatter }) => frontmatter);
 
   return (
     <Layout>
       <SEO
         keywords={["nos promotions"]}
         title="Nos promotions"
-        description="Profitez de nos promotions courantes et offres spéciales."
+        description={
+          "Profitez de nos promotions courantes et rabais pour une durée limitée. Consultez cette section régulièrement pour connaître toutes nos offres spéciales."
+        }
       />
       <Header title="Nos promotions" text="Profitez de nos promotions courantes et offres spéciales" />
 
