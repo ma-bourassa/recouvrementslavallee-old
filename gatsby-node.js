@@ -49,7 +49,7 @@ exports.createPages = async function ({ actions, graphql }) {
     const projectName = node.frontmatter.title;
     const projectSlug = node.parent.name;
     actions.createPage({
-      path: `realisations/${projectSlug}`,
+      path: `realisations/${projectSlug}/`,
       component: require.resolve(`./src/templates/project-gallery.js`),
       context: { projectName: projectName },
     });
