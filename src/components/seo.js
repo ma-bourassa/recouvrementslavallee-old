@@ -2,6 +2,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";
+import JsonLd from "./json-ld";
 
 function SEO({ description, lang, meta, keywords, title }) {
   const { site } = useStaticQuery(graphql`
@@ -18,7 +19,7 @@ function SEO({ description, lang, meta, keywords, title }) {
   `);
 
   const metaDescription = description || site.siteMetadata.description;
-  const url = site.siteMetadata.url;
+  const siteUrl = site.siteMetadata.siteUrl;
   const image = site.siteMetadata.image;
 
   return (
@@ -51,7 +52,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           property: `og:url`,
-          content: url,
+          content: siteUrl,
         },
         {
           property: `og:image`,
@@ -67,7 +68,42 @@ function SEO({ description, lang, meta, keywords, title }) {
             : []
         )
         .concat(meta)}
-    />
+    >
+      <JsonLd>
+        {{
+          "@context": "https://schema.org",
+          "@type": "HomeAndConstructionBusiness",
+          "@id": siteUrl,
+          url: siteUrl,
+          logo: "https://recouvrementslavallee.com/logo.jpg",
+          additionalType: "http://www.productontology.org/id/Flooring",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "166 rang Saint-André",
+            addressLocality: "Saint-Bernard-de-Lacolle",
+            addressRegion: "Québec",
+            postalCode: "J0J 1V0",
+            addressCountry: "CA",
+          },
+          areaServed: "Montérégie",
+          name: site.siteMetadata.title,
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: 45.0687715,
+            longitude: -73.4361446,
+          },
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              opens: "08:00",
+              closes: "17:00",
+            },
+          ],
+          telephone: "+14503573127",
+        }}
+      </JsonLd>
+    </Helmet>
   );
 }
 
