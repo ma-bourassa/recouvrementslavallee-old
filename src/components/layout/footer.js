@@ -84,7 +84,7 @@ function Footer() {
                     title: `Accueil`,
                   },
                   {
-                    route: `/produits`,
+                    route: `/produits/`,
                     title: `Produits
                     `,
                   },
@@ -93,11 +93,11 @@ function Footer() {
                     title: `Réalisations`,
                   },
                   {
-                    route: `/promotions`,
+                    route: `/promotions/`,
                     title: `Promotions`,
                   },
                   {
-                    route: `/contactez-nous`,
+                    route: `/contactez-nous/`,
                     title: `Contactez-nous`,
                   },
                 ].map((link) => (

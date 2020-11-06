@@ -13,7 +13,7 @@ export default function IndexPage({ data }) {
     <Layout>
       <SEO title="Vente et installation de plancher" />
       <Header title="Vente et installation de plancher" text="Contactez nous pour une soumission gratuite">
-        <Link to="/contactez-nous">
+        <Link to="/contactez-nous/">
           <button className="mt-4 btn btn-blue text-xl rounded-lg">Soumission</button>
         </Link>
       </Header>
@@ -44,7 +44,7 @@ export default function IndexPage({ data }) {
           </div>
 
           <div className="flex justify-center">
-            <Link to="/contactez-nous">
+            <Link to="/contactez-nous/">
               <button className="mt-6 py-3 px-5 font-semibold cursor-pointer text-lg border border-blue2 hover:bg-blue2 hover:text-white rounded-lg focus:outline-none transition duration-500">
                 Contactez-nous
               </button>
@@ -71,7 +71,7 @@ export default function IndexPage({ data }) {
             </div>
 
             <div className="mt-4 flex justify-center">
-              <Link to="/produits">
+              <Link to="/produits/">
                 <button className="mt-6 py-2 px-4 font-semibold text-lg inline-block cursor-pointer border border-blue2 hover:bg-blue2 hover:text-white rounded-lg focus:outline-none transition duration-500 ease-in-out">
                   Plus d&apos;informations
                 </button>
