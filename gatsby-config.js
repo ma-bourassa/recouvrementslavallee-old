@@ -15,9 +15,9 @@ const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 module.exports = {
   siteMetadata: {
     title: `Les recouvrements de sols André Lavallée`,
-    description: `Entreprise familiale spécialisée dans l'installation de recouvrements de sols souples tels que lattes de vinyle, tapis, prélart, bois d’ingénierie et laminé depuis 1985. Nous nous déplaçons partout sur la Rive-Sud de Montréal. Contactez-nous pour une soumission gratuite.`,
+    description: `Installation de planchers souples tels que lattes de vinyle, tapis, prélart, bois d’ingénierie et laminé. Nous nous déplaçons partout sur la Rive-Sud de Montréal. Contactez-nous pour une soumission gratuite.`,
     author: `mabourassa`,
-    siteUrl: NETLIFY_SITE_URL,
+    siteUrl,
     image: `logo.jpg`, //from static folder
   },
 

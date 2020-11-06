@@ -74,10 +74,17 @@ function SEO({ description, lang, meta, keywords, title }) {
 SEO.defaultProps = {
   lang: `fr`,
   keywords: [
-    "recouvrement sol",
-    "installation plancher rive-sud",
-    "pose plancher rive-sud",
-    "installation plancher de vinyle",
+    "recouvrement de sol",
+    "installation de plancher rive-sud",
+    "installation de plancher de vinyle",
+    "installation de plancher de vinyle rive-sud",
+    "installation de tapis",
+    "installation de tapis rive-sud",
+    "pose de plancher rive-sud",
+    "pose de plancher de vinyle",
+    "pose de plancher de vinyle rive-sud",
+    "pose de tapis",
+    "pose de tapis rive-sud",
   ],
   meta: [],
 };
