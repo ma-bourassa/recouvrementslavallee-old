@@ -15,7 +15,7 @@ export default function PromotionsPage({ data }) {
   return (
     <Layout>
       <SEO
-        keywords={["promotions", "meilleur prix"]}
+        keywords={["nos promotions"]}
         title="Nos promotions"
         description="Profitez de nos promotions courantes et offres spéciales."
       />

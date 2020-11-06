@@ -10,7 +10,7 @@ function NavBar() {
 
   const data = useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "logo1.png" }) {
+      logo: file(relativePath: { eq: "recouvrementslavallee-logo.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp
@@ -24,7 +24,7 @@ function NavBar() {
     <header className="bg-grey-dark">
       <div className="flex flex-wrap items-baseline lg:items-center justify-between px-2 py-4 lg:justify-around">
         <Link className="w-4/5 lg:w-1/4 px-2" to="/">
-          <Img alt={siteTitle()} fluid={data.logo.childImageSharp.fluid}></Img>
+          <Img alt={siteTitle() + " Logo"} fluid={data.logo.childImageSharp.fluid}></Img>
         </Link>
 
         <button

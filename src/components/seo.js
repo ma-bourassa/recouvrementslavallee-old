@@ -75,6 +75,7 @@ SEO.defaultProps = {
   lang: `fr`,
   keywords: [
     "recouvrement de sol",
+    "vente et installation de plancher",
     "installation de plancher rive-sud",
     "installation de plancher de vinyle",
     "installation de plancher de vinyle rive-sud",

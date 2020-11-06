@@ -11,7 +11,7 @@ export default function ProductsPage({ data }) {
   return (
     <Layout>
       <SEO
-        keywords={[`lattes de vinyle`, `tapis`, `bois d'ingénierie`, `prélart`, `laminé`, `linoléum`]}
+        keywords={["nos produits", `lattes de vinyle`, `tapis`, `bois d'ingénierie`, `prélart`, `laminé`, `linoléum`]}
         title="Nos produits"
         description="Nous offrons un large éventail de recouvrement de sol ainsi que le service d'installation de plancher. Lattes de vinyle, tapis, bois d'ingénierie, prélart, laminé, linoléum, céramique."
       />

@@ -9,7 +9,7 @@ import "../../utils/fontawesome";
 function Footer() {
   const data = useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "logo2.png" }) {
+      logo: file(relativePath: { eq: "recouvrementslavallee-logo-alt.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp
@@ -28,7 +28,7 @@ function Footer() {
               <Link to="/">
                 <Img
                   className="w-1/2 sm:w-1/3 lg:w-1/2 xl:w-1/3 mx-auto"
-                  alt={siteTitle()}
+                  alt={siteTitle() + " Logo"}
                   fluid={data.logo.childImageSharp.fluid}
                 ></Img>
               </Link>

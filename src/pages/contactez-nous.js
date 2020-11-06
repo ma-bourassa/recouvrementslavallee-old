@@ -9,7 +9,7 @@ export default function ContactPage() {
   return (
     <Layout>
       <SEO
-        keywords={["contact", "soumission"]}
+        keywords={["contactez-nous", "soumission"]}
         title="Contactez-nous"
         description="Pour toute demande au sujet de nos services, nos produits ou pour une estimation gratuite, veuillez remplir le formulaire ci-dessous. Nous communiquerons avec vous dans les plus brefs délais."
       />

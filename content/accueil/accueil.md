@@ -10,10 +10,10 @@ features:
       sont capitales. Notre service est clé en main et 100% adapté à vos souhaits!
   - title: Service
     description: Avec nous, vous aurez l'occasion d'acheter vos matériaux de recouvrement
-      de sol au meilleur prix et d'avoir la meilleure équipe de pose sur le marché.
+      de sol au meilleur prix et d'avoir la meilleure équipe sur le marché pour la pose de votre plancher.
   - title: Soumission gratuite
     description: Nous nous déplaçons, quelque soit votre projet, afin de vous présenter
-      nos produits et vous offrir une évaluation gratuitement.
+      nos produits et vous offrir une évaluation gratuite.
 specialites:
   - specialite: Lattes de vinyle
   - specialite: Tapis
