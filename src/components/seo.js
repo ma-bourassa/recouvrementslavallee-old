@@ -17,6 +17,7 @@ function SEO({ description, lang, meta, keywords, title }) {
     }
   `);
 
+  const formattedTitle = `${title} | ${site.siteMetadata.title}`;
   const metaDescription = description || site.siteMetadata.description;
   const siteUrl = site.siteMetadata.siteUrl;
   const image = site.siteMetadata.image;
@@ -26,8 +27,7 @@ function SEO({ description, lang, meta, keywords, title }) {
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={formattedTitle}
       meta={[
         {
           name: "google-site-verification",
@@ -39,7 +39,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: formattedTitle,
         },
         {
           property: `og:description`,

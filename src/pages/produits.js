@@ -1,4 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { graphql } from "gatsby";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 import PropTypes from "prop-types";
 import React from "react";
 import Header from "../components/header";
@@ -29,6 +31,15 @@ export default function ProductsPage({ data }) {
           links={produit.links}
         />
       ))}
+      <div className="container mx-auto px-6 py-12 lg:py-20 flex flex-row-reverse">
+        <AnchorLink
+          to="/produits/#head"
+          stripHash
+          className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-4 rounded"
+        >
+          <FontAwesomeIcon icon="angle-up" color="grey" size="lg" />
+        </AnchorLink>
+      </div>
     </Layout>
   );
 }
