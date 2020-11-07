@@ -130,6 +130,7 @@ module.exports = {
     `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-react-helmet`,
     `gatsby-remark-source-name`,
+    `gatsby-plugin-anchor-links`,
     {
       resolve: `gatsby-plugin-postcss`,
       options: {

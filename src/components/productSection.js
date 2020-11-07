@@ -1,12 +1,13 @@
 import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import React from "react";
+import { slugify } from "../utils/string-utils";
 
 export default function Product({ title, description, photo, reverseOrder, links }) {
   const formattedDescription = description.split(`\n\n`);
 
   return (
-    <section>
+    <section id={slugify(title)}>
       <div className="container mx-auto px-6 py-12 lg:py-20 flex flex-col lg:flex-row">
         <div className="lg:w-1/2 lg:pr-32">
           <h2 className="text-4xl font-semibold leading-tight text-center lg:text-left mb-6">{title}</h2>
