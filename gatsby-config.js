@@ -16,7 +16,7 @@ module.exports = {
   siteMetadata: {
     title: `Les recouvrements de sols André Lavallée`,
     description: `Installation de planchers souples tels que lattes de vinyle, tapis, prélart, bois d’ingénierie et laminé. Nous nous déplaçons partout sur la Rive-Sud de Montréal. Contactez-nous pour une soumission gratuite.`,
-    author: `mabourassa`,
+    author: `@apparluk`,
     siteUrl,
     image: `logo.jpg`, //from static folder
   },
@@ -87,6 +87,7 @@ module.exports = {
             options: {
               maxWidth: 1024,
               withWebp: true,
+              linkImagesToOriginal: false,
             },
           },
           {
@@ -121,9 +122,9 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-sitemap`,
+      resolve: `gatsby-plugin-advanced-sitemap`,
       options: {
-        exclude: [`/success`, `/admin`],
+        exclude: [`/dev-404-page`, `/404`, `/404.html`, `/offline-plugin-app-shell-fallback`, `/success`, `/admin`],
       },
     },
     `gatsby-plugin-netlify`,
@@ -144,14 +145,18 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Les recouvrements de sols André Lavallée.inc`,
-        short_name: `recouvrements-lavallee`,
+        name: `Les recouvrements de sols André Lavallée`,
+        short_name: `Recouvrements-lavallee`,
         start_url: `/`,
-        background_color: fullConfig.theme.colors.white,
-        theme_color: fullConfig.theme.colors.teal["400"],
+        background_color: fullConfig.theme.colors.grey.default,
+        theme_color: fullConfig.theme.colors.blue2.default,
         display: `minimal-ui`,
         icon: `src/images/logo_favicon.png`,
+        icon_options: {
+          purpose: `any maskable`,
+        },
       },
     },
+    `gatsby-plugin-offline`,
   ],
 };
