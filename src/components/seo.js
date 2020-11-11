@@ -99,24 +99,51 @@ function SEO({ description, lang, meta, keywords, title }) {
           },
           "areaServed": [
             {
-              "@type": "GeoCircle",
-              "geoMidpoint": {
-                  "@type": "GeoCoordinates",
-                  "latitude": 45.259811,
-                  "longitude": -73.279484
-              },
-              "geoRadius": 30000
+              "@type": "City",
+              "name": "Saint-Jean-sur-Richelieu",
+              "sameAs": "https://en.wikipedia.org/wiki/Saint-Jean-sur-Richelieu"
             },
             {
-              "@type": "GeoCircle",
-              "geoMidpoint": {
-                  "@type": "GeoCoordinates",
-                  "latitude": 45.486111,
-                  "longitude": -73.210746
-              },
-              "geoRadius": 25000
+              "@type": "City",
+              "name": "Boucherville",
+              "sameAs": "https://en.wikipedia.org/wiki/Boucherville"
+            },
+            {
+              "@type": "City",
+              "name": "Brossard",
+              "sameAs": "https://en.wikipedia.org/wiki/Brossard"
+            },
+            {
+              "@type": "City",
+              "name": "Châteauguay",
+              "sameAs": "https://en.wikipedia.org/wiki/Ch%C3%A2teauguay"
+            },
+            {
+              "@type": "City",
+              "name": "Longueuil",
+              "sameAs": "https://en.wikipedia.org/wiki/Longueuil"
+            },
+            {
+              "@type": "City",
+              "name": "Mont-Saint-Hilaire",
+              "sameAs": "https://en.wikipedia.org/wiki/Mont-Saint-Hilaire,_Quebec"
+            },
+            {
+              "@type": "City",
+              "name": "Saint-Hyacinthe",
+              "sameAs": "https://en.wikipedia.org/wiki/Saint-Hyacinthe,_Quebec"
+            },
+            {
+              "@type": "City",
+              "name": "Granby",
+              "sameAs": "https://en.wikipedia.org/wiki/Granby,_Quebec"
+            },
+            {
+              "@type": "City",
+              "name": "Chambly",
+              "sameAs": "https://en.wikipedia.org/wiki/Chambly,_Quebec"
             }
-          ],          
+          ],
           "geo": {
             "@type": "GeoCoordinates",
             "latitude": 45.0687715,
