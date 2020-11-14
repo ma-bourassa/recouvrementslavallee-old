@@ -158,5 +158,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "G-XW3833S4ZN", // Google Analytics / GA
+        ],
+      },
+    },
   ],
 };
