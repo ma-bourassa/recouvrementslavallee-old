@@ -24,7 +24,7 @@ export default function ContactPage() {
         <div className="w-full lg:w-1/3 p-6">
           <div className="mb-5">
             <h2 className="text-xl font-bold mb-1">Téléphones</h2>
-            <ul className="list-none leading-relaxed text-blue2">
+            <ul className="list-none leading-relaxed text-blue-600">
               <li>
                 <a className="font-semibold underline" href="tel:+14503573127">
                   450-357-3127
@@ -35,7 +35,7 @@ export default function ContactPage() {
 
           <div className="mb-5">
             <h2 className="text-xl font-bold mb-1">Zone de service</h2>
-            <ul className="font-semibold text-blue2 mb-2 leading-relaxed">
+            <ul className="font-semibold text-blue-600 mb-2 leading-relaxed">
               <li>Montérégie</li>
               <li>Rive-sud de Montréal</li>
             </ul>
@@ -43,7 +43,7 @@ export default function ContactPage() {
 
           <div className="mb-5">
             <h2 className="text-xl font-bold mb-1">Adresse</h2>
-            <p className=" mb-2 font-semibold text-blue2 ">
+            <p className=" mb-2 font-semibold text-blue-600 ">
               166 rang Saint-André
               <br />
               Saint-Bernard-de-Lacolle

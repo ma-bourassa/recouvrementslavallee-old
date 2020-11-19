@@ -27,7 +27,7 @@ export default function RealisationsPage({ data }) {
         text="Les projets suivants vous offre un aperçu de notre expertise et notre savoir-faire."
       />
 
-      <section className="bg-gray-200">
+      <section className="bg-gray-100">
         <div className="container mx-auto flex flex-col lg:flex-row flex-wrap p-12 lg:p-12 justify-center">
           {projects.map((project, i) => (
             <Link

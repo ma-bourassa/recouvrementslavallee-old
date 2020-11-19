@@ -51,7 +51,7 @@ function Footer() {
               </ul>
             </div>
 
-            <div className="w-full bg-blue2 py-6 px-6 lg:px-10 al">
+            <div className="w-full bg-blue-600 py-6 px-6 lg:px-10 al">
               <p className="text-center font-semibold text-lg">Accréditations</p>
               <ul className="p-2 list-disc leading-relaxed max-w-2xl mx-auto">
                 <li className="mt-2">
@@ -101,7 +101,7 @@ function Footer() {
                     title: `Contactez-nous`,
                   },
                 ].map((link) => (
-                  <Link className="py-2 lg:py-0 block hover:text-blue2" key={link.title} to={link.route}>
+                  <Link className="py-2 lg:py-0 block hover:text-blue-600" key={link.title} to={link.route}>
                     {link.title}
                   </Link>
                 ))}

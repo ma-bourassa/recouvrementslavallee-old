@@ -148,8 +148,8 @@ module.exports = {
         name: `Les recouvrements de sols André Lavallée`,
         short_name: `Recouvrements-lavallee`,
         start_url: `/`,
-        background_color: fullConfig.theme.colors.grey.default,
-        theme_color: fullConfig.theme.colors.blue2.default,
+        background_color: `#424043`,
+        theme_color: `#1874B5`,
         display: `minimal-ui`,
         icon: `src/images/logo_favicon.png`,
         icon_options: {

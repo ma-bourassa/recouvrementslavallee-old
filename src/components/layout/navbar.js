@@ -73,7 +73,7 @@ function NavBar() {
             >
               <Link
                 className="px-4 py-3 font-semibold hover:bg-grey-darker transition duration-500 inline-flex w-full items-center justify-center"
-                activeClassName="lg:border-b-2 lg:border-blue2"
+                activeClassName="lg:border-b-2 lg:border-blue-600"
                 to={`${link.route}`}
               >
                 {link.title}
@@ -90,7 +90,7 @@ function NavBar() {
                       stripHash
                       className="w-full"
                     >
-                      <li className="list-none px-4 py-3 border-t border-grey-light bg-grey-dark hover:bg-grey-darker transition duration-200">
+                      <li className="list-none px-4 py-3 border-t border-gray-500 bg-grey-dark hover:bg-grey-darker transition duration-200">
                         <span>{item}</span>
                       </li>
                     </AnchorLink>

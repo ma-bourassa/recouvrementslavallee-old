@@ -1,4 +1,6 @@
 // See https://tailwindcss.com/docs/configuration for details
+const colors = require("tailwindcss/colors");
+
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
@@ -11,14 +13,13 @@ module.exports = {
         "1/2": "50vh",
       },
       colors: {
+        blue: colors.lightBlue,
+        gray: colors.blueGray,
         grey: {
           light: "#525053",
-          default: "#424043",
+          DEFAULT: "#424043",
           dark: "#323033",
           darker: "#222023",
-        },
-        blue2: {
-          default: "#1874B5",
         },
       },
     },
