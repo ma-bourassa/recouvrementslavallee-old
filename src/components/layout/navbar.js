@@ -74,7 +74,7 @@ function NavBar() {
               <Link
                 className="px-4 py-3 font-semibold hover:bg-grey-darker transition duration-500 inline-flex w-full items-center justify-center"
                 activeClassName="lg:border-b-2 lg:border-blue-600"
-                to={`${link.route}`}
+                to={link.dropdown ? null : `${link.route}`}
               >
                 {link.title}
                 {link.dropdown && <FontAwesomeIcon icon="angle-down" className="ml-2" color="white" />}
