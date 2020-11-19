@@ -53,7 +53,8 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "react-hook-form": "^6.11.3"
+    "react-hook-form": "^6.11.3",
+    "react-reveal": "^1.2.2"
   },
   "devDependencies": {
     "@hot-loader/react-dom": "^17.0.0",

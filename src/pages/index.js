@@ -6,6 +6,7 @@ import { Link, graphql } from "gatsby";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
 import Header from "../components/header";
+import Fade from "react-reveal/Fade";
 
 export default function IndexPage({ data }) {
   const pageData = data.accueil.frontmatter;
@@ -56,7 +57,9 @@ export default function IndexPage({ data }) {
       <section>
         <div className="container mx-auto flex flex-col lg:flex-row px-6 py-6 lg:py-12 leading-relaxed items-center">
           <div className="hidden lg:block lg:w-1/2">
-            <Img className="rounded" fluid={data.homeImage.childImageSharp.fluid} />
+            <Fade left>
+              <Img className="rounded" fluid={data.homeImage.childImageSharp.fluid} />
+            </Fade>
           </div>
           <div className="lg:w-1/2 lg:mx-12 text-center lg:text-left">
             <h2 className="text-2xl font-semibold mb-6 text-center">Nos spécialitées</h2>
