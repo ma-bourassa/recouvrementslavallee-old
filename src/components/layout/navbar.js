@@ -90,7 +90,7 @@ function NavBar() {
                       stripHash
                       className="w-full"
                     >
-                      <li className="list-none px-4 py-3 border-t border-gray-500 bg-grey-dark hover:bg-grey-darker transition duration-200">
+                      <li className="list-none px-4 py-3 border-t border-grey-light bg-grey-dark hover:bg-grey-darker transition duration-200">
                         <span>{item}</span>
                       </li>
                     </AnchorLink>

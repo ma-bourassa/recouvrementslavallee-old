@@ -28,5 +28,5 @@ module.exports = {
     backgroundColor: ["responsive", "hover", "focus", "active"],
     display: ["responsive", "group-hover", "group-focus"],
   },
-  plugins: [require("@tailwindcss/custom-forms"), require("tailwindcss"), require("autoprefixer")],
+  plugins: [require("@tailwindcss/forms"), require("tailwindcss"), require("autoprefixer")],
 };

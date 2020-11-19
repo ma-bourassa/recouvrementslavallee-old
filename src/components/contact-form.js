@@ -73,7 +73,7 @@ export default function ContactForm() {
               required: true,
             })}
           />
-          {errors.Nom && <span className="text-red-600 text-sm">Veuillez entrer votre nom.</span>}
+          {errors.Nom && <span className="text-red-600 text-sm">Entrez votre nom</span>}
         </label>
 
         <label className="block mb-4">
@@ -87,7 +87,7 @@ export default function ContactForm() {
               required: true,
             })}
           />
-          {errors.Téléphone && <span className="text-red-600 text-sm">Téléphone invalide.</span>}
+          {errors.Téléphone && <span className="text-red-600 text-sm">Entrez votre numéro de téléphone</span>}
         </label>
 
         <label className="block mb-4">
@@ -104,7 +104,7 @@ export default function ContactForm() {
               },
             })}
           />
-          {errors.Courriel && <span className="text-red-600 text-sm">Courriel invalide.</span>}
+          {errors.Courriel && <span className="text-red-600 text-sm">Courriel invalide</span>}
         </label>
 
         <label className="block mb-4">
@@ -120,7 +120,7 @@ export default function ContactForm() {
               required: true,
             })}
           />
-          {errors.Message && <span className="text-red-600 text-sm">Veuillez entrer un message.</span>}
+          {errors.Message && <span className="text-red-600 text-sm">Entrez un message</span>}
         </label>
 
         <label>
