@@ -118,7 +118,7 @@ function Footer() {
           </p>
           <p className="text-white font-semibold">
             Site web réalisé par{` `}
-            <a href="https://github.com/ma-bourassa" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/boumar04/" target="_blank" rel="noopener noreferrer">
               Marc-André Bourassa
             </a>
           </p>
