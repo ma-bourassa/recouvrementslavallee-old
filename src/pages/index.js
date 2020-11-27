@@ -13,7 +13,7 @@ export default function IndexPage({ data }) {
   return (
     <Layout>
       <SEO title="Pose de plancher" />
-      <Header title="Vente et installation de plancher" text="Contactez nous pour une soumission gratuite">
+      <Header title="Vente et installation de plancher" text="Contactez-nous pour une soumission gratuite">
         <Link to="/contactez-nous/">
           <button className="mt-4 btn btn-blue text-xl rounded-lg">Soumission</button>
         </Link>
