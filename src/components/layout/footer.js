@@ -51,7 +51,7 @@ function Footer() {
               </ul>
             </div>
 
-            <div className="w-full bg-blue-600 py-6 px-6 lg:px-10 al">
+            <div className="w-full bg-blue-700 py-6 px-6 lg:px-10 al">
               <p className="text-center font-semibold text-lg">Accréditations</p>
               <ul className="p-2 list-disc leading-relaxed max-w-2xl mx-auto">
                 <li className="mt-2">

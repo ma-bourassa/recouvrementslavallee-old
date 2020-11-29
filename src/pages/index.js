@@ -21,7 +21,7 @@ export default function IndexPage({ data }) {
 
       <section className="container mx-auto px-6 pb-6 lg:pb-12 lg:max-w-5xl leading-relaxed">
         <h2 className="text-xl lg:text-3xl font-semibold text-center">{pageData.title_intro}</h2>
-        <hr className="border-blue-600 border-t-2 mx-auto my-6 w-full" />
+        <hr className="border-blue-700 border-t-2 mx-auto my-6 w-full" />
         <div className="text-center lg:text-lg">{pageData.texte_intro}</div>
       </section>
 
@@ -30,7 +30,7 @@ export default function IndexPage({ data }) {
           <h2 className=" text-xl lg:text-2xl font-semibold text-center ">
             Pourquoi choisir notre entreprise pour vos travaux&nbsp;?
           </h2>
-          <hr className="border-blue-600 border-t-2 my-6 lg:max-w-lg mx-auto" />
+          <hr className="border-blue-700 border-t-2 my-6 lg:max-w-lg mx-auto" />
 
           <div className="flex flex-col lg:flex-row ">
             {pageData.features.map((feature) => (
@@ -46,7 +46,7 @@ export default function IndexPage({ data }) {
 
           <div className="flex justify-center">
             <Link to="/contactez-nous/">
-              <button className="mt-6 py-3 px-5 font-semibold cursor-pointer text-lg border border-blue-600 hover:bg-blue-600 hover:text-white rounded-lg focus:outline-none transition duration-500">
+              <button className="mt-6 py-3 px-5 font-semibold cursor-pointer text-lg border border-blue-700 hover:bg-blue-700 hover:text-white rounded-lg focus:outline-none transition duration-500">
                 Contactez-nous
               </button>
             </Link>
@@ -63,7 +63,7 @@ export default function IndexPage({ data }) {
           </div>
           <div className="lg:w-1/2 lg:mx-12 text-center lg:text-left">
             <h2 className="text-2xl font-semibold mb-6 text-center">Nos spécialitées</h2>
-            <hr className="border-blue-600 border-t-2 my-6 lg:max-w-xs mx-auto" />
+            <hr className="border-blue-700 border-t-2 my-6 lg:max-w-xs mx-auto" />
 
             <div className="justify-center text-center flex">
               <ul className="text-xl font-medium space-y-1">
@@ -75,7 +75,7 @@ export default function IndexPage({ data }) {
 
             <div className="mt-4 flex justify-center">
               <Link to="/produits/">
-                <button className="mt-6 py-2 px-4 font-semibold text-lg inline-block cursor-pointer border border-blue-600 hover:bg-blue-600 hover:text-white rounded-lg focus:outline-none transition duration-500 ease-in-out">
+                <button className="mt-6 py-2 px-4 font-semibold text-lg inline-block cursor-pointer border border-blue-700 hover:bg-blue-700 hover:text-white rounded-lg focus:outline-none transition duration-500 ease-in-out">
                   Plus d&apos;informations
                 </button>
               </Link>
