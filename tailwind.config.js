@@ -8,6 +8,9 @@ module.exports = {
   },
   purge: ["./src/**/*.js"],
   theme: {
+    fontFamily: {
+      sans: ["Roboto", "ui-sans-serif", "system-ui"],
+    },
     extend: {
       minHeight: {
         "1/2": "50vh",
