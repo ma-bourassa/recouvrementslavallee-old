@@ -2,35 +2,35 @@
 new_page_extension: md
 auto_deploy: false
 admin_path: "/static/admin"
-webhook_url:
+webhook_url: 
 sections:
-  - type: heading
-    label: Content
-  - type: document
-    path: content/accueil/accueil.md
-    label: Accueil
-  - type: document
-    path: content/produits/produits.md
-    label: Produits
-  - type: directory
-    path: content/realisations
-    label: Réalisations
-    create: documents
-    match: "**/*"
-    new_doc_ext: md
-    templates:
-      - realisation
-  - type: directory
-    path: content/promotions
-    label: Promotions
-    create: documents
-    match: "**/*"
-    new_doc_ext: md
-    templates:
-      - promotions
+- type: heading
+  label: Content
+- type: document
+  path: content/accueil/accueil.md
+  label: Accueil
+- type: document
+  path: content/produits/produits.md
+  label: Produits
+- type: directory
+  path: content/realisations
+  label: Réalisations
+  create: documents
+  match: "**/*"
+  new_doc_ext: md
+  templates:
+  - realisation
+- type: directory
+  path: content/promotions
+  label: Promotions
+  create: documents
+  match: "**/*"
+  new_doc_ext: md
+  templates:
+  - promotions
 upload_dir: static/uploads
 public_path: "/uploads"
-front_matter_path: ""
+front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
 build:
