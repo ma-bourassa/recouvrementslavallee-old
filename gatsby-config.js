@@ -129,7 +129,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-remark-source-name`,
     `gatsby-plugin-anchor-links`,
-    "gatsby-plugin-page-transitions",
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
