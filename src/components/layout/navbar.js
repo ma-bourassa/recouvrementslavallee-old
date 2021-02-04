@@ -4,9 +4,9 @@ import Img from "gatsby-image";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import React, { useState } from "react";
 import { slugify } from "../../utils/string-utils";
-import siteTitle from "../title";
+import useSiteTitle from "../useSiteTitle";
 
-function NavBar() {
+export default function NavBar() {
   const [isExpanded, toggleExpansion] = useState(false);
 
   const data = useStaticQuery(graphql`
@@ -33,7 +33,7 @@ function NavBar() {
     <header id="head" className="bg-grey-dark">
       <div className="flex flex-wrap items-baseline lg:items-center justify-between px-2 py-4 lg:justify-around">
         <Link className="w-4/5 lg:w-1/4 px-2" to="/">
-          <Img alt={siteTitle() + " Logo"} fluid={logo}></Img>
+          <Img alt={useSiteTitle() + " Logo"} fluid={logo}></Img>
         </Link>
 
         <button
@@ -119,5 +119,3 @@ function NavBar() {
     </header>
   );
 }
-
-export default NavBar;

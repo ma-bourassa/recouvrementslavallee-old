@@ -1,12 +1,12 @@
 import React from "react";
-import siteTitle from "../title";
+import useSiteTitle from "../useSiteTitle";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../utils/fontawesome";
 
-function Footer() {
+export default function Footer() {
   const data = useStaticQuery(graphql`
     query {
       logo: file(relativePath: { eq: "recouvrementslavallee-logo-alt.png" }) {
@@ -28,7 +28,7 @@ function Footer() {
               <Link to="/">
                 <Img
                   className="w-1/2 sm:w-1/3 lg:w-1/2 xl:w-1/3 mx-auto"
-                  alt={siteTitle() + " Logo"}
+                  alt={useSiteTitle() + " Logo"}
                   fluid={data.logo.childImageSharp.fluid}
                 ></Img>
               </Link>
@@ -113,7 +113,7 @@ function Footer() {
       <section className="bg-grey-dark p-4 text-sm">
         <div className="container mx-auto flex flex-wrap lg:justify-around leading-relaxed">
           <p className="flex flex-wrap text-white font-semibold">
-            <span>{siteTitle()}&nbsp;</span>
+            <span>{useSiteTitle()}&nbsp;</span>
             <span>&copy; {new Date().getFullYear()} Tous droits réservés.</span>
           </p>
           <p className="text-white font-semibold">
@@ -127,5 +127,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;

@@ -35,6 +35,13 @@ export default function Product({ title, description, photo, reverseOrder, links
   );
 }
 
+Product.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  photo: PropTypes.object,
+  reverseOrder: PropTypes.bool,
+  links: PropTypes.array,
+};
 function ImageSection({ title, photo, links }) {
   return (
     <>
@@ -66,13 +73,5 @@ function ImageSection({ title, photo, links }) {
 ImageSection.propTypes = {
   title: PropTypes.string,
   photo: PropTypes.object,
-  links: PropTypes.array,
-};
-
-Product.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  photo: PropTypes.object,
-  reverseOrder: PropTypes.bool,
   links: PropTypes.array,
 };

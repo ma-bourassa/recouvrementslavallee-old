@@ -4,7 +4,7 @@ import NavBar from "./navbar";
 import Footer from "./footer";
 import "../../utils/fontawesome";
 
-function Layout({ children }) {
+export default function Layout({ children }) {
   return (
     <div className="flex flex-col min-h-screen font-sans text-gray-900">
       <NavBar />
@@ -17,5 +17,3 @@ function Layout({ children }) {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
-
-export default Layout;
