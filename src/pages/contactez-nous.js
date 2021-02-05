@@ -1,9 +1,9 @@
 import React from "react";
 
-import Layout from "../components/layout/layout";
-import ContactForm from "../components/contact-form";
-import SEO from "../components/seo";
-import Header from "../components/header";
+import Layout from "../components/layout/Layout";
+import ContactForm from "../components/Contact-form";
+import SEO from "../components/Seo";
+import Header from "../components/Header";
 
 export default function ContactPage() {
   return (

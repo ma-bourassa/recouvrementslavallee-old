@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import React from "react";
-import NavBar from "./navbar";
-import Footer from "./footer";
+import NavBar from "./Navbar";
+import Footer from "./Footer";
 import "../../utils/fontawesome";
 
-export default function Layout({ children }) {
+const Layout = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen font-sans text-gray-900">
       <NavBar />
@@ -12,8 +12,10 @@ export default function Layout({ children }) {
       <Footer />
     </div>
   );
-}
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
+export default Layout;

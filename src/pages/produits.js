@@ -3,10 +3,10 @@ import { graphql } from "gatsby";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import PropTypes from "prop-types";
 import React from "react";
-import Header from "../components/header";
-import Layout from "../components/layout/layout";
-import ProductSection from "../components/productSection";
-import SEO from "../components/seo";
+import Header from "../components/Header";
+import Layout from "../components/layout/Layout";
+import ProductSection from "../components/ProductSection";
+import SEO from "../components/Seo";
 
 export default function ProductsPage({ data }) {
   const produits = data.produits.frontmatter.produits;

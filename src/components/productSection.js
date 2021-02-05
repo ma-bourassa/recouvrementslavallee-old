@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { slugify } from "../utils/string-utils";
 
-export default function Product({ title, description, photo, reverseOrder, links }) {
+const Product = ({ title, description, photo, reverseOrder, links }) => {
   const formattedDescription = description.split(`\n\n`);
 
   return (
@@ -33,7 +33,7 @@ export default function Product({ title, description, photo, reverseOrder, links
       </div>
     </section>
   );
-}
+};
 
 Product.propTypes = {
   title: PropTypes.string,
@@ -42,7 +42,10 @@ Product.propTypes = {
   reverseOrder: PropTypes.bool,
   links: PropTypes.array,
 };
-function ImageSection({ title, photo, links }) {
+
+export default Product;
+
+const ImageSection = ({ title, photo, links }) => {
   return (
     <>
       <Img className="container mx-auto lg:mx-0 rounded" alt={title} fluid={photo} />
@@ -68,7 +71,7 @@ function ImageSection({ title, photo, links }) {
       )}
     </>
   );
-}
+};
 
 ImageSection.propTypes = {
   title: PropTypes.string,

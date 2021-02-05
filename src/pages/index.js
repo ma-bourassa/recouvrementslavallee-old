@@ -4,10 +4,10 @@ import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import React from "react";
 import Feature from "../components/Feature";
-import Header from "../components/header";
-import Layout from "../components/layout/layout";
+import Header from "../components/Header";
+import Layout from "../components/layout/Layout";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
-import SEO from "../components/seo";
+import SEO from "../components/Seo";
 
 export const IndexPageTemplate = ({ title, subtitle, image, mainpitch, features, specialties }) => {
   return (

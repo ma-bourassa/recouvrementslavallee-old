@@ -3,9 +3,9 @@ import "@browniebroke/gatsby-image-gallery/dist/style.css";
 import { graphql, Link } from "gatsby";
 import PropTypes, { any } from "prop-types";
 import React from "react";
-import Header from "../components/header";
-import Layout from "../components/layout/layout";
-import SEO from "../components/seo";
+import Header from "../components/Header";
+import Layout from "../components/layout/Layout";
+import SEO from "../components/Seo";
 
 export default function ProjectGallery({ data }) {
   const title = data.gallery.frontmatter.title;

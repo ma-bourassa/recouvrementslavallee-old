@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { slugify } from "../../utils/string-utils";
 import useSiteTitle from "../useSiteTitle";
 
-export default function NavBar() {
+const NavBar = () => {
   const [isExpanded, toggleExpansion] = useState(false);
 
   const data = useStaticQuery(graphql`
@@ -118,4 +118,6 @@ export default function NavBar() {
       </div>
     </header>
   );
-}
+};
+
+export default NavBar;

@@ -14,7 +14,7 @@ function encode(data) {
   return formData;
 }
 
-export default function ContactForm() {
+const ContactForm = () => {
   const { handleSubmit, register, errors } = useForm();
 
   const [submitting, toggleSubmit] = useState(false);
@@ -146,7 +146,7 @@ export default function ContactForm() {
           id="submitBtn"
           type="submit"
           className={`${submitting ? `opacity-50 cursor-default` : ``} btn btn-blue mt-8 block focus:outline-none`}
-          disabled={submitting ? "disabled" : ""}
+          disabled={submitting}
         >
           {submitting && <FontAwesomeIcon icon="circle-notch" spin className="mr-2" />}
           Envoyer
@@ -154,4 +154,6 @@ export default function ContactForm() {
       </form>
     </div>
   );
-}
+};
+
+export default ContactForm;

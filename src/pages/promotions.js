@@ -2,9 +2,9 @@ import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import React from "react";
-import Header from "../components/header";
-import Layout from "../components/layout/layout";
-import SEO from "../components/seo";
+import Header from "../components/Header";
+import Layout from "../components/layout/Layout";
+import SEO from "../components/Seo";
 
 export default function PromotionsPage({ data }) {
   let promotions = [];

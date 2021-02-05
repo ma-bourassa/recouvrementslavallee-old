@@ -6,7 +6,7 @@ import Img from "gatsby-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../utils/fontawesome";
 
-export default function Footer() {
+const Footer = () => {
   const data = useStaticQuery(graphql`
     query {
       logo: file(relativePath: { eq: "recouvrementslavallee-logo-alt.png" }) {
@@ -126,4 +126,6 @@ export default function Footer() {
       </section>
     </footer>
   );
-}
+};
+
+export default Footer;
