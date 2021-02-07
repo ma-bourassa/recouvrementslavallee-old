@@ -20,6 +20,7 @@ module.exports = {
 
   plugins: [
     {
+      // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: `gatsby-source-filesystem`,
       options: {
         name: "uploads",
@@ -29,15 +30,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "accueil",
-        path: `${__dirname}/content/accueil`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "produits",
-        path: `${__dirname}/content/produits`,
+        name: "pages",
+        path: `${__dirname}/content/pages`,
       },
     },
     {
@@ -50,25 +44,17 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "promotions",
-        path: `${__dirname}/content/promotions`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: "images",
         path: `${__dirname}/src/images`,
       },
     },
-
+    `gatsby-transformer-sharp`,
     {
       resolve: "gatsby-plugin-sharp",
       options: {
         defaultQuality: 75,
       },
     },
-    `gatsby-transformer-sharp`,
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -82,6 +68,9 @@ module.exports = {
           {
             resolve: "gatsby-remark-images",
             options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
               maxWidth: 1024,
               withWebp: true,
               linkImagesToOriginal: false,
@@ -124,7 +113,6 @@ module.exports = {
         exclude: [`/dev-404-page`, `/404`, `/404.html`, `/offline-plugin-app-shell-fallback`, `/success`, `/admin`],
       },
     },
-    `gatsby-plugin-netlify`,
     `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-react-helmet`,
     `gatsby-remark-source-name`,
@@ -150,7 +138,7 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/logo_favicon.png`,
         icon_options: {
-          purpose: `any maskable`,
+          purpose: `maskable`,
         },
       },
     },
@@ -163,5 +151,12 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: "gatsby-plugin-netlify-cms",
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
+    `gatsby-plugin-netlify`,
   ],
 };

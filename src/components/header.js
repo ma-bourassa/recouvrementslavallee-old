@@ -1,23 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import BackgroundImage from "gatsby-background-image";
-import { graphql, useStaticQuery } from "gatsby";
+import headerImage from "../images/header.jpg";
 
-export default function Header({ title, text, children }) {
-  const data = useStaticQuery(graphql`
-    query {
-      background: file(sourceInstanceName: { eq: "images" }, relativePath: { eq: "header.jpg" }) {
-        childImageSharp {
-          fluid(quality: 90) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `);
-
+const Header = ({ title, text, children }) => {
   return (
-    <BackgroundImage fluid={data.background.childImageSharp.fluid}>
+    <div
+      className="bg-center bg-ima"
+      style={{
+        backgroundImage: `url(${headerImage})`,
+      }}
+    >
       <section className="py-8 mb-6 lg:mb-10 lg:py-16 text-center text-white">
         <div className="bg-grey-dark py-4 bg-opacity-75">
           <div>
@@ -28,12 +20,15 @@ export default function Header({ title, text, children }) {
           </div>
         </div>
       </section>
-    </BackgroundImage>
+    </div>
   );
-}
+};
 
 Header.propTypes = {
   title: PropTypes.string,
   text: PropTypes.string,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   children: PropTypes.any,
 };
+
+export default Header;

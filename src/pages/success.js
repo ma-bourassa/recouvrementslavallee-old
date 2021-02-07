@@ -1,9 +1,9 @@
 import React from "react";
 
-import Layout from "../components/layout/layout";
+import Layout from "../components/layout/Layout";
 import { Link } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import SEO from "../components/seo";
+import SEO from "../components/Seo";
 
 export default function Success() {
   return (

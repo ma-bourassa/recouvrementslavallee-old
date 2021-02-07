@@ -1,33 +1,20 @@
-import { useStaticQuery, graphql } from "gatsby";
+import { StaticQuery, graphql } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";
 
-function SEO({ description, lang, meta, keywords, title }) {
-  const { site } = useStaticQuery(graphql`
-    query DefaultSEOQuery {
-      site {
-        siteMetadata {
-          title
-          description
-          siteUrl
-          image
-        }
-      }
-    }
-  `);
-
-  const metaDescription = description || site.siteMetadata.description;
-  const siteUrl = site.siteMetadata.siteUrl;
-  const image = site.siteMetadata.image;
+const SEO = ({ siteMetadata, title, description, meta, keywords }) => {
+  const metaDescription = description || siteMetadata.description;
+  const siteUrl = siteMetadata.siteUrl;
+  const image = siteMetadata.image;
 
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: "fr",
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${siteMetadata.title}`}
       meta={[
         {
           name: "google-site-verification",
@@ -67,7 +54,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: siteMetadata.author,
         },
       ]
         .concat(
@@ -158,7 +145,7 @@ function SEO({ description, lang, meta, keywords, title }) {
             "https://recouvrementslavallee.com/static/037d8d188cc7162a6263ec7ff0244b68/b31d1/ra20_resultat.jpg",
             "https://recouvrementslavallee.com/static/ae0506841fc1196862b4a18df41b2472/61d2c/ra19_resultat.jpg"
           ],
-          "name": "${site.siteMetadata.title}",
+          "name": "${siteMetadata.title}",
           "openingHoursSpecification": [
             {
               "@type": "OpeningHoursSpecification",
@@ -174,10 +161,9 @@ function SEO({ description, lang, meta, keywords, title }) {
       </script>
     </Helmet>
   );
-}
+};
 
 SEO.defaultProps = {
-  lang: `fr`,
   keywords: [
     "recouvrement de sol",
     "vente et installation de plancher",
@@ -196,11 +182,30 @@ SEO.defaultProps = {
 };
 
 SEO.propTypes = {
+  siteMetadata: PropTypes.object,
+  title: PropTypes.string,
   description: PropTypes.string,
   keywords: PropTypes.arrayOf(PropTypes.string),
-  lang: PropTypes.string,
   meta: PropTypes.array,
-  title: PropTypes.string.isRequired,
 };
 
-export default SEO;
+const SeoWrapper = (props) => {
+  return (
+    <StaticQuery
+      query={graphql`
+        query DefaultSEOQuery {
+          site {
+            siteMetadata {
+              title
+              description
+              siteUrl
+              image
+            }
+          }
+        }
+      `}
+      render={(data) => <SEO siteMetadata={data.site.siteMetadata} {...props} />}
+    />
+  );
+};
+export default SeoWrapper;

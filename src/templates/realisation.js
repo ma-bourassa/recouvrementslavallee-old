@@ -1,13 +1,14 @@
 import Gallery from "@browniebroke/gatsby-image-gallery";
 import "@browniebroke/gatsby-image-gallery/dist/style.css";
 import { graphql, Link } from "gatsby";
-import PropTypes from "prop-types";
+import PropTypes, { any } from "prop-types";
 import React from "react";
-import Header from "../components/header";
-import Layout from "../components/layout/layout";
-import SEO from "../components/seo";
+import Header from "../components/Header";
+import Layout from "../components/layout/Layout";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
+import SEO from "../components/Seo";
 
-export default function ProjectGallery({ data, pageContext }) {
+export const RealisationPageTemplate = ({ title, images }) => {
   const lightboxOptions = {
     imageLoadErrorMessage: "Impossible de charger cette image",
     nextLabel: "Image suivante",
@@ -16,34 +17,59 @@ export default function ProjectGallery({ data, pageContext }) {
     zoomOutLabel: "Dézoomer",
     closeLabel: "Fermer",
   };
-
-  const images = data.images.frontmatter.photos.map((photo) => photo.childImageSharp);
-
   return (
-    <Layout>
+    <>
       <SEO
         keywords={[`realisations`]}
-        title={pageContext.projectName}
+        title={title}
         description="Découvrez nos plus récentes réalisations. Les projets suivants vous offre un aperçu de notre expertise et notre savoir-faire. Chaque projet est fait sur mesure et offre un service clé en main."
       />
-      <Header title={pageContext.projectName} text="" />
+      <Header title={title} text="" />
       <div className="max-w-screen-lg mx-auto px-4">
         <Link to={`/realisations/`} className="text-lg lg:text-xl font-semibold">
-          &lt; Retour à nos réalisations
+          &#10094; Retour à nos réalisations
         </Link>
       </div>
       <div className="max-w-screen-lg mx-auto p-4">
         <Gallery images={images} imgClass={"img"} gutter={"0.5rem"} lightboxOptions={lightboxOptions} />
       </div>
+      {images.map((image, i) => (
+        <div key={i}>
+          <PreviewCompatibleImage imageInfo={image}></PreviewCompatibleImage>
+        </div>
+      ))}
+    </>
+  );
+};
+
+RealisationPageTemplate.propTypes = {
+  title: PropTypes.string,
+  images: PropTypes.arrayOf(any),
+};
+
+const RealisationPage = ({ data }) => {
+  const title = data.markdownRemark.frontmatter.title;
+  const images = data.markdownRemark.frontmatter.images.map((image) => image.childImageSharp);
+
+  return (
+    <Layout>
+      <RealisationPageTemplate title={title} images={images}></RealisationPageTemplate>
     </Layout>
   );
-}
+};
+
+RealisationPage.propTypes = {
+  data: PropTypes.any,
+};
+
+export default RealisationPage;
 
 export const query = graphql`
   query($projectName: String) {
-    images: markdownRemark(frontmatter: { title: { eq: $projectName } }) {
+    markdownRemark(frontmatter: { title: { eq: $projectName } }) {
       frontmatter {
-        photos {
+        title
+        images {
           childImageSharp {
             thumb: fluid(maxWidth: 270, maxHeight: 270) {
               ...GatsbyImageSharpFluid_withWebp
@@ -57,8 +83,3 @@ export const query = graphql`
     }
   }
 `;
-
-ProjectGallery.propTypes = {
-  data: PropTypes.any,
-  pageContext: PropTypes.object,
-};
