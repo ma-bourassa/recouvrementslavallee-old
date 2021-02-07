@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { ProjectGalleryTemplate } from "../../templates/project-gallery";
+import { RealisationPageTemplate } from "../../templates/realisation";
 
 const RealisationPreview = ({ entry }) => {
   const data = entry.getIn(["data"]).toJS();
   if (data) {
-    return <ProjectGalleryTemplate title={data.title} images={data.photos} />;
+    return <RealisationPageTemplate title={data.title} images={data.images} />;
   } else {
     return <div>Loading...</div>;
   }
@@ -15,6 +15,7 @@ RealisationPreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
+  getAsset: PropTypes.func,
 };
 
 export default RealisationPreview;

@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import headerImage from "../images/header.jpg";
 
-const Header = ({ title, text, image, children }) => {
+const Header = ({ title, text, children }) => {
   return (
     <div
-      className="full-width-image"
+      className="bg-center bg-ima"
       style={{
-        backgroundImage: `url(${image.childImageSharp ? image.childImageSharp.fluid.src : image})`,
-        backgroundPosition: `center`,
+        backgroundImage: `url(${headerImage})`,
       }}
     >
       <section className="py-8 mb-6 lg:mb-10 lg:py-16 text-center text-white">

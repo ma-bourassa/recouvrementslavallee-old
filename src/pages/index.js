@@ -1,6 +1,5 @@
 // import PreviewCompatibleImage from "components/PreviewCompatibleImage";
 import { graphql, Link } from "gatsby";
-import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import React from "react";
 import Feature from "../components/Feature";
@@ -9,11 +8,11 @@ import Layout from "../components/layout/Layout";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import SEO from "../components/Seo";
 
-export const IndexPageTemplate = ({ title, subtitle, image, mainpitch, features, specialties }) => {
+export const IndexPageTemplate = ({ title, subtitle, mainpitch, features, specialties }) => {
   return (
     <>
       <SEO title={title} />
-      <Header title={title} text={subtitle} image={image}>
+      <Header title={title} text={subtitle}>
         <Link to="/contactez-nous/">
           <button className="mt-4 btn btn-blue text-xl rounded-lg">Soumission</button>
         </Link>
@@ -57,8 +56,8 @@ export const IndexPageTemplate = ({ title, subtitle, image, mainpitch, features,
 
             <div className="justify-center text-center flex">
               <ul className="text-xl font-medium space-y-1">
-                {specialties.specialties.map((specialty) => (
-                  <li key={specialty.specialty}>{specialty.specialty}</li>
+                {specialties.specialties.map((specialty, i) => (
+                  <li key={i}>{specialty.specialty}</li>
                 ))}
               </ul>
             </div>
@@ -79,7 +78,6 @@ export const IndexPageTemplate = ({ title, subtitle, image, mainpitch, features,
 
 IndexPageTemplate.propTypes = {
   features: PropTypes.object,
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   mainpitch: PropTypes.object,
   specialties: PropTypes.object,
   subtitle: PropTypes.string,
@@ -94,7 +92,6 @@ const IndexPage = ({ data }) => {
       <IndexPageTemplate
         title={frontmatter.title}
         subtitle={frontmatter.subtitle}
-        image={frontmatter.image}
         mainpitch={frontmatter.mainpitch}
         features={frontmatter.features}
         specialties={frontmatter.specialties}
@@ -136,13 +133,6 @@ export const query = graphql`
           feature1 {
             title
             description
-          }
-        }
-        image {
-          childImageSharp {
-            fluid(quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
           }
         }
         specialties {

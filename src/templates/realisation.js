@@ -5,24 +5,10 @@ import PropTypes, { any } from "prop-types";
 import React from "react";
 import Header from "../components/Header";
 import Layout from "../components/layout/Layout";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import SEO from "../components/Seo";
 
-export default function ProjectGallery({ data }) {
-  const title = data.gallery.frontmatter.title;
-  const images = data.gallery.frontmatter.photos.map((photo) => photo.childImageSharp);
-
-  return (
-    <Layout>
-      <ProjectGalleryTemplate title={title} images={images}></ProjectGalleryTemplate>
-    </Layout>
-  );
-}
-
-ProjectGallery.propTypes = {
-  data: PropTypes.any,
-};
-
-export function ProjectGalleryTemplate({ title, images }) {
+export const RealisationPageTemplate = ({ title, images }) => {
   const lightboxOptions = {
     imageLoadErrorMessage: "Impossible de charger cette image",
     nextLabel: "Image suivante",
@@ -31,7 +17,6 @@ export function ProjectGalleryTemplate({ title, images }) {
     zoomOutLabel: "Dézoomer",
     closeLabel: "Fermer",
   };
-
   return (
     <>
       <SEO
@@ -42,27 +27,49 @@ export function ProjectGalleryTemplate({ title, images }) {
       <Header title={title} text="" />
       <div className="max-w-screen-lg mx-auto px-4">
         <Link to={`/realisations/`} className="text-lg lg:text-xl font-semibold">
-          &lt; Retour à nos réalisations
+          &#10094; Retour à nos réalisations
         </Link>
       </div>
       <div className="max-w-screen-lg mx-auto p-4">
         <Gallery images={images} imgClass={"img"} gutter={"0.5rem"} lightboxOptions={lightboxOptions} />
       </div>
+      {images.map((image, i) => (
+        <div key={i}>
+          <PreviewCompatibleImage imageInfo={image}></PreviewCompatibleImage>
+        </div>
+      ))}
     </>
   );
-}
+};
 
-ProjectGalleryTemplate.propTypes = {
+RealisationPageTemplate.propTypes = {
   title: PropTypes.string,
   images: PropTypes.arrayOf(any),
 };
 
+const RealisationPage = ({ data }) => {
+  const title = data.markdownRemark.frontmatter.title;
+  const images = data.markdownRemark.frontmatter.images.map((image) => image.childImageSharp);
+
+  return (
+    <Layout>
+      <RealisationPageTemplate title={title} images={images}></RealisationPageTemplate>
+    </Layout>
+  );
+};
+
+RealisationPage.propTypes = {
+  data: PropTypes.any,
+};
+
+export default RealisationPage;
+
 export const query = graphql`
   query($projectName: String) {
-    gallery: markdownRemark(frontmatter: { title: { eq: $projectName } }) {
+    markdownRemark(frontmatter: { title: { eq: $projectName } }) {
       frontmatter {
         title
-        photos {
+        images {
           childImageSharp {
             thumb: fluid(maxWidth: 270, maxHeight: 270) {
               ...GatsbyImageSharpFluid_withWebp

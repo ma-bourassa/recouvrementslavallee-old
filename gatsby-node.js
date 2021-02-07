@@ -18,10 +18,17 @@ exports.createSchemaCustomization = ({ actions }) => {
   const typeDefs = `
     type MarkdownRemarkFrontmatter @infer {
       title: String
-      photos: [File!]! @fileByRelativePath
+      images: [File!]! @fileByRelativePath
       description: String
-      photo: File! @fileByRelativePath
+      image: File! @fileByRelativePath
       url: String
+      promotions: [Promotion]
+    }
+    type Promotion {
+      title: String
+      description: String
+      url: String
+      image: File! @fileByRelativePath
     }
   `;
   createTypes(typeDefs);
@@ -50,7 +57,7 @@ exports.createPages = async function ({ actions, graphql }) {
     const projectSlug = node.parent.name;
     actions.createPage({
       path: `realisations/${projectSlug}/`,
-      component: require.resolve(`./src/templates/project-gallery.js`),
+      component: require.resolve(`./src/templates/realisation.js`),
       context: { projectName: projectName },
     });
   });

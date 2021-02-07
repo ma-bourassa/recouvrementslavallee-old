@@ -1,9 +1,9 @@
-import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import React from "react";
 import { slugify } from "../utils/string-utils";
+import PreviewCompatibleImage from "./PreviewCompatibleImage";
 
-const Product = ({ title, description, photo, reverseOrder, links }) => {
+const Product = ({ title, description, image, reverseOrder, linksTitle, links }) => {
   const formattedDescription = description.split(`\n\n`);
 
   return (
@@ -14,7 +14,7 @@ const Product = ({ title, description, photo, reverseOrder, links }) => {
 
           {/* Mobile */}
           <div className="flex flex-col lg:hidden">
-            <ImageSection title={title} photo={photo} links={links} />
+            <ImageSection title={title} image={image} linksTitle={linksTitle} links={links} />
           </div>
 
           <div>
@@ -28,7 +28,7 @@ const Product = ({ title, description, photo, reverseOrder, links }) => {
 
         {/* Desktop */}
         <div className={`hidden w-1/2 lg:flex lg:flex-col lg:pr-32 ${reverseOrder && `order-last lg:order-first`}`}>
-          <ImageSection title={title} photo={photo} links={links} />
+          <ImageSection title={title} image={image} linksTitle={linksTitle} links={links} />
         </div>
       </div>
     </section>
@@ -38,21 +38,26 @@ const Product = ({ title, description, photo, reverseOrder, links }) => {
 Product.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  photo: PropTypes.object,
+  linksTitle: PropTypes.string,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   reverseOrder: PropTypes.bool,
   links: PropTypes.array,
 };
 
 export default Product;
 
-const ImageSection = ({ title, photo, links }) => {
+const ImageSection = ({ title, image, linksTitle, links }) => {
+  const imageInfo = { image, alt: title };
   return (
     <>
-      <Img className="container mx-auto lg:mx-0 rounded" alt={title} fluid={photo} />
+      <PreviewCompatibleImage
+        imageInfo={imageInfo}
+        classes="container mx-auto lg:mx-0 rounded"
+      ></PreviewCompatibleImage>
 
       {links && (
         <>
-          <p className="mt-6 mb-2 font-bold text-center lg:text-left">Voir les produits disponibles</p>
+          <p className="mt-6 mb-2 font-bold text-center lg:text-left">{linksTitle}</p>
           <div className="flex flex-wrap justify-center lg:justify-start pb-4">
             {links &&
               links.map((link, i) => (
@@ -75,6 +80,7 @@ const ImageSection = ({ title, photo, links }) => {
 
 ImageSection.propTypes = {
   title: PropTypes.string,
-  photo: PropTypes.object,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  linksTitle: PropTypes.string,
   links: PropTypes.array,
 };

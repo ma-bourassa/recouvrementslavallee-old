@@ -16,9 +16,14 @@ const Footer = () => {
           }
         }
       }
+      markdownRemark(frontmatter: { templateKey: { eq: "contact-page" } }) {
+        frontmatter {
+          phone
+        }
+      }
     }
   `);
-
+  const phone = data.markdownRemark.frontmatter.phone;
   return (
     <footer>
       <section className="bg-grey text-white">
@@ -35,8 +40,8 @@ const Footer = () => {
               <ul className="mt-4 list-none lg:text-lg leading-loose">
                 <li className="py-2">
                   <FontAwesomeIcon className="mr-2" icon="phone-alt" />
-                  <a className="text-xl font-semibold" href="tel:+14503573127">
-                    450-357-3127
+                  <a className="text-xl font-semibold" href={`tel:+1-${phone}`}>
+                    {phone}
                   </a>
                 </li>
                 <li>

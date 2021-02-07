@@ -11,24 +11,30 @@ const NavBar = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "recouvrementslavallee-logo.png" }) {
+      file(relativePath: { eq: "recouvrementslavallee-logo.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
-      produits: markdownRemark(fields: { sourceName: { eq: "produits" } }) {
+      products: markdownRemark(frontmatter: { templateKey: { eq: "products-page" } }) {
         frontmatter {
-          produits {
+          products {
             title
           }
         }
       }
+      phone: markdownRemark(frontmatter: { templateKey: { eq: "contact-page" } }) {
+        frontmatter {
+          phone
+        }
+      }
     }
   `);
-  const logo = data.logo.childImageSharp.fluid;
-  const products = data.produits.frontmatter.produits.map((product) => product.title);
+  const logo = data.file.childImageSharp.fluid;
+  const products = data.products.frontmatter.products.map((product) => product.title);
+  const phone = data.phone.frontmatter.phone;
   return (
     <header id="head" className="bg-grey-dark">
       <div className="flex flex-wrap items-baseline lg:items-center justify-between px-2 py-4 lg:justify-around">
@@ -100,18 +106,18 @@ const NavBar = () => {
           ))}
           <a
             className="block lg:hidden px-4 py-3  text-white border-t-2 lg:border-t-0 text-lg font-semibold hover:bg-grey-darker transition duration-500 text-center"
-            href="tel:+14503573127"
+            href={`tel:+1-${phone}`}
           >
             <FontAwesomeIcon className="mr-2" icon="phone-alt" />
-            450.357.3127
+            {phone}
           </a>
           <div className="hidden lg:block">
             <a
               className="border-2 border-white text-white text-lg font-semibold py-3 px-4 rounded-lg hover:bg-white hover:text-black lg:ml-6 lg:mr-4 transition duration-500"
-              href="tel:+14503573127"
+              href={`tel:+1-${phone}`}
             >
               <FontAwesomeIcon className="mr-2" icon="phone-alt" />
-              450.357.3127
+              {phone}
             </a>
           </div>
         </nav>

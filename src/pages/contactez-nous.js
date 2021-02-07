@@ -1,23 +1,19 @@
+import { graphql } from "gatsby";
+import PropTypes from "prop-types";
 import React from "react";
-
-import Layout from "../components/layout/Layout";
 import ContactForm from "../components/Contact-form";
-import SEO from "../components/Seo";
 import Header from "../components/Header";
+import Layout from "../components/layout/Layout";
+import SEO from "../components/Seo";
 
-export default function ContactPage() {
+export const ContactPageTemplate = ({ title, subtitle, phone, address, area }) => {
+  const formattedAddress = address.split(`\n`);
+  const formattedArea = area.split(`\n`);
+
   return (
-    <Layout>
-      <SEO
-        keywords={["contactez-nous", "soumission"]}
-        title="Contactez-nous"
-        description="Pour toute demande au sujet de nos services, nos produits ou pour une estimation gratuite, veuillez remplir le formulaire ci-dessous. Nous communiquerons avec vous dans les plus brefs délais."
-      />
-      <Header
-        title="Contactez-nous !"
-        text="Pour toute demande au sujet de nos services, nos produits ou pour une estimation gratuite, veuillez remplir le
-              formulaire ci-dessous. Nous communiquerons avec vous dans les plus brefs délais."
-      />
+    <>
+      <SEO keywords={[title, "soumission"]} title={title} description={subtitle} />
+      <Header title={title} text={subtitle} />
       <section className="flex flex-wrap justify-start items-start max-w-6xl mx-auto mb-6 ">
         <ContactForm />
 
@@ -26,8 +22,8 @@ export default function ContactPage() {
             <h2 className="text-xl font-bold mb-1">Téléphones</h2>
             <ul className="list-none leading-relaxed text-blue-700">
               <li>
-                <a className="font-semibold underline" href="tel:+14503573127">
-                  450-357-3127
+                <a className="font-semibold underline" href={`tel:+1-${phone}`}>
+                  {phone}
                 </a>
               </li>
             </ul>
@@ -36,20 +32,23 @@ export default function ContactPage() {
           <div className="mb-5">
             <h2 className="text-xl font-bold mb-1">Zone de service</h2>
             <ul className="font-semibold text-blue-700 mb-2 leading-relaxed">
-              <li>Montérégie</li>
-              <li>Rive-sud de Montréal</li>
+              {formattedArea.map((area, i) => (
+                <li key={i} className="font-semibold text-blue-700">
+                  {area}
+                </li>
+              ))}
             </ul>
           </div>
 
           <div className="mb-5">
             <h2 className="text-xl font-bold mb-1">Adresse</h2>
-            <p className=" mb-2 font-semibold text-blue-700 ">
-              166 rang Saint-André
-              <br />
-              Saint-Bernard-de-Lacolle
-              <br />
-              Québec, J0J 1V0
-            </p>
+            <ul className="font-semibold text-blue-700 mb-2 leading-relaxed">
+              {formattedAddress.map((addressLine, i) => (
+                <li key={i} className="font-semibold text-blue-700">
+                  {addressLine}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -65,6 +64,54 @@ export default function ContactPage() {
           frameBorder="0"
         />
       </section>
+    </>
+  );
+};
+
+ContactPageTemplate.propTypes = {
+  address: PropTypes.string,
+  area: PropTypes.string,
+  phone: PropTypes.string,
+  subtitle: PropTypes.string,
+  title: PropTypes.string,
+};
+
+const ContactPage = ({ data }) => {
+  const { frontmatter } = data.markdownRemark;
+
+  return (
+    <Layout>
+      <ContactPageTemplate
+        title={frontmatter.title}
+        subtitle={frontmatter.subtitle}
+        phone={frontmatter.phone}
+        address={frontmatter.address}
+        area={frontmatter.area}
+      ></ContactPageTemplate>
     </Layout>
   );
-}
+};
+
+ContactPage.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.object,
+    }),
+  }),
+};
+
+export default ContactPage;
+
+export const query = graphql`
+  query {
+    markdownRemark(frontmatter: { templateKey: { eq: "contact-page" } }) {
+      frontmatter {
+        title
+        subtitle
+        phone
+        address
+        area
+      }
+    }
+  }
+`;

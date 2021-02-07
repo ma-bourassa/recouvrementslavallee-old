@@ -1,18 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { IndexPageTemplate } from "../../pages";
+import { PromotionsPageTemplate } from "../../pages/promotions";
 
-const IndexPagePreview = ({ entry }) => {
+const PromotionsPagePreview = ({ entry }) => {
   const data = entry.getIn(["data"]).toJS();
 
   if (data) {
     return (
-      <IndexPageTemplate
+      <PromotionsPageTemplate
         title={data.title}
         subtitle={data.subtitle}
-        mainpitch={data.mainpitch || {}}
-        features={data.features || {}}
-        specialties={data.specialties || {}}
+        emptyPromo={data.emptyPromo}
+        promotions={data.promotions || []}
       />
     );
   } else {
@@ -20,10 +19,10 @@ const IndexPagePreview = ({ entry }) => {
   }
 };
 
-IndexPagePreview.propTypes = {
+PromotionsPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
 };
 
-export default IndexPagePreview;
+export default PromotionsPagePreview;

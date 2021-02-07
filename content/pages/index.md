@@ -2,7 +2,6 @@
 templateKey: index-page
 title: Vente et installation de plancher
 subtitle: Contactez-nous pour une soumission gratuite
-image: /uploads/header.jpg
 mainpitch:
   title: Vos experts en pose de plancher
   description: >
