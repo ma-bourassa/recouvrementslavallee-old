@@ -6,7 +6,6 @@ import PromotionsPagePreview from "./preview-template/PromotionsPagePreview";
 import RealisationPreview from "./preview-template/RealisationPreview";
 import RealisationsPagePreview from "./preview-template/RealisationsPagePreview";
 
-CMS.init();
 CMS.registerPreviewTemplate("index", IndexPagePreview);
 CMS.registerPreviewTemplate("products", ProductsPagePreview);
 CMS.registerPreviewTemplate("realisations", RealisationsPagePreview);
