@@ -17,7 +17,7 @@ module.exports = {
     siteUrl,
     image: `/img/logo.jpg`, //from static folder
   },
-
+  flags: { PRESERVE_WEBPACK_CACHE: true },
   plugins: [
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
@@ -151,12 +151,12 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-netlify`,
     {
       resolve: "gatsby-plugin-netlify-cms",
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
-    `gatsby-plugin-netlify`,
   ],
 };
