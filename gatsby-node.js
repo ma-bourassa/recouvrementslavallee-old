@@ -37,7 +37,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 exports.createPages = async function ({ actions, graphql }) {
   const { data } = await graphql(`
     query {
-      projects: allMarkdownRemark(filter: { fields: { sourceName: { eq: "realisations" } } }) {
+      allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "realisation" } } }) {
         nodes {
           frontmatter {
             title
@@ -52,7 +52,7 @@ exports.createPages = async function ({ actions, graphql }) {
     }
   `);
 
-  data.projects.nodes.forEach((node) => {
+  data.allMarkdownRemark.nodes.forEach((node) => {
     const projectName = node.frontmatter.title;
     const projectSlug = node.parent.name;
     actions.createPage({

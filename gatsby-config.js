@@ -85,7 +85,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-json`,
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
@@ -115,7 +114,6 @@ module.exports = {
     },
     `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-remark-source-name`,
     `gatsby-plugin-anchor-links`,
     {
       resolve: `gatsby-plugin-postcss`,
@@ -152,11 +150,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify`,
-    {
-      resolve: "gatsby-plugin-netlify-cms",
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
-    },
+    `gatsby-plugin-netlify-cms`,
   ],
 };
