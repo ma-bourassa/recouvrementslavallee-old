@@ -3,7 +3,7 @@ import React from "react";
 import { slugify } from "../utils/string-utils";
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
 
-const Product = ({ title, description, image, reverseOrder, linksTitle, links }) => {
+const ProductSection = ({ title, description, image, reverseOrder, linksTitle, links }) => {
   const formattedDescription = description.split(`\n\n`);
 
   return (
@@ -35,7 +35,7 @@ const Product = ({ title, description, image, reverseOrder, linksTitle, links })
   );
 };
 
-Product.propTypes = {
+ProductSection.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   linksTitle: PropTypes.string,
@@ -44,7 +44,7 @@ Product.propTypes = {
   links: PropTypes.array,
 };
 
-export default Product;
+export default ProductSection;
 
 const ImageSection = ({ title, image, linksTitle, links }) => {
   const imageInfo = { image, alt: title };

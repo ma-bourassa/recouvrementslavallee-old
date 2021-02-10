@@ -74,7 +74,7 @@ const SEO = ({ siteMetadata, title, description, meta, keywords }) => {
           "@type": "HomeAndConstructionBusiness",
           "@id": "${siteUrl}",
           "url": "${siteUrl}",
-          "logo": "https://recouvrementslavallee.com/logo.jpg",
+          "logo": "https://recouvrementslavallee.com/img/logo.jpg",
           "additionalType": "http://www.productontology.org/id/Flooring",
           "address": {
             "@type": "PostalAddress",
@@ -137,7 +137,7 @@ const SEO = ({ siteMetadata, title, description, meta, keywords }) => {
             "longitude": -73.4361446
           },
           "image" : [
-            "https://recouvrementslavallee.com/logo.jpg",
+            "https://recouvrementslavallee.com/img/logo.jpg",
             "https://recouvrementslavallee.com/static/ae0506841fc1196862b4a18df41b2472/61d2c/ra19_resultat.jpg",
             "https://recouvrementslavallee.com/static/225084db706ab7a60829763f806c9de9/61d2c/ra01_resultat.jpg",
             "https://recouvrementslavallee.com/static/1dae7181915023c463a633008dbc8c99/61d2c/ra18_resultat.jpg",

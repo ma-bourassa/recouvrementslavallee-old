@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import { navigate } from "gatsby-link";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { navigate } from "gatsby-link";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
-function encode(data) {
+const encode = (data) => {
   const formData = new FormData();
 
   for (const key of Object.keys(data)) {
@@ -12,7 +11,7 @@ function encode(data) {
   }
 
   return formData;
-}
+};
 
 const ContactForm = () => {
   const { handleSubmit, register, errors } = useForm();
@@ -70,7 +69,7 @@ const ContactForm = () => {
             className={`${errors.Nom ? `border-red-600` : ``} form-input mt-1 block w-full text-lg`}
             onChange={handleChange}
             ref={register({
-              required: true,
+              required: "Required",
             })}
           />
           {errors.Nom && <span className="text-red-600 text-sm">Entrez votre nom</span>}
@@ -84,7 +83,7 @@ const ContactForm = () => {
             className={`${errors.Téléphone ? `border-red-600` : ``} form-input mt-1 block w-full text-lg`}
             onChange={handleChange}
             ref={register({
-              required: true,
+              required: "Required",
             })}
           />
           {errors.Téléphone && <span className="text-red-600 text-sm">Entrez votre numéro de téléphone</span>}
@@ -98,9 +97,10 @@ const ContactForm = () => {
             className={`${errors.Courriel ? `border-red-600` : ``} form-input mt-1 block w-full text-lg`}
             onChange={handleChange}
             ref={register({
-              required: true,
+              required: "Required",
               pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: "",
               },
             })}
           />
@@ -114,7 +114,7 @@ const ContactForm = () => {
             className={`${errors.Message ? `border-red-600` : ``} form-textarea mt-1 block w-full text-lg`}
             id="message"
             placeholder="Précisez votre demande"
-            rows="4"
+            rows={4}
             onChange={handleChange}
             ref={register({
               required: true,

@@ -15,9 +15,9 @@ module.exports = {
     description: `Installation de planchers souples tels que lattes de vinyle, tapis, prélart, bois d’ingénierie et laminé. Nous nous déplaçons partout sur la Rive-Sud de Montréal. Contactez-nous pour une soumission gratuite.`,
     author: `@apparluk`,
     siteUrl,
-    image: `logo.jpg`, //from static folder
+    image: `/img/logo.jpg`, //from static folder
   },
-
+  flags: { PRESERVE_WEBPACK_CACHE: true },
   plugins: [
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
@@ -85,7 +85,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-json`,
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
@@ -115,7 +114,6 @@ module.exports = {
     },
     `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-remark-source-name`,
     `gatsby-plugin-anchor-links`,
     {
       resolve: `gatsby-plugin-postcss`,
@@ -151,12 +149,7 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: "gatsby-plugin-netlify-cms",
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
-    },
     `gatsby-plugin-netlify`,
+    `gatsby-plugin-netlify-cms`,
   ],
 };

@@ -1,13 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import headerImage from "../images/header.jpg";
 
 const Header = ({ title, text, children }) => {
   return (
     <div
       className="bg-center bg-ima"
       style={{
-        backgroundImage: `url(${headerImage})`,
+        backgroundImage: `url('/img/header.jpg')`,
       }}
     >
       <section className="py-8 mb-6 lg:mb-10 lg:py-16 text-center text-white">

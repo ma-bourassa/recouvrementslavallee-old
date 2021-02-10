@@ -4,7 +4,7 @@ import Img from "gatsby-image";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import React, { useState } from "react";
 import { slugify } from "../../utils/string-utils";
-import useSiteTitle from "../useSiteTitle";
+import useSiteTitle from "../UseSiteTitle";
 
 const NavBar = () => {
   const [isExpanded, toggleExpansion] = useState(false);

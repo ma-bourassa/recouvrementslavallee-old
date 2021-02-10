@@ -1,7 +1,7 @@
 import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
-import ContactForm from "../components/Contact-form";
+import ContactForm from "../components/ContactForm";
 import Header from "../components/Header";
 import Layout from "../components/layout/Layout";
 import SEO from "../components/Seo";

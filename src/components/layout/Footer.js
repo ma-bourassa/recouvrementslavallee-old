@@ -1,5 +1,5 @@
 import React from "react";
-import useSiteTitle from "../useSiteTitle";
+import useSiteTitle from "../UseSiteTitle";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 
