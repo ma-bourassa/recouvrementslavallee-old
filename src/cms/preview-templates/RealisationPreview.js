@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { RealisationPageTemplate } from "../../templates/realisation";
 
 const RealisationPreview = ({ entry }) => {
-  const data = entry.getIn(["data"]).toJS();
+  const data = entry.get("data").toJS();
   if (data) {
     return <RealisationPageTemplate title={data.title} images={data.images} />;
   } else {

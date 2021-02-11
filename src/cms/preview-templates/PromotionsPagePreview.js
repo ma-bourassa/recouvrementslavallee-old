@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { PromotionsPageTemplate } from "../../pages/promotions";
 
 const PromotionsPagePreview = ({ entry }) => {
-  const data = entry.getIn(["data"]).toJS();
+  const data = entry.get("data").toJS();
 
   if (data) {
     return (
