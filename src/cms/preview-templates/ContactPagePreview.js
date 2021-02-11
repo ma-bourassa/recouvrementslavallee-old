@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { ContactPageTemplate } from "../../pages/contactez-nous";
 
 const ContactPagePreview = ({ entry }) => {
-  const data = entry.getIn(["data"]).toJS();
+  const data = entry.get("data").toJS();
 
   if (data) {
     return (

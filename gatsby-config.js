@@ -150,6 +150,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify`,
-    `gatsby-plugin-netlify-cms`,
+    {
+      resolve: "gatsby-plugin-netlify-cms",
+      options: {
+        manualInit: true,
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
   ],
 };

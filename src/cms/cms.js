@@ -1,11 +1,12 @@
 import CMS from "netlify-cms-app";
-import ContactPagePreview from "./preview-template/ContactPagePreview";
-import IndexPagePreview from "./preview-template/IndexPagePreview";
-import ProductsPagePreview from "./preview-template/ProductsPagePreview";
-import PromotionsPagePreview from "./preview-template/PromotionsPagePreview";
-import RealisationPreview from "./preview-template/RealisationPreview";
-import RealisationsPagePreview from "./preview-template/RealisationsPagePreview";
+import ContactPagePreview from "./preview-templates/ContactPagePreview";
+import IndexPagePreview from "./preview-templates/IndexPagePreview";
+import ProductsPagePreview from "./preview-templates/ProductsPagePreview";
+import PromotionsPagePreview from "./preview-templates/PromotionsPagePreview";
+import RealisationPreview from "./preview-templates/RealisationPreview";
+import RealisationsPagePreview from "./preview-templates/RealisationsPagePreview";
 
+CMS.init();
 CMS.registerPreviewTemplate("index", IndexPagePreview);
 CMS.registerPreviewTemplate("products", ProductsPagePreview);
 CMS.registerPreviewTemplate("realisations", RealisationsPagePreview);
