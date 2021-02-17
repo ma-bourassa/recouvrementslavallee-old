@@ -8,7 +8,7 @@ import Layout from "../components/layout/Layout";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import SEO from "../components/Seo";
 
-export const IndexPageTemplate = ({ title, subtitle, mainpitch, features, specialties }) => {
+const IndexPageTemplate = ({ title, subtitle, mainpitch, features, specialties }) => {
   return (
     <>
       <SEO title={title} />

@@ -6,7 +6,7 @@ import Header from "../components/Header";
 import Layout from "../components/layout/Layout";
 import SEO from "../components/Seo";
 
-export const ContactPageTemplate = ({ title, subtitle, phone, address, area }) => {
+const ContactPageTemplate = ({ title, subtitle, phone, address, area }) => {
   const formattedAddress = address.split(`\n`);
   const formattedArea = area.split(`\n`);
 
