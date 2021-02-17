@@ -1,0 +1,77 @@
+---
+label: Home
+hide_body: true
+fields:
+- type: text
+  name: templateKey
+  label: templateKey
+- type: text
+  name: title
+  label: title
+- type: text
+  name: subtitle
+  label: subtitle
+- type: field_group
+  name: mainpitch
+  label: mainpitch
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: textarea
+    name: description
+    label: description
+- type: field_group
+  name: features
+  label: features
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: field_group
+    name: feature1
+    label: feature1
+    fields:
+    - type: text
+      name: title
+      label: title
+    - type: textarea
+      name: description
+      label: description
+  - type: field_group
+    name: feature2
+    label: feature2
+    fields:
+    - type: text
+      name: title
+      label: title
+    - type: textarea
+      name: description
+      label: description
+  - type: field_group
+    name: feature3
+    label: feature3
+    fields:
+    - type: text
+      name: title
+      label: title
+    - type: textarea
+      name: description
+      label: description
+- type: field_group
+  name: specialties
+  label: specialties
+  fields:
+  - type: field_group_list
+    name: specialties
+    label: specialties
+    fields:
+    - type: text
+      name: specialty
+      label: specialty
+  - type: text
+    name: title
+    label: title
+  - type: file
+    name: image
+    label: image
