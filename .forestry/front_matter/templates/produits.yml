@@ -5,12 +5,20 @@ fields:
 - type: text
   name: templateKey
   label: templateKey
+  hidden: true
+  config:
+    required: true
+  default: products-page
 - type: text
   name: title
   label: title
+  config:
+    required: true
 - type: textarea
   name: subtitle
   label: subtitle
+  config:
+    required: true
 - type: field_group_list
   name: products
   label: products
@@ -18,9 +26,14 @@ fields:
   - type: text
     name: title
     label: title
+    config:
+      required: true
   - type: textarea
     name: description
     label: description
+    config:
+      wysiwyg: false
+      required: true
   - type: file
     name: image
     label: image
