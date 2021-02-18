@@ -5,6 +5,10 @@ fields:
 - type: text
   name: templateKey
   label: templateKey
+  hidden: true
+  default: realisation
+  config:
+    required: false
 - type: text
   name: title
   label: title
