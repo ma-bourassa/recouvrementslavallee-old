@@ -56,3 +56,5 @@ fields:
     max: 
     labelField: 
   label: Promotions
+pages:
+- content/pages/promotions.md
