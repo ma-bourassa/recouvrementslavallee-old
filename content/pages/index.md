@@ -35,5 +35,11 @@ specialties:
   - specialty: Laminé
   title: Nos spécialitées
   image: "/uploads/homepage.jpg"
+  specialities:
+  - Lattes de vinyle
+  - Tapis
+  - Prélart
+  - Bois d'ingénierie
+  - Laminé
 
 ---
