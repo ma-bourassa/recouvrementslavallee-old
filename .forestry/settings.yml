@@ -15,15 +15,12 @@ sections:
 - type: document
   path: content/pages/realisations.md
   label: Realisations
-  match: "**/*"
 - type: document
   path: content/pages/promotions.md
   label: Promotions
-  match: "**/*"
 - type: document
   path: content/pages/contact.md
   label: Contact
-  match: "**/*"
 - type: heading
   label: Dynamic pages
 - type: directory
