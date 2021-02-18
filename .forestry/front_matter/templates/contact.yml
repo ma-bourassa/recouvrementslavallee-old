@@ -34,3 +34,5 @@ fields:
   label: address
   config:
     required: true
+pages:
+- content/pages/contact.md
