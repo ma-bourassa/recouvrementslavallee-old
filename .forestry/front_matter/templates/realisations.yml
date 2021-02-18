@@ -19,3 +19,5 @@ fields:
   label: subtitle
   config:
     required: true
+pages:
+- content/pages/realisations.md
