@@ -11,12 +11,12 @@ fields:
   hidden: true
 - type: text
   name: title
-  label: title
+  label: Title
   config:
     required: true
 - type: textarea
   name: subtitle
-  label: subtitle
+  label: Subtitle
   config:
     required: true
 pages:
