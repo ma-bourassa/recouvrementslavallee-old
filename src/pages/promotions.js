@@ -6,7 +6,7 @@ import Layout from "../components/layout/Layout";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import SEO from "../components/Seo";
 
-export const PromotionsPageTemplate = ({ title, subtitle, emptyPromo, promotions }) => {
+const PromotionsPageTemplate = ({ title, subtitle, emptyPromo, promotions }) => {
   return (
     <>
       <SEO

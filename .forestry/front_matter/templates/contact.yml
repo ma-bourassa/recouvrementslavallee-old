@@ -1,0 +1,46 @@
+---
+label: Contact
+hide_body: true
+fields:
+- type: text
+  name: templateKey
+  label: templateKey
+  default: contact-page
+  hidden: true
+  config:
+    required: false
+- type: text
+  name: title
+  label: Title
+  config:
+    required: true
+- type: textarea
+  name: subtitle
+  label: Subtitle
+  config:
+    required: true
+- type: text
+  name: phone
+  label: Phone
+  config:
+    required: true
+- name: area
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Area
+- name: address
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Address
+pages:
+- content/pages/contact.md

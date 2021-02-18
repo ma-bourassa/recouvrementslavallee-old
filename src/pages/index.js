@@ -8,7 +8,7 @@ import Layout from "../components/layout/Layout";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import SEO from "../components/Seo";
 
-export const IndexPageTemplate = ({ title, subtitle, mainpitch, features, specialties }) => {
+const IndexPageTemplate = ({ title, subtitle, mainpitch, features, specialties }) => {
   return (
     <>
       <SEO title={title} />
@@ -57,7 +57,7 @@ export const IndexPageTemplate = ({ title, subtitle, mainpitch, features, specia
             <div className="justify-center text-center flex">
               <ul className="text-xl font-medium space-y-1">
                 {specialties.specialties.map((specialty, i) => (
-                  <li key={i}>{specialty.specialty}</li>
+                  <li key={i}>{specialty}</li>
                 ))}
               </ul>
             </div>
@@ -145,9 +145,7 @@ export const query = graphql`
               }
             }
           }
-          specialties {
-            specialty
-          }
+          specialties
         }
       }
     }

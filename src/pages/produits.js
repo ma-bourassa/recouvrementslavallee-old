@@ -8,7 +8,7 @@ import Layout from "../components/layout/Layout";
 import ProductSection from "../components/ProductSection";
 import SEO from "../components/Seo";
 
-export const ProductsPageTemplate = ({ title, subtitle, products }) => {
+const ProductsPageTemplate = ({ title, subtitle, products }) => {
   return (
     <>
       <SEO

@@ -1,0 +1,18 @@
+---
+label: Realisation
+hide_body: true
+display_field: title
+fields:
+- type: text
+  name: templateKey
+  label: templateKey
+  hidden: true
+  default: realisation
+  config:
+    required: false
+- type: text
+  name: title
+  label: Title
+- type: image_gallery
+  name: images
+  label: Images

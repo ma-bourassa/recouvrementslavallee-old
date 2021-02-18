@@ -8,7 +8,7 @@ import Layout from "../components/layout/Layout";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import SEO from "../components/Seo";
 
-export const RealisationPageTemplate = ({ title, images }) => {
+const RealisationPageTemplate = ({ title, images }) => {
   const lightboxOptions = {
     imageLoadErrorMessage: "Impossible de charger cette image",
     nextLabel: "Image suivante",

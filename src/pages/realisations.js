@@ -6,7 +6,7 @@ import Header from "../components/Header";
 import Layout from "../components/layout/Layout";
 import SEO from "../components/Seo";
 
-export const RealisationsPageTemplate = ({ title, subtitle, realisations }) => {
+const RealisationsPageTemplate = ({ title, subtitle, realisations }) => {
   return (
     <>
       <SEO keywords={[title]} title={title} description={subtitle} />

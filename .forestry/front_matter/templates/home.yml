@@ -1,0 +1,117 @@
+---
+label: Home
+hide_body: true
+fields:
+- type: text
+  name: templateKey
+  label: templateKey
+  hidden: true
+  default: index-page
+  config:
+    required: true
+- type: text
+  name: title
+  label: Title
+  config:
+    required: true
+- name: subtitle
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: html
+  label: Subtitle
+- type: field_group
+  name: mainpitch
+  label: Mainpitch
+  fields:
+  - type: text
+    name: title
+    label: Title
+    config:
+      required: true
+  - type: textarea
+    name: description
+    label: Description
+    config:
+      required: true
+      wysiwyg: true
+      schema:
+        format: html
+- type: field_group
+  name: features
+  label: Features
+  fields:
+  - type: text
+    name: title
+    label: Title
+    config:
+      required: true
+  - type: field_group
+    name: feature1
+    label: feature1
+    fields:
+    - type: text
+      name: title
+      label: Title
+      config:
+        required: true
+    - type: textarea
+      name: description
+      label: Description
+      config:
+        required: true
+        wysiwyg: true
+        schema:
+          format: html
+  - type: field_group
+    name: feature2
+    label: feature2
+    fields:
+    - type: text
+      name: title
+      label: Title
+      config:
+        required: true
+    - type: textarea
+      name: description
+      label: Description
+      config:
+        required: true
+  - type: field_group
+    name: feature3
+    label: feature3
+    fields:
+    - type: text
+      name: title
+      label: Title
+      config:
+        required: true
+    - type: textarea
+      name: description
+      label: Description
+      config:
+        required: true
+- type: field_group
+  name: specialties
+  label: Specialties
+  fields:
+  - type: text
+    name: title
+    label: Title
+    config:
+      required: true
+  - name: specialties
+    type: list
+    config:
+      use_select: false
+      min: 
+      max: 
+    label: Specialties
+  - type: file
+    name: image
+    label: Image
+pages:
+- content/pages/index.md

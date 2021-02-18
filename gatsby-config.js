@@ -19,6 +19,13 @@ module.exports = {
   },
   flags: { PRESERVE_WEBPACK_CACHE: true },
   plugins: [
+    `gatsby-transformer-sharp`,
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        defaultQuality: 75,
+      },
+    },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: `gatsby-source-filesystem`,
@@ -48,13 +55,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    {
-      resolve: "gatsby-plugin-sharp",
-      options: {
-        defaultQuality: 75,
-      },
-    },
+
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -150,12 +151,5 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify`,
-    {
-      resolve: "gatsby-plugin-netlify-cms",
-      options: {
-        manualInit: true,
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
-    },
   ],
 };
