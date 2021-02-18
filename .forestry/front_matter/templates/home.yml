@@ -60,6 +60,9 @@ fields:
       label: description
       config:
         required: true
+        wysiwyg: true
+        schema:
+          format: html
   - type: field_group
     name: feature2
     label: feature2
