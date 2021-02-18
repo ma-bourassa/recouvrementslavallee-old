@@ -16,7 +16,7 @@ sections:
   label: Pages dynamiques
 - type: directory
   path: content/realisations
-  label: Réalisations
+  label: Realisations
   create: documents
   match: "**/*"
   templates:
