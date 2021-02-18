@@ -1,0 +1,22 @@
+---
+label: Contact
+hide_body: true
+fields:
+- type: text
+  name: templateKey
+  label: templateKey
+- type: text
+  name: title
+  label: title
+- type: textarea
+  name: subtitle
+  label: subtitle
+- type: text
+  name: phone
+  label: phone
+- type: text
+  name: area
+  label: area
+- type: text
+  name: address
+  label: address
