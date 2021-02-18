@@ -12,7 +12,7 @@ fields:
     required: false
 - type: text
   name: title
-  label: title
+  label: Title
 - type: image_gallery
   name: images
-  label: images
+  label: Images
