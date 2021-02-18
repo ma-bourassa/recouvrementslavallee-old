@@ -5,9 +5,12 @@ fields:
 - type: text
   name: templateKey
   label: templateKey
+  hidden: true
 - type: text
   name: title
   label: title
+  config:
+    required: true
 - type: text
   name: subtitle
   label: subtitle
@@ -18,9 +21,13 @@ fields:
   - type: text
     name: title
     label: title
+    config:
+      required: true
   - type: textarea
     name: description
     label: description
+    config:
+      required: true
 - type: field_group
   name: features
   label: features
@@ -28,6 +35,8 @@ fields:
   - type: text
     name: title
     label: title
+    config:
+      required: true
   - type: field_group
     name: feature1
     label: feature1
@@ -35,9 +44,13 @@ fields:
     - type: text
       name: title
       label: title
+      config:
+        required: true
     - type: textarea
       name: description
       label: description
+      config:
+        required: true
   - type: field_group
     name: feature2
     label: feature2
@@ -45,9 +58,13 @@ fields:
     - type: text
       name: title
       label: title
+      config:
+        required: true
     - type: textarea
       name: description
       label: description
+      config:
+        required: true
   - type: field_group
     name: feature3
     label: feature3
@@ -55,13 +72,22 @@ fields:
     - type: text
       name: title
       label: title
+      config:
+        required: true
     - type: textarea
       name: description
       label: description
+      config:
+        required: true
 - type: field_group
   name: specialties
   label: specialties
   fields:
+  - type: text
+    name: title
+    label: title
+    config:
+      required: true
   - type: field_group_list
     name: specialties
     label: specialties
@@ -69,9 +95,8 @@ fields:
     - type: text
       name: specialty
       label: specialty
-  - type: text
-    name: title
-    label: title
+      config:
+        required: true
   - type: file
     name: image
     label: image
