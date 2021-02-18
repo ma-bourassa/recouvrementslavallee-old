@@ -13,8 +13,7 @@ features:
   feature1:
     title: Qualité
     description: Chez nous, il n'y a pas de demi-mesure, car la qualité et la finition
-      sont capitales. Notre service est clé en main et 100% adapté à vos souhaits
-      !
+      sont capitales. Notre service est clé en main et 100% adapté à vos souhaits !
   feature2:
     title: Service
     description: Avec nous, vous aurez l'occasion d'acheter vos matériaux de recouvrement
@@ -23,7 +22,7 @@ features:
   feature3:
     title: Soumission gratuite
     description: "Nous nous déplaçons, quelque soit votre projet, afin de vous présenter
-      nos produits et vous offrir une évaluation gratuite.\n\n"
+      nos produits et vous offrir une évaluation gratuite."
 specialties:
   title: Nos spécialitées
   image: "/uploads/homepage.jpg"
