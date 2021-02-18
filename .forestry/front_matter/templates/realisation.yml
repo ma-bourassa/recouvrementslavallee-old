@@ -1,0 +1,13 @@
+---
+label: Réalisation
+hide_body: true
+fields:
+- type: text
+  name: templateKey
+  label: templateKey
+- type: text
+  name: title
+  label: title
+- type: image_gallery
+  name: images
+  label: images
