@@ -9,12 +9,9 @@ sections:
 - type: document
   path: content/pages/index.md
   label: Accueil
-  match: "**/*"
-  read_only: false
 - type: document
   path: content/pages/products.md
   label: Produits
-  match: "**/*"
 - type: heading
   label: Pages dynamiques
 - type: directory
