@@ -23,12 +23,18 @@ exports.createSchemaCustomization = ({ actions }) => {
       image: File! @fileByRelativePath
       url: String
       promotions: [Promotion]
+      specialties: Specialties
     }
     type Promotion {
       title: String
       description: String
       url: String
       image: File! @fileByRelativePath
+    }
+    type Specialties {
+      title: String
+      image: File! @fileByRelativePath
+      specialties: [String]
     }
   `;
   createTypes(typeDefs);
