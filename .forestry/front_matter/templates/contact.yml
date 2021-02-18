@@ -5,18 +5,32 @@ fields:
 - type: text
   name: templateKey
   label: templateKey
+  default: contact-page
+  hidden: true
+  config:
+    required: false
 - type: text
   name: title
   label: title
+  config:
+    required: true
 - type: textarea
   name: subtitle
   label: subtitle
+  config:
+    required: true
 - type: text
   name: phone
   label: phone
+  config:
+    required: true
 - type: text
   name: area
   label: area
+  config:
+    required: true
 - type: text
   name: address
   label: address
+  config:
+    required: true
