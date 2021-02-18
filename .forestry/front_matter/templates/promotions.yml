@@ -1,0 +1,19 @@
+---
+label: Promotions
+hide_body: true
+fields:
+- type: text
+  name: templateKey
+  label: templateKey
+- type: text
+  name: title
+  label: title
+- type: text
+  name: subtitle
+  label: subtitle
+- type: text
+  name: emptyPromo
+  label: emptyPromo
+- type: list
+  name: promotions
+  label: promotions
