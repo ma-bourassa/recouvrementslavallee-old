@@ -11,26 +11,26 @@ fields:
   default: products-page
 - type: text
   name: title
-  label: title
+  label: Title
   config:
     required: true
 - type: textarea
   name: subtitle
-  label: subtitle
+  label: Subtitle
   config:
     required: true
 - type: field_group_list
   name: products
-  label: products
+  label: Products
   fields:
   - type: text
     name: title
-    label: title
+    label: Title
     config:
       required: true
   - type: textarea
     name: description
-    label: description
+    label: Description
     config:
       wysiwyg: true
       required: true
@@ -38,19 +38,19 @@ fields:
         format: html
   - type: file
     name: image
-    label: image
+    label: Image
   - type: text
     name: linksTitle
-    label: linksTitle
+    label: Links title
   - type: field_group_list
     name: links
-    label: links
+    label: Links
     fields:
     - type: text
       name: url
-      label: url
+      label: Url
     - type: text
       name: name
-      label: name
+      label: Name
 pages:
 - content/pages/products.md
