@@ -5,12 +5,14 @@ admin_path: ''
 webhook_url: 
 sections:
 - type: heading
-  label: Pages
+  label: Pages statiques
 - type: document
   path: content/pages/index.md
   label: Accueil
   match: "**/*"
   read_only: false
+- type: heading
+  label: Pages dynamiques
 - type: directory
   path: content/realisations
   label: Réalisations
