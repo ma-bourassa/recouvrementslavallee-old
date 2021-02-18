@@ -11,28 +11,36 @@ fields:
     required: false
 - type: text
   name: title
-  label: title
+  label: Title
   config:
     required: true
 - type: textarea
   name: subtitle
-  label: subtitle
+  label: Subtitle
   config:
     required: true
 - type: text
   name: phone
-  label: phone
+  label: Phone
   config:
     required: true
-- type: text
-  name: area
-  label: area
+- name: area
+  type: textarea
+  default: ''
   config:
     required: true
-- type: text
-  name: address
-  label: address
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Area
+- name: address
+  type: textarea
+  default: ''
   config:
     required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Address
 pages:
 - content/pages/contact.md
