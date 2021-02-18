@@ -103,13 +103,13 @@ fields:
     label: Title
     config:
       required: true
-  - name: specialities
+  - name: specialties
     type: list
     config:
       use_select: false
       min: 
       max: 
-    label: Specialities
+    label: Specialties
   - type: file
     name: image
     label: Image
