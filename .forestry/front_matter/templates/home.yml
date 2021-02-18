@@ -19,9 +19,9 @@ fields:
   default: ''
   config:
     required: true
-    wysiwyg: false
+    wysiwyg: true
     schema:
-      format: markdown
+      format: html-blocks
   label: Subtitle
 - type: field_group
   name: mainpitch
