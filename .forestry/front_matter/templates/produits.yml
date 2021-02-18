@@ -32,8 +32,10 @@ fields:
     name: description
     label: description
     config:
-      wysiwyg: false
+      wysiwyg: true
       required: true
+      schema:
+        format: html
   - type: file
     name: image
     label: image
