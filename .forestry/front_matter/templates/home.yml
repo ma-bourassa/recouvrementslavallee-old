@@ -11,7 +11,7 @@ fields:
     required: true
 - type: text
   name: title
-  label: title
+  label: Title
   config:
     required: true
 - name: subtitle
@@ -25,16 +25,16 @@ fields:
   label: Subtitle
 - type: field_group
   name: mainpitch
-  label: mainpitch
+  label: Mainpitch
   fields:
   - type: text
     name: title
-    label: title
+    label: Title
     config:
       required: true
   - type: textarea
     name: description
-    label: description
+    label: Description
     config:
       required: true
       wysiwyg: true
@@ -42,11 +42,11 @@ fields:
         format: html
 - type: field_group
   name: features
-  label: features
+  label: Features
   fields:
   - type: text
     name: title
-    label: title
+    label: Title
     config:
       required: true
   - type: field_group
@@ -55,12 +55,12 @@ fields:
     fields:
     - type: text
       name: title
-      label: title
+      label: Title
       config:
         required: true
     - type: textarea
       name: description
-      label: description
+      label: Description
       config:
         required: true
         wysiwyg: true
@@ -72,12 +72,12 @@ fields:
     fields:
     - type: text
       name: title
-      label: title
+      label: Title
       config:
         required: true
     - type: textarea
       name: description
-      label: description
+      label: Description
       config:
         required: true
   - type: field_group
@@ -86,34 +86,32 @@ fields:
     fields:
     - type: text
       name: title
-      label: title
+      label: Title
       config:
         required: true
     - type: textarea
       name: description
-      label: description
+      label: Description
       config:
         required: true
 - type: field_group
   name: specialties
-  label: specialties
+  label: Specialties
   fields:
   - type: text
     name: title
-    label: title
+    label: Title
     config:
       required: true
-  - type: field_group_list
-    name: specialties
-    label: specialties
-    fields:
-    - type: text
-      name: specialty
-      label: specialty
-      config:
-        required: true
+  - name: specialities
+    type: list
+    config:
+      use_select: false
+      min: 
+      max: 
+    label: Specialities
   - type: file
     name: image
-    label: image
+    label: Image
 pages:
 - content/pages/index.md
