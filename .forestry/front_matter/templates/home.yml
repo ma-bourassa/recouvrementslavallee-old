@@ -14,9 +14,15 @@ fields:
   label: title
   config:
     required: true
-- type: text
-  name: subtitle
-  label: subtitle
+- name: subtitle
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Subtitle
 - type: field_group
   name: mainpitch
   label: mainpitch
