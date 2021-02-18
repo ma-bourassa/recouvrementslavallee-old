@@ -6,6 +6,9 @@ fields:
   name: templateKey
   label: templateKey
   hidden: true
+  default: index-page
+  config:
+    required: true
 - type: text
   name: title
   label: title
