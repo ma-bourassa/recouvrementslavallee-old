@@ -4,7 +4,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import PropTypes from "prop-types";
 import React, { useEffect, useRef, useState } from "react";
 
-const MAPBOX_TOKEN = process.env.MAPBOX_TOKEN;
+const MAPBOX_TOKEN = process.env.GATSBY_MAPBOX_KEY;
 
 const mapContainerStyle = {
   width: "100%",
