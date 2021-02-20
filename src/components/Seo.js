@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 const SEO = ({ siteMetadata, title, description, meta, keywords }) => {
   const metaDescription = description || siteMetadata.description;
   const siteUrl = siteMetadata.siteUrl;
-  const image = siteMetadata.image;
+  const logo = siteMetadata.logo;
 
   return (
     <Helmet
@@ -42,7 +42,7 @@ const SEO = ({ siteMetadata, title, description, meta, keywords }) => {
         },
         {
           property: `og:image`,
-          content: image,
+          content: logo,
         },
         {
           name: `twitter:title`,
@@ -200,7 +200,7 @@ const SeoWrapper = (props) => {
               title
               description
               siteUrl
-              image
+              logo
             }
           }
         }

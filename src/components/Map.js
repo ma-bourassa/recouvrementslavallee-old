@@ -23,7 +23,6 @@ const Map = ({ address }) => {
       style: "mapbox://styles/mapbox/streets-v11",
       center: [-73.4461868, 45.0698815],
       zoom: 10,
-      dragPan: false,
     });
     map.addControl(new mapboxgl.NavigationControl(), "top-left");
     map.scrollZoom.disable();
