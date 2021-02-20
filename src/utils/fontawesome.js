@@ -9,6 +9,7 @@ import {
   faCircleNotch,
   faAngleDown,
   faAngleUp,
+  faLocationArrow,
 } from "@fortawesome/free-solid-svg-icons";
 import { fab, faFacebook } from "@fortawesome/free-brands-svg-icons";
 library.add(
@@ -22,5 +23,6 @@ library.add(
   faCheckCircle,
   faCircleNotch,
   faAngleDown,
-  faAngleUp
+  faAngleUp,
+  faLocationArrow
 );

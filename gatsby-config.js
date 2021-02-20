@@ -110,7 +110,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-advanced-sitemap`,
       options: {
-        exclude: [`/dev-404-page`, `/404`, `/404.html`, `/offline-plugin-app-shell-fallback`, `/success`, `/admin`],
+        exclude: [
+          `/dev-404-page`,
+          `/404`,
+          `/404.html`,
+          `/offline-plugin-app-shell-fallback`,
+          `/success`,
+          `/cms`,
+          `/admin`,
+        ],
       },
     },
     `gatsby-plugin-fontawesome-css`,

@@ -18,3 +18,5 @@ now.json
 .netlify
 
 debug.log
+/.env.production
+/.env.development
