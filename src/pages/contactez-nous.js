@@ -5,7 +5,6 @@ import ContactForm from "../components/ContactForm";
 import Header from "../components/Header";
 import Layout from "../components/layout/Layout";
 import SEO from "../components/Seo";
-import Map from "../components/Map";
 
 const ContactPageTemplate = ({ title, subtitle, phone, address, area }) => {
   const formattedAddress = address.split(`\n`);
@@ -54,8 +53,14 @@ const ContactPageTemplate = ({ title, subtitle, phone, address, area }) => {
         </div>
       </section>
       <section>
-
-        <Map address={address} />
+        <iframe
+          title="Map"
+          scrolling="no"
+          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=166%20rang%20St-Andr%C3%A9%20St-Bernard%20de%20Lacolle%20+(My%20company)&amp;t=&amp;z=10&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          width="100%"
+          height="400"
+          frameBorder="0"
+        />
       </section>
     </>
   );

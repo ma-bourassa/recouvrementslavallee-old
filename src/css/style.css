@@ -34,13 +34,5 @@
   @apply -translate-y-1 scale-110;
 }
 
-.mapboxgl-popup-close-button {
-  padding: 8px;
-}
-
-.mapboxgl-popup {
-  @apply max-w-sm font-sans;
-}
-
 /*! purgecss end ignore */
 @tailwind utilities;
