@@ -1,12 +1,27 @@
-import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
 import PropTypes from "prop-types";
+import React from "react";
 
 const Header = ({ title, text, children }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      file(sourceInstanceName: { eq: "images" }, relativePath: { eq: "header.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `);
+  const headerImage = data.file.childImageSharp.fluid.srcWebp;
   return (
     <div
-      className="bg-center bg-ima"
+      className="bg-center"
       style={{
-        backgroundImage: `url('/img/header.jpg')`,
+        backgroundImage: `url(${headerImage})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
       }}
     >
       <section className="py-8 mb-6 lg:mb-10 lg:py-16 text-center text-white">

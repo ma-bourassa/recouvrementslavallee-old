@@ -1,11 +1,10 @@
-// import PreviewCompatibleImage from "components/PreviewCompatibleImage";
 import { graphql, Link } from "gatsby";
+import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import React from "react";
 import Feature from "../components/Feature";
 import Header from "../components/Header";
 import Layout from "../components/layout/Layout";
-import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import SEO from "../components/Seo";
 
 const IndexPageTemplate = ({ title, subtitle, mainpitch, features, specialties }) => {
@@ -48,7 +47,7 @@ const IndexPageTemplate = ({ title, subtitle, mainpitch, features, specialties }
       <section>
         <div className="container mx-auto flex flex-col lg:flex-row px-6 py-6 lg:py-12 leading-relaxed items-center">
           <div className="hidden lg:block lg:w-1/2">
-            <PreviewCompatibleImage imageInfo={specialties.image}></PreviewCompatibleImage>
+            <Img className="rounded" fluid={specialties.image.childImageSharp.fluid} />
           </div>
           <div className="lg:w-1/2 lg:mx-12 text-center lg:text-left">
             <h2 className="text-2xl font-semibold mb-6 text-center">{specialties.title}</h2>

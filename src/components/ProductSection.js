@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { slugify } from "../utils/string-utils";
-import PreviewCompatibleImage from "./PreviewCompatibleImage";
+import Img from "gatsby-image";
 
 const ProductSection = ({ title, description, image, reverseOrder, linksTitle, links }) => {
   const formattedDescription = description.split(`\n\n`);
@@ -47,14 +47,9 @@ ProductSection.propTypes = {
 export default ProductSection;
 
 const ImageSection = ({ title, image, linksTitle, links }) => {
-  const imageInfo = { image, alt: title };
   return (
     <>
-      <PreviewCompatibleImage
-        imageInfo={imageInfo}
-        classes="container mx-auto lg:mx-0 rounded"
-      ></PreviewCompatibleImage>
-
+      <Img className="container mx-auto lg:mx-0 rounded" alt={title} fluid={image.childImageSharp.fluid} />
       {links && (
         <>
           <p className="mt-6 mb-2 font-bold text-center lg:text-left">{linksTitle}</p>

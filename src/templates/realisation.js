@@ -5,7 +5,6 @@ import PropTypes, { any } from "prop-types";
 import React from "react";
 import Header from "../components/Header";
 import Layout from "../components/layout/Layout";
-import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import SEO from "../components/Seo";
 
 const RealisationPageTemplate = ({ title, images }) => {
@@ -33,11 +32,6 @@ const RealisationPageTemplate = ({ title, images }) => {
       <div className="max-w-screen-lg mx-auto p-4">
         <Gallery images={images} imgClass={"img"} gutter={"0.5rem"} lightboxOptions={lightboxOptions} />
       </div>
-      {images.map((image, i) => (
-        <div key={i}>
-          <PreviewCompatibleImage imageInfo={image}></PreviewCompatibleImage>
-        </div>
-      ))}
     </>
   );
 };
