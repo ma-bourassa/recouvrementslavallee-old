@@ -71,7 +71,7 @@ ContactPageTemplate.propTypes = {
   area: PropTypes.string,
   phone: PropTypes.string,
   subtitle: PropTypes.string,
-  title: PropTypes.string,
+  title: PropTypes.string
 };
 
 const ContactPage = ({ data }) => {
@@ -93,9 +93,9 @@ const ContactPage = ({ data }) => {
 ContactPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
+      frontmatter: PropTypes.object
+    })
+  })
 };
 
 export default ContactPage;

@@ -80,7 +80,7 @@ IndexPageTemplate.propTypes = {
   mainpitch: PropTypes.object,
   specialties: PropTypes.object,
   subtitle: PropTypes.string,
-  title: PropTypes.string,
+  title: PropTypes.string
 };
 
 const IndexPage = ({ data }) => {
@@ -102,9 +102,9 @@ const IndexPage = ({ data }) => {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
+      frontmatter: PropTypes.object
+    })
+  })
 };
 
 export default IndexPage;

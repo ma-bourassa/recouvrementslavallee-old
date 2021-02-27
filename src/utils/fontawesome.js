@@ -9,7 +9,7 @@ import {
   faCircleNotch,
   faAngleDown,
   faAngleUp,
-  faLocationArrow,
+  faLocationArrow
 } from "@fortawesome/free-solid-svg-icons";
 import { fab, faFacebook } from "@fortawesome/free-brands-svg-icons";
 library.add(

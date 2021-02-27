@@ -86,25 +86,25 @@ const Footer = () => {
                 {[
                   {
                     route: `/`,
-                    title: `Accueil`,
+                    title: `Accueil`
                   },
                   {
                     route: `/produits/`,
                     title: `Produits
-                    `,
+                    `
                   },
                   {
                     route: `/realisations/`,
-                    title: `Réalisations`,
+                    title: `Réalisations`
                   },
                   {
                     route: `/promotions/`,
-                    title: `Promotions`,
+                    title: `Promotions`
                   },
                   {
                     route: `/contactez-nous/`,
-                    title: `Contactez-nous`,
-                  },
+                    title: `Contactez-nous`
+                  }
                 ].map((link) => (
                   <Link className="py-2 lg:py-0 block hover:text-blue-600" key={link.title} to={link.route}>
                     {link.title}

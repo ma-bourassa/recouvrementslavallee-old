@@ -51,7 +51,7 @@ PromotionsPageTemplate.propTypes = {
   promotions: PropTypes.any,
   subtitle: PropTypes.string,
   title: PropTypes.string,
-  emptyPromo: PropTypes.string,
+  emptyPromo: PropTypes.string
 };
 
 const PromotionsPage = ({ data }) => {
@@ -73,9 +73,9 @@ const PromotionsPage = ({ data }) => {
 PromotionsPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
+      frontmatter: PropTypes.object
+    })
+  })
 };
 
 export default PromotionsPage;
@@ -106,5 +106,5 @@ export const query = graphql`
 `;
 
 PromotionsPageTemplate.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.object
 };

@@ -21,7 +21,7 @@ const Header = ({ title, text, children }) => {
       style={{
         backgroundImage: `url(${headerImage})`,
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
+        backgroundSize: "cover"
       }}
     >
       <section className="py-8 mb-6 lg:mb-10 lg:py-16 text-center text-white">
@@ -42,7 +42,7 @@ Header.propTypes = {
   title: PropTypes.string,
   text: PropTypes.string,
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  children: PropTypes.any,
+  children: PropTypes.any
 };
 
 export default Header;

@@ -39,7 +39,7 @@ RealisationsPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   realisations: PropTypes.any,
   subtitle: PropTypes.string,
-  title: PropTypes.string,
+  title: PropTypes.string
 };
 
 const RealisationsPage = ({ data }) => {
@@ -48,7 +48,7 @@ const RealisationsPage = ({ data }) => {
     return {
       projectPath: node.parent.name,
       projectName: node.frontmatter.title,
-      thumbnail: node.frontmatter.images[0].childImageSharp.fixed,
+      thumbnail: node.frontmatter.images[0].childImageSharp.fixed
     };
   });
 
@@ -66,12 +66,12 @@ const RealisationsPage = ({ data }) => {
 RealisationsPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
+      frontmatter: PropTypes.object
     }),
     allMarkdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
+      frontmatter: PropTypes.object
+    })
+  })
 };
 
 export default RealisationsPage;
@@ -107,5 +107,5 @@ export const query = graphql`
 `;
 
 RealisationsPage.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.object
 };

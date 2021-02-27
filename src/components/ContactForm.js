@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { navigate } from "gatsby-link";
+import { navigate } from "gatsby";
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -14,11 +15,17 @@ const encode = (data) => {
 };
 
 const ContactForm = () => {
-  const { handleSubmit, register, errors } = useForm();
+  const { handleSubmit, register, reset, errors } = useForm();
 
-  const [submitting, toggleSubmit] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  const [state, setState] = useState({});
+  const [state, setState] = useState({
+    nom: null,
+    courriel: null,
+    telephone: null,
+    message: null,
+    file: null
+  });
 
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
@@ -29,19 +36,21 @@ const ContactForm = () => {
   };
 
   const onSubmit = () => {
-    toggleSubmit(true);
+    setSubmitting(true);
     fetch("/", {
       method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": "Contact v1",
-        ...state,
-      }),
+        "form-name": "Contact form",
+        ...state
+      })
     })
       .then(() => {
+        reset();
         navigate("/success/");
       })
       .catch(() => {
-        toggleSubmit(false);
+        setSubmitting(false);
         alert("Une erreur est survenue. Veuillez réessayer plus tard.");
       });
   };
@@ -50,80 +59,77 @@ const ContactForm = () => {
     <div className="w-full lg:w-2/3 p-6 text-lg font-semibold">
       <form
         method="post"
-        name="Contact v1"
+        name="Contact form"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        data-netlify-recaptcha="true"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <input type="hidden" name="Contact v1" value="Contact v1" />
+        <input type="hidden" name="form-name" value="Contact form" />
         <div className="hidden">
           <label>
             Don’t fill this out: <input name="bot-field" onChange={handleChange} />
           </label>
         </div>
         <label className="block mb-4">
-          <span>Nom</span>
+          <span>Nom*</span>
           <input
             type="text"
-            name="Nom"
+            name="nom"
             className={`${errors.Nom ? `border-red-600` : ``} form-input mt-1 block w-full text-lg`}
             onChange={handleChange}
             ref={register({
-              required: "Required",
+              required: "Required"
             })}
           />
           {errors.Nom && <span className="text-red-600 text-sm">Entrez votre nom</span>}
         </label>
 
         <label className="block mb-4">
-          <span>Téléphone</span>
-          <input
-            type="tel"
-            name="Téléphone"
-            className={`${errors.Téléphone ? `border-red-600` : ``} form-input mt-1 block w-full text-lg`}
-            onChange={handleChange}
-            ref={register({
-              required: "Required",
-            })}
-          />
-          {errors.Téléphone && <span className="text-red-600 text-sm">Entrez votre numéro de téléphone</span>}
-        </label>
-
-        <label className="block mb-4">
-          <span>Courriel</span>
+          <span>Courriel*</span>
           <input
             type="text"
-            name="Courriel"
+            name="courriel"
             className={`${errors.Courriel ? `border-red-600` : ``} form-input mt-1 block w-full text-lg`}
             onChange={handleChange}
             ref={register({
               required: "Required",
               pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "",
-              },
+                message: ""
+              }
             })}
           />
           {errors.Courriel && <span className="text-red-600 text-sm">Courriel invalide</span>}
         </label>
 
         <label className="block mb-4">
-          <span>Message</span>
+          <span>Téléphone (optionnel)</span>
+          <input
+            type="tel"
+            name="telephone"
+            className={`form-input mt-1 block w-full text-lg`}
+            onChange={handleChange}
+          />
+        </label>
+
+        <label className="block mb-4">
+          <span>Message*</span>
           <textarea
-            name="Message"
+            name="message"
             className={`${errors.Message ? `border-red-600` : ``} form-textarea mt-1 block w-full text-lg`}
             id="message"
-            placeholder="Précisez votre demande"
+            placeholder="Comment pouvons-nous vous aidez ?"
             rows={4}
             onChange={handleChange}
             ref={register({
-              required: true,
+              required: true
             })}
           />
           {errors.Message && <span className="text-red-600 text-sm">Entrez un message</span>}
         </label>
 
-        <label>
+        <label className="block mb-4">
           <span className="block">
             Joindre vos fichiers <span className="hidden lg:inline">(plans, photos, etc.)</span>
           </span>
@@ -142,6 +148,10 @@ const ContactForm = () => {
           </div>
         )}
 
+        <div className="block mb-4">
+          <div data-netlify-recaptcha="true"></div>
+        </div>
+
         <button
           id="submitBtn"
           type="submit"
@@ -154,6 +164,10 @@ const ContactForm = () => {
       </form>
     </div>
   );
+};
+
+ContactForm.propTypes = {
+  showSuccessToast: PropTypes.func
 };
 
 export default ContactForm;

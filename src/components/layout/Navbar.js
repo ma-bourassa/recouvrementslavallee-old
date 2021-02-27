@@ -53,25 +53,25 @@ const NavBar = () => {
           {[
             {
               route: `/`,
-              title: `Accueil`,
+              title: `Accueil`
             },
             {
               route: `/produits/`,
               title: `Produits`,
-              dropdown: products,
+              dropdown: products
             },
             {
               route: `/realisations/`,
-              title: `Réalisations`,
+              title: `Réalisations`
             },
             {
               route: `/promotions/`,
-              title: `Promotions`,
+              title: `Promotions`
             },
             {
               route: `/contactez-nous/`,
-              title: `Contactez-nous`,
-            },
+              title: `Contactez-nous`
+            }
           ].map((link) => (
             <div
               key={link.title}

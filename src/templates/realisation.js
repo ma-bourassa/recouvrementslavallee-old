@@ -14,7 +14,7 @@ const RealisationPageTemplate = ({ title, images }) => {
     prevLabel: "Image précédente",
     zoomInLabel: "Zoomer",
     zoomOutLabel: "Dézoomer",
-    closeLabel: "Fermer",
+    closeLabel: "Fermer"
   };
   return (
     <>
@@ -38,7 +38,7 @@ const RealisationPageTemplate = ({ title, images }) => {
 
 RealisationPageTemplate.propTypes = {
   title: PropTypes.string,
-  images: PropTypes.arrayOf(any),
+  images: PropTypes.arrayOf(any)
 };
 
 const RealisationPage = ({ data }) => {
@@ -53,7 +53,7 @@ const RealisationPage = ({ data }) => {
 };
 
 RealisationPage.propTypes = {
-  data: PropTypes.any,
+  data: PropTypes.any
 };
 
 export default RealisationPage;

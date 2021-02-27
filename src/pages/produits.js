@@ -44,7 +44,7 @@ const ProductsPageTemplate = ({ title, subtitle, products }) => {
 ProductsPageTemplate.propTypes = {
   products: PropTypes.any,
   subtitle: PropTypes.string,
-  title: PropTypes.string,
+  title: PropTypes.string
 };
 
 const Productpage = ({ data }) => {
@@ -64,9 +64,9 @@ const Productpage = ({ data }) => {
 Productpage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
+      frontmatter: PropTypes.object
+    })
+  })
 };
 
 export default Productpage;

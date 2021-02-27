@@ -41,7 +41,7 @@ ProductSection.propTypes = {
   linksTitle: PropTypes.string,
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   reverseOrder: PropTypes.bool,
-  links: PropTypes.array,
+  links: PropTypes.array
 };
 
 export default ProductSection;
@@ -77,5 +77,5 @@ ImageSection.propTypes = {
   title: PropTypes.string,
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   linksTitle: PropTypes.string,
-  links: PropTypes.array,
+  links: PropTypes.array
 };

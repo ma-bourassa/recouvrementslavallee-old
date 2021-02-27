@@ -11,57 +11,57 @@ const SEO = ({ siteMetadata, title, description, meta, keywords }) => {
   return (
     <Helmet
       htmlAttributes={{
-        lang: "fr",
+        lang: "fr"
       }}
       title={title}
       titleTemplate={`%s | ${siteMetadata.title}`}
       meta={[
         {
           name: "google-site-verification",
-          content: "a1O4YzwdJ_WkiMzegdOZjdDXUMsDsfqBfzpHAchsf8w",
+          content: "a1O4YzwdJ_WkiMzegdOZjdDXUMsDsfqBfzpHAchsf8w"
         },
         {
           name: `description`,
-          content: metaDescription,
+          content: metaDescription
         },
         {
           property: `og:title`,
-          content: title,
+          content: title
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: metaDescription
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: `website`
         },
         {
           property: `og:url`,
-          content: siteUrl,
+          content: siteUrl
         },
         {
           property: `og:image`,
-          content: logo,
+          content: logo
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: title
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: metaDescription
         },
         {
           name: `twitter:creator`,
-          content: siteMetadata.author,
-        },
+          content: siteMetadata.author
+        }
       ]
         .concat(
           keywords.length > 0
             ? {
                 name: `keywords`,
-                content: keywords.join(`, `),
+                content: keywords.join(`, `)
               }
             : []
         )
@@ -176,9 +176,9 @@ SEO.defaultProps = {
     "pose de plancher de vinyle",
     "pose de plancher de vinyle rive-sud",
     "pose de tapis",
-    "pose de tapis rive-sud",
+    "pose de tapis rive-sud"
   ],
-  meta: [],
+  meta: []
 };
 
 SEO.propTypes = {
@@ -186,7 +186,7 @@ SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   keywords: PropTypes.arrayOf(PropTypes.string),
-  meta: PropTypes.array,
+  meta: PropTypes.array
 };
 
 const SeoWrapper = (props) => {
