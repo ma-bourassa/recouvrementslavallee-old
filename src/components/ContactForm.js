@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { navigate } from "gatsby";
-import PropTypes from "prop-types";
+import { navigate } from "gatsby-link";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -15,7 +14,7 @@ const encode = (data) => {
 };
 
 const ContactForm = () => {
-  const { handleSubmit, register, reset, errors } = useForm();
+  const { handleSubmit, register, errors } = useForm();
 
   const [submitting, setSubmitting] = useState(false);
 
@@ -39,14 +38,12 @@ const ContactForm = () => {
     setSubmitting(true);
     fetch("/", {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": "Contact form",
+        "form-name": "Contact v2",
         ...state
       })
     })
       .then(() => {
-        reset();
         navigate("/success/");
       })
       .catch(() => {
@@ -59,13 +56,12 @@ const ContactForm = () => {
     <div className="w-full lg:w-2/3 p-6 text-lg font-semibold">
       <form
         method="post"
-        name="Contact form"
+        name="Contact v2"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        data-netlify-recaptcha="true"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <input type="hidden" name="form-name" value="Contact form" />
+        <input type="hidden" name="Contact v2" value="Contact v2" />
         <div className="hidden">
           <label>
             Don’t fill this out: <input name="bot-field" onChange={handleChange} />
@@ -75,7 +71,7 @@ const ContactForm = () => {
           <span>Nom*</span>
           <input
             type="text"
-            name="nom"
+            name="Nom"
             className={`${errors.Nom ? `border-red-600` : ``} form-input mt-1 block w-full text-lg`}
             onChange={handleChange}
             ref={register({
@@ -89,7 +85,7 @@ const ContactForm = () => {
           <span>Courriel*</span>
           <input
             type="text"
-            name="courriel"
+            name="Courriel"
             className={`${errors.Courriel ? `border-red-600` : ``} form-input mt-1 block w-full text-lg`}
             onChange={handleChange}
             ref={register({
@@ -104,10 +100,10 @@ const ContactForm = () => {
         </label>
 
         <label className="block mb-4">
-          <span>Téléphone (optionnel)</span>
+          <span>Téléphone</span>
           <input
             type="tel"
-            name="telephone"
+            name="Téléphone"
             className={`form-input mt-1 block w-full text-lg`}
             onChange={handleChange}
           />
@@ -116,7 +112,7 @@ const ContactForm = () => {
         <label className="block mb-4">
           <span>Message*</span>
           <textarea
-            name="message"
+            name="Message"
             className={`${errors.Message ? `border-red-600` : ``} form-textarea mt-1 block w-full text-lg`}
             id="message"
             placeholder="Comment pouvons-nous vous aidez ?"
@@ -129,7 +125,7 @@ const ContactForm = () => {
           {errors.Message && <span className="text-red-600 text-sm">Entrez un message</span>}
         </label>
 
-        <label className="block mb-4">
+        <label>
           <span className="block">
             Joindre vos fichiers <span className="hidden lg:inline">(plans, photos, etc.)</span>
           </span>
@@ -148,10 +144,6 @@ const ContactForm = () => {
           </div>
         )}
 
-        <div className="block mb-4">
-          <div data-netlify-recaptcha="true"></div>
-        </div>
-
         <button
           id="submitBtn"
           type="submit"
@@ -164,10 +156,6 @@ const ContactForm = () => {
       </form>
     </div>
   );
-};
-
-ContactForm.propTypes = {
-  showSuccessToast: PropTypes.func
 };
 
 export default ContactForm;
