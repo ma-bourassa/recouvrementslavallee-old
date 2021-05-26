@@ -55,12 +55,14 @@ const ContactPageTemplate = ({ title, subtitle, phone, address, area }) => {
       <section>
         <iframe
           title="Map"
-          scrolling="no"
-          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=166%20rang%20St-Andr%C3%A9%20St-Bernard%20de%20Lacolle%20+(My%20company)&amp;t=&amp;z=10&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
           width="100%"
-          height="400"
+          scrolling="no"
+          height="450"
           frameBorder="0"
-        />
+          loading="lazy"
+          allowFullScreen
+          src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJnVi3GauGyUwRrSD4t2aoccU&key=AIzaSyB6Jf_tXUa6gbnvVOxEh0di45Ff_LzGlZ4&zoom=12"
+        ></iframe>
       </section>
     </>
   );
