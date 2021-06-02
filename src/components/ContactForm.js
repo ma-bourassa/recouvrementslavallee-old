@@ -14,15 +14,19 @@ const encode = (data) => {
 };
 
 const ContactForm = () => {
-  const { handleSubmit, register, errors } = useForm();
+  const {
+    handleSubmit,
+    register,
+    formState: { errors }
+  } = useForm();
 
   const [submitting, setSubmitting] = useState(false);
 
   const [state, setState] = useState({
-    nom: null,
-    courriel: null,
-    telephone: null,
-    message: null,
+    Nom: null,
+    Courriel: null,
+    Téléphone: null,
+    Message: null,
     file: null
   });
 
@@ -71,12 +75,11 @@ const ContactForm = () => {
           <span>Nom*</span>
           <input
             type="text"
-            name="Nom"
-            className={`${errors.Nom ? `border-red-600` : ``} form-input mt-1 block w-full text-lg`}
-            onChange={handleChange}
-            ref={register({
+            {...register("Nom", {
               required: "Required"
             })}
+            className={`${errors.Nom ? `border-red-600` : ``} form-input mt-1 block w-full text-lg`}
+            onChange={handleChange}
           />
           {errors.Nom && <span className="text-red-600 text-sm">Entrez votre nom</span>}
         </label>
@@ -85,16 +88,15 @@ const ContactForm = () => {
           <span>Courriel*</span>
           <input
             type="text"
-            name="Courriel"
-            className={`${errors.Courriel ? `border-red-600` : ``} form-input mt-1 block w-full text-lg`}
-            onChange={handleChange}
-            ref={register({
+            {...register("Courriel", {
               required: "Required",
               pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                 message: ""
               }
             })}
+            className={`${errors.Courriel ? `border-red-600` : ``} form-input mt-1 block w-full text-lg`}
+            onChange={handleChange}
           />
           {errors.Courriel && <span className="text-red-600 text-sm">Courriel invalide</span>}
         </label>
@@ -112,15 +114,14 @@ const ContactForm = () => {
         <label className="block mb-4">
           <span>Message*</span>
           <textarea
-            name="Message"
+            {...register("Message", {
+              required: true
+            })}
             className={`${errors.Message ? `border-red-600` : ``} form-textarea mt-1 block w-full text-lg`}
             id="message"
             placeholder="Comment pouvons-nous vous aidez ?"
             rows={4}
             onChange={handleChange}
-            ref={register({
-              required: true
-            })}
           />
           {errors.Message && <span className="text-red-600 text-sm">Entrez un message</span>}
         </label>
