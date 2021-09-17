@@ -14,13 +14,13 @@ const ContactPageTemplate = ({ title, subtitle, phone, address, area }) => {
     <>
       <SEO keywords={[title, "soumission"]} title={title} description={subtitle} />
       <Header title={title} text={subtitle} />
-      <section className="flex flex-wrap justify-start items-start max-w-6xl mx-auto mb-6 ">
+      <section className="flex flex-wrap items-start justify-start max-w-6xl mx-auto mb-6 ">
         <ContactForm />
 
-        <div className="w-full lg:w-1/3 p-6">
+        <div className="w-full p-6 lg:w-1/3">
           <div className="mb-5">
-            <h2 className="text-xl font-bold mb-1">Téléphones</h2>
-            <ul className="list-none leading-relaxed text-blue-700">
+            <h2 className="mb-1 text-xl font-bold">Téléphones</h2>
+            <ul className="leading-relaxed text-blue-700 list-none">
               <li>
                 <a className="font-semibold underline" href={`tel:+1-${phone}`}>
                   {phone}
@@ -30,8 +30,8 @@ const ContactPageTemplate = ({ title, subtitle, phone, address, area }) => {
           </div>
 
           <div className="mb-5">
-            <h2 className="text-xl font-bold mb-1">Zone de service</h2>
-            <ul className="font-semibold text-blue-700 mb-2 leading-relaxed">
+            <h2 className="mb-1 text-xl font-bold">Zone de service</h2>
+            <ul className="mb-2 font-semibold leading-relaxed text-blue-700">
               {formattedArea.map((area, i) => (
                 <li key={i} className="font-semibold text-blue-700">
                   {area}
@@ -41,8 +41,8 @@ const ContactPageTemplate = ({ title, subtitle, phone, address, area }) => {
           </div>
 
           <div className="mb-5">
-            <h2 className="text-xl font-bold mb-1">Adresse</h2>
-            <ul className="font-semibold text-blue-700 mb-2 leading-relaxed">
+            <h2 className="mb-1 text-xl font-bold">Adresse</h2>
+            <ul className="mb-2 font-semibold leading-relaxed text-blue-700">
               {formattedAddress.map((addressLine, i) => (
                 <li key={i} className="font-semibold text-blue-700">
                   {addressLine}
@@ -61,7 +61,7 @@ const ContactPageTemplate = ({ title, subtitle, phone, address, area }) => {
           frameBorder="0"
           loading="lazy"
           allowFullScreen
-          src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJnVi3GauGyUwRrSD4t2aoccU&key=AIzaSyB6Jf_tXUa6gbnvVOxEh0di45Ff_LzGlZ4&zoom=12"
+          src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJnVi3GauGyUwRrSD4t2aoccU&key=APIKEY&zoom=12"
         ></iframe>
       </section>
     </>
